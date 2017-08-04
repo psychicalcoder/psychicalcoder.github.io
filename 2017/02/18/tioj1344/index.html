@@ -1,4 +1,141 @@
-<!DOCTYPE html><html><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description"><title>TIOJ 1344 [IOI 2007, Day 2] Miners | CocoTea</title><link rel="stylesheet" type="text/css" href="/css/normalize.css"><link rel="stylesheet" type="text/css" href="/css/highlight.css"><link rel="stylesheet" type="text/css" href="/css/very-simple.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css"><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"></head><body><!-- include the sidebar--><!-- include ./includes/sidebar.jade--><!-- Blog title and subtitle--><header><div class="container header"><a id="logo" href="/." class="title">CocoTea</a><span class="subtitle"></span><label id="toggle-menu" for="menu" onclick><i class="fa fa-bars"></i></label></div></header><!-- use checkbox hack for toggle nav-bar on small screens--><input id="menu" type="checkbox"><!-- Navigation Links--><nav id="nav"><div class="container"><a href="/" class="sidebar-nav-item active">Home</a><a href="/archives" class="sidebar-nav-item">Archives</a><a href="/About" class="sidebar-nav-item">About</a></div></nav><div id="header-margin-bar"></div><!-- gallery that comes before the header--><div class="wrapper"><div class="container post-header"><h1>TIOJ 1344 [IOI 2007, Day 2] Miners</h1></div></div><div class="wrapper"><div class="container meta"><div class="post-time">2017-02-18</div><div class="post-categories"><a class="post-category-link" href="/categories/TIOJ/">TIOJ</a></div><div class="post-tags"><a class="post-tag-link" href="/tags/coding/">coding</a>/<a class="post-tag-link" href="/tags/dp/">dp</a>/<a class="post-tag-link" href="/tags/ioi/">ioi</a>/<a class="post-tag-link" href="/tags/tioj/">tioj</a></div></div></div><article><div class="container post"><link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.css"><h3 id="題目敘述"><a href="#題目敘述" class="headerlink" title="題目敘述"></a>題目敘述</h3><blockquote><p>有兩個煤礦區各有一群礦工在礦區採礦。因為採礦是很辛苦的工作，這些礦工需要食物讓他們保持體力。<br>每次一個裝載的食物到達礦區後，此礦區的礦工即可生產相同數量的煤礦。<br>每次裝載的食物可以是肉類裝載、魚類裝載、或麵包裝載其中的一種。<br>因為礦工喜歡多樣化的餐點，若能享用越多樣化的餐點，礦工的產能就越大。明確地說，礦工會考量運送到其礦區的最新裝載食物<br>和前兩次裝載食物(若還未有多次裝載時，則以現有次數的裝載食物為考量)來做以下的產能：<br> •若考量的裝載食物只有一種類型，礦工只生產 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.64444em;"></span><span class="strut bottom" style="height:0.64444em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathrm">1</span></span></span></span> 單位的煤礦；<br> •若考量的裝載食物內含有二種不同類型，礦工則生產 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn></mrow><annotation encoding="application/x-tex">2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.64444em;"></span><span class="strut bottom" style="height:0.64444em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathrm">2</span></span></span></span> 單位的煤礦；<br> •若考量的裝載食物內含有三種不同類型，礦工則生產 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>3</mn></mrow><annotation encoding="application/x-tex">3</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.64444em;"></span><span class="strut bottom" style="height:0.64444em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathrm">3</span></span></span></span> 單位的煤礦；<br>假設我們事先知道裝載食物的內容和運送順序，就能以裝載食物的運送順序和運送地點來影響各個礦區的產量分佈。<br>各個裝載食物都不能切割，必須被運送到其中一個礦區。<br>此兩個礦區不需要收到相同次數的裝載食物(事實上，允許將所有裝載食物運送到同一礦區)。<br>請寫一個程式在給定要分配到礦區之裝載食物的類型和順序的條件下，經由決定各個裝載食物應送到礦區 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.64444em;"></span><span class="strut bottom" style="height:0.64444em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathrm">1</span></span></span></span> 還是礦區 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn></mrow><annotation encoding="application/x-tex">2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.64444em;"></span><span class="strut bottom" style="height:0.64444em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathrm">2</span></span></span></span> ，來幫忙<br>找出可以生產的最大煤礦總產量。</p>
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<!-- Head tag -->
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!--Description-->
+  
+
+  <!--Author-->
+  
+  <meta name="author" content="psychicalcoder">
+  
+
+  <!--Open Graph Title-->
+  
+      <meta property="og:title" content="TIOJ 1344 [IOI 2007, Day 2] Miners"/>
+  
+  <!--Open Graph Description-->
+  
+  <!--Open Graph Site Name-->
+  <meta property="og:site_name" content="茶與巧克力的漩渦"/>
+  <!--Type page-->
+  
+      <meta property="og:type" content="article" />
+  
+  <!--Page Cover-->
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <!-- 百度统计 -->
+    <script>
+	var _hmt = _hmt || [];
+	(function() {
+  	var hm = document.createElement("script");
+  	hm.src = "https://hm.baidu.com/hm.js?c0451e16533956173997b85f7a8de666";
+  	var s = document.getElementsByTagName("script")[0]; 
+  	s.parentNode.insertBefore(hm, s);
+	})();
+    </script>
+  <!-- Title -->
+  
+  <title>TIOJ 1344 [IOI 2007, Day 2] Miners - 茶與巧克力的漩渦</title>
+
+
+  <link rel="shortcut icon" href="/favicon.ico">
+    <!--font-awesome-->
+  <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <!-- Custom CSS/Sass -->
+  <link rel="stylesheet" href="/css/style.css"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</head>
+
+
+<body>
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><!-- Nav -->
+  <header class="site-header">
+  <div class="header-inside">
+    
+    <div class="logo">
+      <a href="/" rel="home">
+        
+        <img src="/cow.png" alt="茶與巧克力的漩渦" height="60">
+        
+      </a>
+    </div>
+    <a class="header-name" href="/">
+            <span>茶與巧克力的漩渦</span>
+            的小部落
+        </a>
+    <!-- navbar -->
+    <nav class="navbar">
+      <!--  nav links -->
+      <div class="collapse">
+        <ul class="navbar-nav">
+          
+          
+            <li>
+              <a href="/.">
+                
+                  <i class="fa fa-home "></i>
+                
+                首頁
+              </a>
+            </li>
+          
+            <li>
+              <a href="/archives">
+                
+                  <i class="fa fa-archive "></i>
+                
+                文章
+              </a>
+            </li>
+          
+            <li>
+              <a href="/about">
+                
+                  <i class="fa fa-user "></i>
+                
+                關於
+              </a>
+            </li>
+          
+        </ul>
+      </div>
+      <!-- /.navbar-collapse -->
+    </nav>
+    <div class="button-wrap">
+      <button class="menu-toggle">Primary Menu</button>
+    </div>
+  </div>
+</header>
+
+
+  <!-- Main Content -->
+  <div class="content-area">
+  <div class="post">
+    <!-- Post Content -->
+    <div class="container">
+      <article>
+        <!-- Title date & tags -->
+        <div class="post-header">
+          <h1 class="entry-title">
+            TIOJ 1344 [IOI 2007, Day 2] Miners
+            
+          </h1>
+         
+        </div>
+         <p class="a-posted-on">
+          2017-02-18
+          </p>
+        <!-- Post Main Content -->
+        <div class="entry-content">
+          <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.css"><h3 id="題目敘述"><a href="#題目敘述" class="headerlink" title="題目敘述"></a>題目敘述</h3><blockquote><p>有兩個煤礦區各有一群礦工在礦區採礦。因為採礦是很辛苦的工作，這些礦工需要食物讓他們保持體力。<br>每次一個裝載的食物到達礦區後，此礦區的礦工即可生產相同數量的煤礦。<br>每次裝載的食物可以是肉類裝載、魚類裝載、或麵包裝載其中的一種。<br>因為礦工喜歡多樣化的餐點，若能享用越多樣化的餐點，礦工的產能就越大。明確地說，礦工會考量運送到其礦區的最新裝載食物<br>和前兩次裝載食物(若還未有多次裝載時，則以現有次數的裝載食物為考量)來做以下的產能：<br> •若考量的裝載食物只有一種類型，礦工只生產 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.64444em;"></span><span class="strut bottom" style="height:0.64444em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathrm">1</span></span></span></span> 單位的煤礦；<br> •若考量的裝載食物內含有二種不同類型，礦工則生產 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn></mrow><annotation encoding="application/x-tex">2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.64444em;"></span><span class="strut bottom" style="height:0.64444em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathrm">2</span></span></span></span> 單位的煤礦；<br> •若考量的裝載食物內含有三種不同類型，礦工則生產 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>3</mn></mrow><annotation encoding="application/x-tex">3</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.64444em;"></span><span class="strut bottom" style="height:0.64444em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathrm">3</span></span></span></span> 單位的煤礦；<br>假設我們事先知道裝載食物的內容和運送順序，就能以裝載食物的運送順序和運送地點來影響各個礦區的產量分佈。<br>各個裝載食物都不能切割，必須被運送到其中一個礦區。<br>此兩個礦區不需要收到相同次數的裝載食物(事實上，允許將所有裝載食物運送到同一礦區)。<br>請寫一個程式在給定要分配到礦區之裝載食物的類型和順序的條件下，經由決定各個裝載食物應送到礦區 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.64444em;"></span><span class="strut bottom" style="height:0.64444em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathrm">1</span></span></span></span> 還是礦區 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn></mrow><annotation encoding="application/x-tex">2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.64444em;"></span><span class="strut bottom" style="height:0.64444em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathrm">2</span></span></span></span> ，來幫忙<br>找出可以生產的最大煤礦總產量。</p>
 </blockquote>
 <h3 id="題解"><a href="#題解" class="headerlink" title="題解"></a>題解</h3><blockquote><p>第一次寫IOI題<br>這題一臉就是DP<br>而且是最水的那種</p>
 <p>一看就知道可以滾動(捲動陣列)</p>
@@ -9,7 +146,65 @@
 </blockquote>
 <h6 id="C"><a href="#C" class="headerlink" title="C++"></a>C++</h6><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> LL;</div><div class="line"></div><div class="line"><span class="keyword">int</span> N, y;</div><div class="line"></div><div class="line"><span class="keyword">int</span> da[<span class="number">4</span>][<span class="number">4</span>][<span class="number">4</span>][<span class="number">4</span>], db[<span class="number">4</span>][<span class="number">4</span>][<span class="number">4</span>][<span class="number">4</span>];</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">tran</span><span class="params">(<span class="keyword">char</span> ch)</span> </span>&#123;</div><div class="line">    <span class="keyword">if</span>(ch == <span class="string">'M'</span>) <span class="keyword">return</span> <span class="number">1</span>;</div><div class="line">    <span class="keyword">if</span>(ch == <span class="string">'F'</span>) <span class="keyword">return</span> <span class="number">2</span>;</div><div class="line">    <span class="keyword">return</span> <span class="number">3</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">score</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b, <span class="keyword">int</span> c)</span> </span>&#123;</div><div class="line">    <span class="keyword">int</span> r = <span class="number">0</span>;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; <span class="number">4</span>; i++) <span class="keyword">if</span>(a == i || b == i || c == i) r++;</div><div class="line">    <span class="keyword">return</span> r;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</div><div class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;N);</div><div class="line">    getchar(); <span class="comment">//吃掉換行</span></div><div class="line">    <span class="built_in">memset</span>(da, <span class="number">-1</span>, <span class="keyword">sizeof</span>(da));</div><div class="line">    <span class="built_in">memset</span>(db, <span class="number">-1</span>, <span class="keyword">sizeof</span>(db));</div><div class="line">    da[<span class="number">0</span>][<span class="number">0</span>][<span class="number">0</span>][<span class="number">0</span>] = <span class="number">0</span>;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> r = <span class="number">0</span>; r &lt; N; r++) &#123;</div><div class="line">        <span class="keyword">int</span> kd = tran(getchar());</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">4</span>; i++)</div><div class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; i &lt; <span class="number">4</span>; i++)</div><div class="line">                <span class="keyword">for</span>(<span class="keyword">int</span> k = <span class="number">0</span>; k &lt; <span class="number">4</span>; k++) &#123;</div><div class="line">                <span class="comment">//db[i][kd][j][k]</span></div><div class="line">                <span class="keyword">int</span> mx = <span class="number">-1</span>;</div><div class="line">                <span class="keyword">for</span>(<span class="keyword">int</span> u = <span class="number">0</span>; u &lt; <span class="number">4</span>; u++)</div><div class="line">                    <span class="keyword">if</span>(da[u][i][j][k] != <span class="number">-1</span> &amp;&amp; (y = da[u][i][j][k] + score(u,i,kd)) &gt; mx) &#123;</div><div class="line">                        mx = y;</div><div class="line">                    &#125;</div><div class="line">                db[i][kd][j][k] = max(db[i][kd][j][k], mx);</div><div class="line">                <span class="comment">//db[i][j][k][kd]</span></div><div class="line">                mx = <span class="number">-1</span>;</div><div class="line">                <span class="keyword">for</span>(<span class="keyword">int</span> u = <span class="number">0</span>; u &lt; <span class="number">4</span>; u++)</div><div class="line">                    <span class="keyword">if</span>(da[i][j][u][k] != <span class="number">-1</span> &amp;&amp; (y = da[i][j][u][k] + score(u,k,kd)) &gt; mx)&#123;</div><div class="line">                        mx = y;</div><div class="line">                    &#125;</div><div class="line">                db[i][j][k][kd] = max(db[i][j][k][kd], mx);</div><div class="line">        &#125;</div><div class="line">        <span class="built_in">memcpy</span>(da,db,<span class="keyword">sizeof</span>(db));</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">int</span> ans = <span class="number">-1</span>;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">4</span>; i++)</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; i &lt; <span class="number">4</span>; i++)</div><div class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> k = <span class="number">0</span>; k &lt; <span class="number">4</span>; k++)</div><div class="line">                <span class="keyword">for</span>(<span class="keyword">int</span> u = <span class="number">0</span>; u &lt; <span class="number">4</span>; u++)</div><div class="line">                    <span class="keyword">if</span>(da[i][j][k][u] &gt; ans)</div><div class="line">                        ans = da[i][j][k][u];</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%d\n"</span>, ans);</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>誰可以告訴我為什麼Highlight怎麼了QAQ<br>我把inline跟define拿掉就沒事了<br>真奇怪</p>
-</div><!-- comment system--><div class="container"><hr></div></article><footer id="footer"><div class="container"><div class="bar"><div class="social"><a href="mailto:psychicalcoder@gmail.com" target="_blank"><i class="fa fa-envelope-o"></i></a><a href="https://github.com/psychicalcoder" target="_blank"><i class="fa fa-github"></i></a><a href="/atom.xml" target="_blank"><i class="fa fa-rss"></i></a></div><div class="footer">© 2017 <a href="/" rel="nofollow">psychicalcoder</a>. Powered by <a rel="nofollow" target="_blank" href="https://hexo.io">Hexo</a>. Theme <a target="_blank" href="https://github.com/lotabout/very-simple">very-simple</a>.</div></div></div></footer><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.css"><script src="//cdn.bootcss.com/jquery/2.0.3/jquery.min.js"></script><script src="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.pack.js"></script><script>$(document).ready(function() {
-    $(".fancybox").fancybox();
-});
-</script></body></html>
+
+        </div>
+      </article>
+    </div>
+    <!-- Pre or Next -->
+    
+	<div class="container" >
+           <ul class="pager">
+    	     
+      	     <li class="previous">
+              <a href="/2017/02/25/tioj1086/" rel="prev">下一篇</a>
+             </li>
+           
+           
+              <li class="next">
+              <a href="/2017/02/12/tioj1155/" rel="prev">上一篇</a>
+            </li>
+           
+          </ul>
+       </div>
+　　　　<!-- Comments -->
+    <div class="container">
+      
+<section id="comment">
+  <!-- <h1 class="title">留言</h1> -->
+
+  
+</section>
+
+
+    </div>
+   
+　　　　
+  </div>
+</div>
+
+
+  <!-- Footer -->
+  <!-- Footer -->
+<footer class="site-info">
+  <p>
+    <span>茶與巧克力的漩渦 &copy; 2017</span>
+    
+      <span class="split">|</span>
+      <span>PSYCHICALCODER</span>
+    
+  </p>
+  <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  本站總訪問量<span id="busuanzi_value_site_pv"></span>次
+  本站訪客數<span id="busuanzi_value_site_uv"></span>人次
+</footer>
+
+
+  <!-- After footer scripts -->
+  <!-- scripts -->
+<script src="/js/app.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+</body>
+
+</html>

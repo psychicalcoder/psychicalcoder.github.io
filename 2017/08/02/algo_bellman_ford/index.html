@@ -1,4 +1,141 @@
-<!DOCTYPE html><html><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description"><title>演算法週記 單源最短路徑之Bellman-Ford演算法 | CocoTea</title><link rel="stylesheet" type="text/css" href="/css/normalize.css"><link rel="stylesheet" type="text/css" href="/css/highlight.css"><link rel="stylesheet" type="text/css" href="/css/very-simple.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css"><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"></head><body><!-- include the sidebar--><!-- include ./includes/sidebar.jade--><!-- Blog title and subtitle--><header><div class="container header"><a id="logo" href="/." class="title">CocoTea</a><span class="subtitle"></span><label id="toggle-menu" for="menu" onclick><i class="fa fa-bars"></i></label></div></header><!-- use checkbox hack for toggle nav-bar on small screens--><input id="menu" type="checkbox"><!-- Navigation Links--><nav id="nav"><div class="container"><a href="/" class="sidebar-nav-item active">Home</a><a href="/archives" class="sidebar-nav-item">Archives</a><a href="/About" class="sidebar-nav-item">About</a></div></nav><div id="header-margin-bar"></div><!-- gallery that comes before the header--><div class="wrapper"><div class="container post-header"><h1>演算法週記 單源最短路徑之Bellman-Ford演算法</h1></div></div><div class="wrapper"><div class="container meta"><div class="post-time">2017-08-02</div><div class="post-categories"><a class="post-category-link" href="/categories/Algorithm-Weeekly-Journal/">Algorithm-Weeekly-Journal</a></div><div class="post-tags"><a class="post-tag-link" href="/tags/SSSP/">SSSP</a>/<a class="post-tag-link" href="/tags/algorithm/">algorithm</a></div></div></div><article><div class="container post"><link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.css"><h3 id="最短路徑"><a href="#最短路徑" class="headerlink" title="最短路徑"></a>最短路徑</h3><blockquote><p>什麼是最短路徑呢?<br>首先最短路徑要有起點(<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>S</mi></mrow><annotation encoding="application/x-tex">S</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68333em;"></span><span class="strut bottom" style="height:0.68333em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.05764em;">S</span></span></span></span>)跟終點(<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>T</mi></mrow><annotation encoding="application/x-tex">T</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68333em;"></span><span class="strut bottom" style="height:0.68333em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.13889em;">T</span></span></span></span>)<br>從<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>S</mi></mrow><annotation encoding="application/x-tex">S</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68333em;"></span><span class="strut bottom" style="height:0.68333em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.05764em;">S</span></span></span></span>走到<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>T</mi></mrow><annotation encoding="application/x-tex">T</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68333em;"></span><span class="strut bottom" style="height:0.68333em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.13889em;">T</span></span></span></span>經過的邊權總和最短的一條路徑就稱為”最短路徑”(Shortest Path)<br>而這個邊權和就是”最短距離”</p>
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<!-- Head tag -->
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!--Description-->
+  
+
+  <!--Author-->
+  
+  <meta name="author" content="psychicalcoder">
+  
+
+  <!--Open Graph Title-->
+  
+      <meta property="og:title" content="演算法週記 單源最短路徑之Bellman-Ford演算法"/>
+  
+  <!--Open Graph Description-->
+  
+  <!--Open Graph Site Name-->
+  <meta property="og:site_name" content="茶與巧克力的漩渦"/>
+  <!--Type page-->
+  
+      <meta property="og:type" content="article" />
+  
+  <!--Page Cover-->
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <!-- 百度统计 -->
+    <script>
+	var _hmt = _hmt || [];
+	(function() {
+  	var hm = document.createElement("script");
+  	hm.src = "https://hm.baidu.com/hm.js?c0451e16533956173997b85f7a8de666";
+  	var s = document.getElementsByTagName("script")[0]; 
+  	s.parentNode.insertBefore(hm, s);
+	})();
+    </script>
+  <!-- Title -->
+  
+  <title>演算法週記 單源最短路徑之Bellman-Ford演算法 - 茶與巧克力的漩渦</title>
+
+
+  <link rel="shortcut icon" href="/favicon.ico">
+    <!--font-awesome-->
+  <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <!-- Custom CSS/Sass -->
+  <link rel="stylesheet" href="/css/style.css"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</head>
+
+
+<body>
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><!-- Nav -->
+  <header class="site-header">
+  <div class="header-inside">
+    
+    <div class="logo">
+      <a href="/" rel="home">
+        
+        <img src="/cow.png" alt="茶與巧克力的漩渦" height="60">
+        
+      </a>
+    </div>
+    <a class="header-name" href="/">
+            <span>茶與巧克力的漩渦</span>
+            的小部落
+        </a>
+    <!-- navbar -->
+    <nav class="navbar">
+      <!--  nav links -->
+      <div class="collapse">
+        <ul class="navbar-nav">
+          
+          
+            <li>
+              <a href="/.">
+                
+                  <i class="fa fa-home "></i>
+                
+                首頁
+              </a>
+            </li>
+          
+            <li>
+              <a href="/archives">
+                
+                  <i class="fa fa-archive "></i>
+                
+                文章
+              </a>
+            </li>
+          
+            <li>
+              <a href="/about">
+                
+                  <i class="fa fa-user "></i>
+                
+                關於
+              </a>
+            </li>
+          
+        </ul>
+      </div>
+      <!-- /.navbar-collapse -->
+    </nav>
+    <div class="button-wrap">
+      <button class="menu-toggle">Primary Menu</button>
+    </div>
+  </div>
+</header>
+
+
+  <!-- Main Content -->
+  <div class="content-area">
+  <div class="post">
+    <!-- Post Content -->
+    <div class="container">
+      <article>
+        <!-- Title date & tags -->
+        <div class="post-header">
+          <h1 class="entry-title">
+            演算法週記 單源最短路徑之Bellman-Ford演算法
+            
+          </h1>
+         
+        </div>
+         <p class="a-posted-on">
+          2017-08-02
+          </p>
+        <!-- Post Main Content -->
+        <div class="entry-content">
+          <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.css"><h3 id="最短路徑"><a href="#最短路徑" class="headerlink" title="最短路徑"></a>最短路徑</h3><blockquote><p>什麼是最短路徑呢?<br>首先最短路徑要有起點(<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>S</mi></mrow><annotation encoding="application/x-tex">S</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68333em;"></span><span class="strut bottom" style="height:0.68333em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.05764em;">S</span></span></span></span>)跟終點(<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>T</mi></mrow><annotation encoding="application/x-tex">T</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68333em;"></span><span class="strut bottom" style="height:0.68333em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.13889em;">T</span></span></span></span>)<br>從<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>S</mi></mrow><annotation encoding="application/x-tex">S</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68333em;"></span><span class="strut bottom" style="height:0.68333em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.05764em;">S</span></span></span></span>走到<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>T</mi></mrow><annotation encoding="application/x-tex">T</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68333em;"></span><span class="strut bottom" style="height:0.68333em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.13889em;">T</span></span></span></span>經過的邊權總和最短的一條路徑就稱為”最短路徑”(Shortest Path)<br>而這個邊權和就是”最短距離”</p>
 <p>最短路徑有好多種演算法<br>今天我們來看看Bellman-Ford演算法</p>
 </blockquote>
 <h3 id="Bellman-Ford-Algorithm"><a href="#Bellman-Ford-Algorithm" class="headerlink" title="Bellman-Ford Algorithm"></a>Bellman-Ford Algorithm</h3><blockquote><p>這是個相當常用的演算法<br>他除了可以找出最短路徑之外<br>還能找出負環</p>
@@ -16,7 +153,61 @@
 <h4 id="edge-struct版"><a href="#edge-struct版" class="headerlink" title="edge struct版"></a>edge struct版</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"></div><div class="line"><span class="keyword">const</span> <span class="keyword">int</span> INF = <span class="number">1000000000</span>; <span class="comment">//1e9</span></div><div class="line"></div><div class="line"><span class="comment">//邊from-&gt;to, 費用cost</span></div><div class="line"><span class="keyword">struct</span> edge &#123;</div><div class="line">    <span class="keyword">int</span> from, to, cost;</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="keyword">int</span> V, E; <span class="comment">//頂點數、邊數</span></div><div class="line"><span class="keyword">int</span> d[<span class="number">105</span>]; <span class="comment">//所有點到S的距離</span></div><div class="line">edge es[<span class="number">10005</span>]; <span class="comment">//邊集合</span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">bellman_ford</span><span class="params">(<span class="keyword">int</span> s)</span> </span>&#123;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; V; i++) d[i] = INF; <span class="comment">//初始化距離</span></div><div class="line">    d[s] = <span class="number">0</span>; <span class="comment">//源點距離=0</span></div><div class="line">    <span class="keyword">while</span>(<span class="literal">true</span>) &#123;</div><div class="line">        <span class="keyword">bool</span> update = <span class="literal">false</span>;</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; E; i++) &#123;</div><div class="line">            edge &amp;e = es[i];</div><div class="line">            <span class="keyword">if</span>(d[e.from] != INF &amp;&amp; d[e.to] &gt; d[e.from]+e.cost) &#123;</div><div class="line">                d[e.to] = d[e.from] + e.cost;</div><div class="line">                update = <span class="literal">true</span>;</div><div class="line">            &#125;</div><div class="line"><span class="comment">//            if(d[e.to] != INF &amp;&amp; d[e.from] &gt; d[e.to]+e.cost) &#123;</span></div><div class="line"><span class="comment">//                d[e.from] = d[e.to] + e.cost;</span></div><div class="line"><span class="comment">//                update = true;</span></div><div class="line"><span class="comment">//            &#125; //無向圖</span></div><div class="line">        &#125;</div><div class="line">        <span class="keyword">if</span>(!update) <span class="keyword">break</span>; <span class="comment">//沒更新就退出</span></div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//demo</span></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</div><div class="line">    <span class="built_in">cin</span> &gt;&gt; V &gt;&gt; E;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; E; i++) &#123;</div><div class="line">        <span class="built_in">cin</span> &gt;&gt; es[i].from &gt;&gt; es[i].to &gt;&gt; es[i].cost;</div><div class="line">    &#125;</div><div class="line">    bellman_ford(<span class="number">0</span>);</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; V; i++) &#123;</div><div class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">"d["</span> &lt;&lt; i &lt;&lt; <span class="string">"] = "</span> &lt;&lt; d[i] &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h4 id="鄰接矩陣版"><a href="#鄰接矩陣版" class="headerlink" title="鄰接矩陣版"></a>鄰接矩陣版</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"></div><div class="line"><span class="keyword">const</span> <span class="keyword">int</span> INF = <span class="number">1000000000</span>; <span class="comment">//1e9</span></div><div class="line"></div><div class="line"><span class="keyword">int</span> V, E; <span class="comment">//頂點數、邊數</span></div><div class="line"><span class="keyword">int</span> G[<span class="number">105</span>][<span class="number">105</span>]; <span class="comment">//有邊則G[i][j] != INF</span></div><div class="line"><span class="keyword">int</span> d[<span class="number">105</span>]; <span class="comment">//所有點到S的距離</span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">bellman_ford</span><span class="params">(<span class="keyword">int</span> s)</span> </span>&#123;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; V; i++) d[i] = INF; <span class="comment">//初始化距離</span></div><div class="line">    d[s] = <span class="number">0</span>; <span class="comment">//源點距離=0</span></div><div class="line">    <span class="keyword">while</span>(<span class="literal">true</span>) &#123;</div><div class="line">        <span class="keyword">bool</span> update = <span class="literal">false</span>;</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; V; i++) &#123;</div><div class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; V; j++) &#123;</div><div class="line">                <span class="keyword">if</span>(G[i][j] != INF &amp;&amp; d[i] != INF &amp;&amp; d[j] &gt; d[i]+G[i][j]) &#123;</div><div class="line">                    d[j] = d[i]+G[i][j];</div><div class="line">                    update = <span class="literal">true</span>;</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">if</span>(!update) <span class="keyword">break</span>; <span class="comment">//沒更新就退出</span></div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//demo</span></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</div><div class="line">    <span class="built_in">cin</span> &gt;&gt; V &gt;&gt; E;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; V; i++) <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; V; j++) G[i][j] = INF;</div><div class="line">    <span class="keyword">int</span> u,v,c;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; E; i++) &#123;</div><div class="line">        <span class="built_in">cin</span> &gt;&gt; u &gt;&gt; v &gt;&gt; c;</div><div class="line">        <span class="comment">//G[v][u] = G[u][v] = c; //無向圖</span></div><div class="line">    &#125;</div><div class="line">    bellman_ford(<span class="number">0</span>);</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; V; i++) &#123;</div><div class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">"d["</span> &lt;&lt; i &lt;&lt; <span class="string">"] = "</span> &lt;&lt; d[i] &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>本來想多寫幾種SSSP的演算法<br>可是光一個Bellman-Ford就寫了一下午OAO<br>真的很好奇我是不是真的能一週一篇=ㄦ=</p>
-</div><!-- comment system--><div class="container"><hr></div></article><footer id="footer"><div class="container"><div class="bar"><div class="social"><a href="mailto:psychicalcoder@gmail.com" target="_blank"><i class="fa fa-envelope-o"></i></a><a href="https://github.com/psychicalcoder" target="_blank"><i class="fa fa-github"></i></a><a href="/atom.xml" target="_blank"><i class="fa fa-rss"></i></a></div><div class="footer">© 2017 <a href="/" rel="nofollow">psychicalcoder</a>. Powered by <a rel="nofollow" target="_blank" href="https://hexo.io">Hexo</a>. Theme <a target="_blank" href="https://github.com/lotabout/very-simple">very-simple</a>.</div></div></div></footer><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.css"><script src="//cdn.bootcss.com/jquery/2.0.3/jquery.min.js"></script><script src="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.pack.js"></script><script>$(document).ready(function() {
-    $(".fancybox").fancybox();
-});
-</script></body></html>
+
+        </div>
+      </article>
+    </div>
+    <!-- Pre or Next -->
+    
+	<div class="container" >
+           <ul class="pager">
+    	     
+           
+              <li class="next">
+              <a href="/2017/08/01/algo_preface/" rel="prev">上一篇</a>
+            </li>
+           
+          </ul>
+       </div>
+　　　　<!-- Comments -->
+    <div class="container">
+      
+<section id="comment">
+  <!-- <h1 class="title">留言</h1> -->
+
+  
+</section>
+
+
+    </div>
+   
+　　　　
+  </div>
+</div>
+
+
+  <!-- Footer -->
+  <!-- Footer -->
+<footer class="site-info">
+  <p>
+    <span>茶與巧克力的漩渦 &copy; 2017</span>
+    
+      <span class="split">|</span>
+      <span>PSYCHICALCODER</span>
+    
+  </p>
+  <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  本站總訪問量<span id="busuanzi_value_site_pv"></span>次
+  本站訪客數<span id="busuanzi_value_site_uv"></span>人次
+</footer>
+
+
+  <!-- After footer scripts -->
+  <!-- scripts -->
+<script src="/js/app.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+</body>
+
+</html>

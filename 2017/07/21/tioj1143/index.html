@@ -1,11 +1,206 @@
-<!DOCTYPE html><html><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description"><title>TIOJ 1143 4.靈犬尋寶 | CocoTea</title><link rel="stylesheet" type="text/css" href="/css/normalize.css"><link rel="stylesheet" type="text/css" href="/css/highlight.css"><link rel="stylesheet" type="text/css" href="/css/very-simple.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css"><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"></head><body><!-- include the sidebar--><!-- include ./includes/sidebar.jade--><!-- Blog title and subtitle--><header><div class="container header"><a id="logo" href="/." class="title">CocoTea</a><span class="subtitle"></span><label id="toggle-menu" for="menu" onclick><i class="fa fa-bars"></i></label></div></header><!-- use checkbox hack for toggle nav-bar on small screens--><input id="menu" type="checkbox"><!-- Navigation Links--><nav id="nav"><div class="container"><a href="/" class="sidebar-nav-item active">Home</a><a href="/archives" class="sidebar-nav-item">Archives</a><a href="/About" class="sidebar-nav-item">About</a></div></nav><div id="header-margin-bar"></div><!-- gallery that comes before the header--><div class="wrapper"><div class="container post-header"><h1>TIOJ 1143 4.靈犬尋寶</h1></div></div><div class="wrapper"><div class="container meta"><div class="post-time">2017-07-21</div><div class="post-categories"><a class="post-category-link" href="/categories/TIOJ/">TIOJ</a></div><div class="post-tags"><a class="post-tag-link" href="/tags/bfs/">bfs</a>/<a class="post-tag-link" href="/tags/coding/">coding</a>/<a class="post-tag-link" href="/tags/tioj/">tioj</a>/<a class="post-tag-link" href="/tags/全國賽/">全國賽</a></div></div></div><article><div class="container post"><link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.css"><h3 id="題目敘述"><a href="#題目敘述" class="headerlink" title="題目敘述"></a>題目敘述</h3><blockquote><p>正方形(左下角座標為(0,0)，右上角座標為(99,99))的格網上，有一隻靈犬要尋找一個寶物，格網上除了靈犬與寶物之外，還有一些障礙物。一般情況下，只要不超出格網的邊界，靈犬的每一步最多有8個方向可供選擇，如圖一；但是必須注意，只有在A點沒有障礙物時才可以選擇方向1或方向2，只有在B點沒有障礙物時才可以選擇方向3或方向4，只有在C點沒有障礙物時才可以選擇方向5或方向6，只有在D點沒有障礙物時才可以選擇方向7或方向8。如果靈犬可以從出發的位置走到寶物的位置，其總共使用的步數，理論上應有一個最小值；但是靈犬也有可能無法走到寶物的位置。過程中，靈犬不可以走到障礙物的位置上。</p>
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<!-- Head tag -->
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!--Description-->
+  
+
+  <!--Author-->
+  
+  <meta name="author" content="psychicalcoder">
+  
+
+  <!--Open Graph Title-->
+  
+      <meta property="og:title" content="TIOJ 1143 4.靈犬尋寶"/>
+  
+  <!--Open Graph Description-->
+  
+  <!--Open Graph Site Name-->
+  <meta property="og:site_name" content="茶與巧克力的漩渦"/>
+  <!--Type page-->
+  
+      <meta property="og:type" content="article" />
+  
+  <!--Page Cover-->
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <!-- 百度统计 -->
+    <script>
+	var _hmt = _hmt || [];
+	(function() {
+  	var hm = document.createElement("script");
+  	hm.src = "https://hm.baidu.com/hm.js?c0451e16533956173997b85f7a8de666";
+  	var s = document.getElementsByTagName("script")[0]; 
+  	s.parentNode.insertBefore(hm, s);
+	})();
+    </script>
+  <!-- Title -->
+  
+  <title>TIOJ 1143 4.靈犬尋寶 - 茶與巧克力的漩渦</title>
+
+
+  <link rel="shortcut icon" href="/favicon.ico">
+    <!--font-awesome-->
+  <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <!-- Custom CSS/Sass -->
+  <link rel="stylesheet" href="/css/style.css"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</head>
+
+
+<body>
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><!-- Nav -->
+  <header class="site-header">
+  <div class="header-inside">
+    
+    <div class="logo">
+      <a href="/" rel="home">
+        
+        <img src="/cow.png" alt="茶與巧克力的漩渦" height="60">
+        
+      </a>
+    </div>
+    <a class="header-name" href="/">
+            <span>茶與巧克力的漩渦</span>
+            的小部落
+        </a>
+    <!-- navbar -->
+    <nav class="navbar">
+      <!--  nav links -->
+      <div class="collapse">
+        <ul class="navbar-nav">
+          
+          
+            <li>
+              <a href="/.">
+                
+                  <i class="fa fa-home "></i>
+                
+                首頁
+              </a>
+            </li>
+          
+            <li>
+              <a href="/archives">
+                
+                  <i class="fa fa-archive "></i>
+                
+                文章
+              </a>
+            </li>
+          
+            <li>
+              <a href="/about">
+                
+                  <i class="fa fa-user "></i>
+                
+                關於
+              </a>
+            </li>
+          
+        </ul>
+      </div>
+      <!-- /.navbar-collapse -->
+    </nav>
+    <div class="button-wrap">
+      <button class="menu-toggle">Primary Menu</button>
+    </div>
+  </div>
+</header>
+
+
+  <!-- Main Content -->
+  <div class="content-area">
+  <div class="post">
+    <!-- Post Content -->
+    <div class="container">
+      <article>
+        <!-- Title date & tags -->
+        <div class="post-header">
+          <h1 class="entry-title">
+            TIOJ 1143 4.靈犬尋寶
+            
+          </h1>
+         
+        </div>
+         <p class="a-posted-on">
+          2017-07-21
+          </p>
+        <!-- Post Main Content -->
+        <div class="entry-content">
+          <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.css"><h3 id="題目敘述"><a href="#題目敘述" class="headerlink" title="題目敘述"></a>題目敘述</h3><blockquote><p>正方形(左下角座標為(0,0)，右上角座標為(99,99))的格網上，有一隻靈犬要尋找一個寶物，格網上除了靈犬與寶物之外，還有一些障礙物。一般情況下，只要不超出格網的邊界，靈犬的每一步最多有8個方向可供選擇，如圖一；但是必須注意，只有在A點沒有障礙物時才可以選擇方向1或方向2，只有在B點沒有障礙物時才可以選擇方向3或方向4，只有在C點沒有障礙物時才可以選擇方向5或方向6，只有在D點沒有障礙物時才可以選擇方向7或方向8。如果靈犬可以從出發的位置走到寶物的位置，其總共使用的步數，理論上應有一個最小值；但是靈犬也有可能無法走到寶物的位置。過程中，靈犬不可以走到障礙物的位置上。</p>
 <p><img src="http://tioj.infor.org/pimgs/1143.jpg"></p>
 <p>以圖二為例，有多達4個障礙物介於靈犬與寶物之間，但是靈犬最快只要2步就可以到達寶物的位置。圖三是另一個例子，靈犬的位置靠近角落，雖然只有2個障礙物，靈犬卻無法到達寶物的位置。</p>
 <p>請撰寫一個程式，若靈犬可以從最初位置走到寶物的位置時，請列印出其使用之最少步數；若靈犬無法到達寶物的位置，請列印出單字『impossible』。</p>
 </blockquote>
 <h3 id="題解"><a href="#題解" class="headerlink" title="題解"></a>題解</h3><blockquote><p>這題明顯示BFS<br>就不贅述了<br>只要注意一個重點<br>就是是障礙物的格子是不能走上去的<br>為了這個我找了好久的BUG<br>還去找了全國賽的測資回來測<br>把全部的狀態印出來<br>再用大小=6的字體再記事本上面看<br>才找到(汗</p>
 </blockquote>
-<h6 id="C"><a href="#C" class="headerlink" title="C++"></a>C++</h6><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> F first</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> S second</span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> LL;</div><div class="line"><span class="keyword">typedef</span> pair&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; P;</div><div class="line"></div><div class="line"><span class="keyword">const</span> LL inf = (LL)<span class="number">9.22e18</span>;</div><div class="line"></div><div class="line"><span class="keyword">const</span> <span class="keyword">int</span> dr[] = &#123;<span class="number">-3</span>, <span class="number">-3</span>, <span class="number">-1</span>, <span class="number">1</span>, <span class="number">3</span>, <span class="number">3</span>, <span class="number">1</span>, <span class="number">-1</span>&#125;;</div><div class="line"><span class="keyword">const</span> <span class="keyword">int</span> dc[] = &#123;<span class="number">1</span>, <span class="number">-1</span>, <span class="number">-3</span>, <span class="number">-3</span>, <span class="number">-1</span>, <span class="number">1</span>, <span class="number">3</span>, <span class="number">3</span>&#125;; </div><div class="line"><span class="keyword">const</span> <span class="keyword">int</span> kr[] = &#123;<span class="number">-1</span>, <span class="number">-1</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span>&#125;;</div><div class="line"><span class="keyword">const</span> <span class="keyword">int</span> kc[] = &#123;<span class="number">0</span>, <span class="number">0</span>, <span class="number">-1</span>, <span class="number">-1</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">1</span>&#125;;</div><div class="line"></div><div class="line"><span class="keyword">bool</span> G[<span class="number">105</span>][<span class="number">105</span>];</div><div class="line"><span class="keyword">int</span> vis[<span class="number">105</span>][<span class="number">105</span>]; </div><div class="line"><span class="keyword">int</span> n, sr, sc, er, ec;</div><div class="line"><span class="built_in">queue</span>&lt;P&gt; Q;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</div><div class="line">    <span class="built_in">memset</span>(vis, <span class="number">0</span>, <span class="keyword">sizeof</span>(vis));</div><div class="line">    <span class="built_in">memset</span>(G, <span class="number">0</span>, <span class="keyword">sizeof</span>(G));</div><div class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;n);</div><div class="line">    <span class="keyword">int</span> r, c;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</div><div class="line">        <span class="built_in">scanf</span>(<span class="string">"%d%d"</span>, &amp;r, &amp;c);</div><div class="line">        G[r][c] = <span class="literal">true</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="built_in">scanf</span>(<span class="string">"%d%d%d%d"</span>, &amp;sr, &amp;sc, &amp;er, &amp;ec);</div><div class="line">    vis[sr][sc] = <span class="number">1</span>;</div><div class="line">    Q.push(make_pair(sr,sc));</div><div class="line">    <span class="keyword">while</span>(!Q.empty()) &#123;</div><div class="line">        r = Q.front().F, c = Q.front().S;</div><div class="line">        Q.pop();</div><div class="line">        <span class="keyword">if</span>(r == er &amp;&amp; c == ec) &#123;</div><div class="line">            <span class="built_in">printf</span>(<span class="string">"%d\n"</span>, vis[r][c]<span class="number">-1</span>);</div><div class="line">            <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">8</span>; i++) &#123;</div><div class="line">            <span class="keyword">int</span> rr = r+dr[i], cc = c+dc[i];</div><div class="line">            <span class="keyword">int</span> br = r+kr[i], bc = c+kc[i];</div><div class="line">            <span class="keyword">if</span>(rr &lt; <span class="number">0</span> || rr &gt; <span class="number">99</span> || cc &lt; <span class="number">0</span> || cc &gt; <span class="number">99</span> || vis[rr][cc] || G[br][bc] || G[rr][cc]) <span class="keyword">continue</span>;</div><div class="line">            vis[rr][cc] = vis[r][c]+<span class="number">1</span>;</div><div class="line">            Q.push(make_pair(rr,cc));</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="built_in">puts</span>(<span class="string">"impossible"</span>);</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></div><!-- comment system--><div class="container"><hr></div></article><footer id="footer"><div class="container"><div class="bar"><div class="social"><a href="mailto:psychicalcoder@gmail.com" target="_blank"><i class="fa fa-envelope-o"></i></a><a href="https://github.com/psychicalcoder" target="_blank"><i class="fa fa-github"></i></a><a href="/atom.xml" target="_blank"><i class="fa fa-rss"></i></a></div><div class="footer">© 2017 <a href="/" rel="nofollow">psychicalcoder</a>. Powered by <a rel="nofollow" target="_blank" href="https://hexo.io">Hexo</a>. Theme <a target="_blank" href="https://github.com/lotabout/very-simple">very-simple</a>.</div></div></div></footer><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.css"><script src="//cdn.bootcss.com/jquery/2.0.3/jquery.min.js"></script><script src="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.pack.js"></script><script>$(document).ready(function() {
-    $(".fancybox").fancybox();
-});
-</script></body></html>
+<h6 id="C"><a href="#C" class="headerlink" title="C++"></a>C++</h6><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> F first</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> S second</span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> LL;</div><div class="line"><span class="keyword">typedef</span> pair&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; P;</div><div class="line"></div><div class="line"><span class="keyword">const</span> LL inf = (LL)<span class="number">9.22e18</span>;</div><div class="line"></div><div class="line"><span class="keyword">const</span> <span class="keyword">int</span> dr[] = &#123;<span class="number">-3</span>, <span class="number">-3</span>, <span class="number">-1</span>, <span class="number">1</span>, <span class="number">3</span>, <span class="number">3</span>, <span class="number">1</span>, <span class="number">-1</span>&#125;;</div><div class="line"><span class="keyword">const</span> <span class="keyword">int</span> dc[] = &#123;<span class="number">1</span>, <span class="number">-1</span>, <span class="number">-3</span>, <span class="number">-3</span>, <span class="number">-1</span>, <span class="number">1</span>, <span class="number">3</span>, <span class="number">3</span>&#125;; </div><div class="line"><span class="keyword">const</span> <span class="keyword">int</span> kr[] = &#123;<span class="number">-1</span>, <span class="number">-1</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span>&#125;;</div><div class="line"><span class="keyword">const</span> <span class="keyword">int</span> kc[] = &#123;<span class="number">0</span>, <span class="number">0</span>, <span class="number">-1</span>, <span class="number">-1</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">1</span>&#125;;</div><div class="line"></div><div class="line"><span class="keyword">bool</span> G[<span class="number">105</span>][<span class="number">105</span>];</div><div class="line"><span class="keyword">int</span> vis[<span class="number">105</span>][<span class="number">105</span>]; </div><div class="line"><span class="keyword">int</span> n, sr, sc, er, ec;</div><div class="line"><span class="built_in">queue</span>&lt;P&gt; Q;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</div><div class="line">    <span class="built_in">memset</span>(vis, <span class="number">0</span>, <span class="keyword">sizeof</span>(vis));</div><div class="line">    <span class="built_in">memset</span>(G, <span class="number">0</span>, <span class="keyword">sizeof</span>(G));</div><div class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;n);</div><div class="line">    <span class="keyword">int</span> r, c;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</div><div class="line">        <span class="built_in">scanf</span>(<span class="string">"%d%d"</span>, &amp;r, &amp;c);</div><div class="line">        G[r][c] = <span class="literal">true</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="built_in">scanf</span>(<span class="string">"%d%d%d%d"</span>, &amp;sr, &amp;sc, &amp;er, &amp;ec);</div><div class="line">    vis[sr][sc] = <span class="number">1</span>;</div><div class="line">    Q.push(make_pair(sr,sc));</div><div class="line">    <span class="keyword">while</span>(!Q.empty()) &#123;</div><div class="line">        r = Q.front().F, c = Q.front().S;</div><div class="line">        Q.pop();</div><div class="line">        <span class="keyword">if</span>(r == er &amp;&amp; c == ec) &#123;</div><div class="line">            <span class="built_in">printf</span>(<span class="string">"%d\n"</span>, vis[r][c]<span class="number">-1</span>);</div><div class="line">            <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">8</span>; i++) &#123;</div><div class="line">            <span class="keyword">int</span> rr = r+dr[i], cc = c+dc[i];</div><div class="line">            <span class="keyword">int</span> br = r+kr[i], bc = c+kc[i];</div><div class="line">            <span class="keyword">if</span>(rr &lt; <span class="number">0</span> || rr &gt; <span class="number">99</span> || cc &lt; <span class="number">0</span> || cc &gt; <span class="number">99</span> || vis[rr][cc] || G[br][bc] || G[rr][cc]) <span class="keyword">continue</span>;</div><div class="line">            vis[rr][cc] = vis[r][c]+<span class="number">1</span>;</div><div class="line">            Q.push(make_pair(rr,cc));</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="built_in">puts</span>(<span class="string">"impossible"</span>);</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+        </div>
+      </article>
+    </div>
+    <!-- Pre or Next -->
+    
+	<div class="container" >
+           <ul class="pager">
+    	     
+      	     <li class="previous">
+              <a href="/2017/08/01/algo_preface/" rel="prev">下一篇</a>
+             </li>
+           
+           
+              <li class="next">
+              <a href="/2017/07/19/tioj1938/" rel="prev">上一篇</a>
+            </li>
+           
+          </ul>
+       </div>
+　　　　<!-- Comments -->
+    <div class="container">
+      
+<section id="comment">
+  <!-- <h1 class="title">留言</h1> -->
+
+  
+</section>
+
+
+    </div>
+   
+　　　　
+  </div>
+</div>
+
+
+  <!-- Footer -->
+  <!-- Footer -->
+<footer class="site-info">
+  <p>
+    <span>茶與巧克力的漩渦 &copy; 2017</span>
+    
+      <span class="split">|</span>
+      <span>PSYCHICALCODER</span>
+    
+  </p>
+  <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  本站總訪問量<span id="busuanzi_value_site_pv"></span>次
+  本站訪客數<span id="busuanzi_value_site_uv"></span>人次
+</footer>
+
+
+  <!-- After footer scripts -->
+  <!-- scripts -->
+<script src="/js/app.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+</body>
+
+</html>

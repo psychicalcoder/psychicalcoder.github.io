@@ -24,7 +24,7 @@ article pre, article code {
   font-family: "Source Code Pro", Consolas, Monaco, Menlo, Consolas, monospace; }
 
 article code {
-  background: white;
+  background: black;
   text-shadow: 0 1px #fff;
   padding: 0 0.3rem; }
 
@@ -99,7 +99,7 @@ article .gist-not-used {
       margin-top: 1em;
       margin-left: 1em; }
     article .gist-not-used .gist-file a {
-      color: blue;
+      color: red;
       font-weight: normal; }
       article .gist-not-used .gist-file a:hover {
         text-decoration: underline; }

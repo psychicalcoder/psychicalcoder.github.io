@@ -210,6 +210,12 @@ td,
 th {
   padding: 0; }
 
+/* line 45, C:/Users/admin/Desktop/GithubPages/blog/themes/hexo-theme-believe/source/css/_variables.scss */
+.clearfix::after, article .highlight figcaption::after {
+  content: "";
+  display: table;
+  clear: both; }
+
 /* line 1, C:/Users/admin/Desktop/GithubPages/blog/themes/hexo-theme-believe/source/css/_believe.scss */
 body,
 html {
@@ -1152,223 +1158,202 @@ a.header-name {
     color: #3769c9;
     opacity: 0.8; }
 
-/*
- * From https://github.com/pinggod/hexo-theme-apollo/blob/master/source/scss/_partial/post.scss
- */
-/* line 4, C:/Users/admin/Desktop/GithubPages/blog/themes/hexo-theme-believe/source/css/_highlight.scss */
-code,
-pre {
-  font-size: 0.8em;
-  background-color: #f8f8f8;
-  font-family: 'Roboto Mono', Monaco, courier, monospace; }
+/* line 45, C:/Users/admin/Desktop/GithubPages/blog/themes/hexo-theme-believe/source/css/_variables.scss */
+.clearfix::after, article .highlight figcaption::after {
+  content: "";
+  display: table;
+  clear: both; }
 
-/* line 11, C:/Users/admin/Desktop/GithubPages/blog/themes/hexo-theme-believe/source/css/_highlight.scss */
-code {
-  padding: 0.2em 0.4em;
-  background-color: #efefef;
-  border-radius: 3px; }
-
-/* line 18, C:/Users/admin/Desktop/GithubPages/blog/themes/hexo-theme-believe/source/css/_highlight.scss */
-pre .line {
-  min-height: 1em; }
-
-/* line 23, C:/Users/admin/Desktop/GithubPages/blog/themes/hexo-theme-believe/source/css/_highlight.scss */
-.highlight {
-  position: relative;
-  margin: 1em 0;
+/* line 34, C:/Users/admin/Desktop/GithubPages/blog/themes/hexo-theme-believe/source/css/_highlight.scss */
+.code-block, article pre, article .highlight {
+  background: #2d2d2d;
+  margin: 2ex 0;
+  padding: 1rem 1em;
+  border-style: solid;
+  border-color: #333;
+  border: 1px 0;
   border-radius: 2px;
-  line-height: 1.1em;
-  background-color: #f8f8f8;
-  border: 1px solid #eeeeee;
-  overflow-x: auto; }
-  /* line 31, C:/Users/admin/Desktop/GithubPages/blog/themes/hexo-theme-believe/source/css/_highlight.scss */
-  .highlight table, .highlight tr, .highlight td {
-    width: 100%;
-    border-collapse: collapse;
-    padding: 0;
-    margin: 0; }
-  /* line 37, C:/Users/admin/Desktop/GithubPages/blog/themes/hexo-theme-believe/source/css/_highlight.scss */
-  .highlight .gutter {
-    display: none; }
-  /* line 40, C:/Users/admin/Desktop/GithubPages/blog/themes/hexo-theme-believe/source/css/_highlight.scss */
-  .highlight .code pre {
-    padding: 1.2em 1.4em;
-    line-height: 1.5em;
-    margin: 0; }
+  overflow: auto;
+  color: #cccccc;
+  font-size: 16px;
+  line-height: 1.6em; }
 
-/* line 47, C:/Users/admin/Desktop/GithubPages/blog/themes/hexo-theme-believe/source/css/_highlight.scss */
-.highlight.html .code:after, .highlight.js .code:after, .highlight.bash .code:after, .highlight.css .code:after, .highlight.scss .code:after, .highlight.diff .code:after, .highlight.java .code:after, .highlight.xml .code:after, .highlight.python .code:after, .highlight.json .code:after, .highlight.swift .code:after, .highlight.ruby .code:after, .highlight.perl .code:after, .highlight.php .code:after, .highlight.c .code:after, .highlight.cpp .code:after, .highlight.ts .code:after {
-  position: absolute;
-  top: 0;
-  right: 0;
-  color: #ccc;
-  text-align: right;
-  font-size: 0.75em;
-  padding: 5px 10px 0;
-  line-height: 15px;
-  height: 15px;
-  font-weight: 600; }
+/* line 49, C:/Users/admin/Desktop/GithubPages/blog/themes/hexo-theme-believe/source/css/_highlight.scss */
+.line-numbers, article .highlight .gutter pre, article .gist-not-used .gist-file .gist-data .line-numbers {
+  color: #666;
+  font-size: 16px; }
 
-/* line 62, C:/Users/admin/Desktop/GithubPages/blog/themes/hexo-theme-believe/source/css/_highlight.scss */
-.highlight.html .code:after {
-  content: "HTML"; }
+/* line 55, C:/Users/admin/Desktop/GithubPages/blog/themes/hexo-theme-believe/source/css/_highlight.scss */
+article pre, article code {
+  font-family: "Source Code Pro", Consolas, Monaco, Menlo, Consolas, monospace; }
 
-/* line 62, C:/Users/admin/Desktop/GithubPages/blog/themes/hexo-theme-believe/source/css/_highlight.scss */
-.highlight.js .code:after {
-  content: "JS"; }
+/* line 59, C:/Users/admin/Desktop/GithubPages/blog/themes/hexo-theme-believe/source/css/_highlight.scss */
+article code {
+  background: black;
+  text-shadow: 0 1px #fff;
+  padding: 0 0.3rem; }
 
-/* line 62, C:/Users/admin/Desktop/GithubPages/blog/themes/hexo-theme-believe/source/css/_highlight.scss */
-.highlight.bash .code:after {
-  content: "BASH"; }
+/* line 67, C:/Users/admin/Desktop/GithubPages/blog/themes/hexo-theme-believe/source/css/_highlight.scss */
+article pre code {
+  background: none;
+  text-shadow: none;
+  padding: 0; }
 
-/* line 62, C:/Users/admin/Desktop/GithubPages/blog/themes/hexo-theme-believe/source/css/_highlight.scss */
-.highlight.css .code:after {
-  content: "CSS"; }
+/* line 77, C:/Users/admin/Desktop/GithubPages/blog/themes/hexo-theme-believe/source/css/_highlight.scss */
+article .highlight pre {
+  border: none;
+  margin: 0;
+  padding: 0; }
 
-/* line 62, C:/Users/admin/Desktop/GithubPages/blog/themes/hexo-theme-believe/source/css/_highlight.scss */
-.highlight.scss .code:after {
-  content: "SCSS"; }
+/* line 82, C:/Users/admin/Desktop/GithubPages/blog/themes/hexo-theme-believe/source/css/_highlight.scss */
+article .highlight table {
+  margin: 0;
+  width: auto; }
 
-/* line 62, C:/Users/admin/Desktop/GithubPages/blog/themes/hexo-theme-believe/source/css/_highlight.scss */
-.highlight.diff .code:after {
-  content: "DIFF"; }
+/* line 86, C:/Users/admin/Desktop/GithubPages/blog/themes/hexo-theme-believe/source/css/_highlight.scss */
+article .highlight td {
+  border: none;
+  padding: 0; }
 
-/* line 62, C:/Users/admin/Desktop/GithubPages/blog/themes/hexo-theme-believe/source/css/_highlight.scss */
-.highlight.java .code:after {
-  content: "JAVA"; }
+/* line 90, C:/Users/admin/Desktop/GithubPages/blog/themes/hexo-theme-believe/source/css/_highlight.scss */
+article .highlight figcaption {
+  font-size: 0.85em;
+  color: #999999;
+  line-height: 1em;
+  margin-bottom: 1em; }
 
-/* line 62, C:/Users/admin/Desktop/GithubPages/blog/themes/hexo-theme-believe/source/css/_highlight.scss */
-.highlight.xml .code:after {
-  content: "XML"; }
-
-/* line 62, C:/Users/admin/Desktop/GithubPages/blog/themes/hexo-theme-believe/source/css/_highlight.scss */
-.highlight.python .code:after {
-  content: "PYTHON"; }
-
-/* line 62, C:/Users/admin/Desktop/GithubPages/blog/themes/hexo-theme-believe/source/css/_highlight.scss */
-.highlight.json .code:after {
-  content: "JSON"; }
-
-/* line 62, C:/Users/admin/Desktop/GithubPages/blog/themes/hexo-theme-believe/source/css/_highlight.scss */
-.highlight.swift .code:after {
-  content: "SWIFT"; }
-
-/* line 62, C:/Users/admin/Desktop/GithubPages/blog/themes/hexo-theme-believe/source/css/_highlight.scss */
-.highlight.ruby .code:after {
-  content: "RUBY"; }
-
-/* line 62, C:/Users/admin/Desktop/GithubPages/blog/themes/hexo-theme-believe/source/css/_highlight.scss */
-.highlight.perl .code:after {
-  content: "PERL"; }
-
-/* line 62, C:/Users/admin/Desktop/GithubPages/blog/themes/hexo-theme-believe/source/css/_highlight.scss */
-.highlight.php .code:after {
-  content: "PHP"; }
-
-/* line 62, C:/Users/admin/Desktop/GithubPages/blog/themes/hexo-theme-believe/source/css/_highlight.scss */
-.highlight.c .code:after {
-  content: "C"; }
-
-/* line 62, C:/Users/admin/Desktop/GithubPages/blog/themes/hexo-theme-believe/source/css/_highlight.scss */
-.highlight.java .code:after {
-  content: "JAVA"; }
-
-/* line 62, C:/Users/admin/Desktop/GithubPages/blog/themes/hexo-theme-believe/source/css/_highlight.scss */
-.highlight.cpp .code:after {
-  content: "CPP"; }
-
-/* line 62, C:/Users/admin/Desktop/GithubPages/blog/themes/hexo-theme-believe/source/css/_highlight.scss */
-.highlight.ts .code:after {
-  content: "TS"; }
-
-/* line 72, C:/Users/admin/Desktop/GithubPages/blog/themes/hexo-theme-believe/source/css/_highlight.scss */
-.highlight.cpp .code:after {
-  content: 'C++'; }
-
-/* line 76, C:/Users/admin/Desktop/GithubPages/blog/themes/hexo-theme-believe/source/css/_highlight.scss */
-pre {
-  color: #525252; }
-  /* line 78, C:/Users/admin/Desktop/GithubPages/blog/themes/hexo-theme-believe/source/css/_highlight.scss */
-  pre .function .keyword,
-  pre .constant {
-    color: #0092db; }
-  /* line 82, C:/Users/admin/Desktop/GithubPages/blog/themes/hexo-theme-believe/source/css/_highlight.scss */
-  pre .keyword,
-  pre .attribute {
-    color: #e96900; }
-  /* line 86, C:/Users/admin/Desktop/GithubPages/blog/themes/hexo-theme-believe/source/css/_highlight.scss */
-  pre .number,
-  pre .literal {
-    color: #ae81ff; }
-  /* line 90, C:/Users/admin/Desktop/GithubPages/blog/themes/hexo-theme-believe/source/css/_highlight.scss */
-  pre .tag,
-  pre .tag .title,
-  pre .change,
-  pre .winutils,
-  pre .flow,
-  pre .lisp .title,
-  pre .clojure .built_in,
-  pre .nginx .title,
-  pre .tex .special {
-    color: #2973b7; }
+/* line 97, C:/Users/admin/Desktop/GithubPages/blog/themes/hexo-theme-believe/source/css/_highlight.scss */
+article .highlight a {
+  color: #66cccc !important;
+  text-decoration: none;
+  float: right; }
   /* line 101, C:/Users/admin/Desktop/GithubPages/blog/themes/hexo-theme-believe/source/css/_highlight.scss */
-  pre .symbol,
-  pre .symbol .string,
-  pre .value,
-  pre .regexp {
-    color: #42b983; }
-  /* line 107, C:/Users/admin/Desktop/GithubPages/blog/themes/hexo-theme-believe/source/css/_highlight.scss */
-  pre .title {
-    color: #83B917; }
-  /* line 110, C:/Users/admin/Desktop/GithubPages/blog/themes/hexo-theme-believe/source/css/_highlight.scss */
-  pre .tag .value,
-  pre .string,
-  pre .subst,
-  pre .haskell .type,
-  pre .preprocessor,
-  pre .ruby .class .parent,
-  pre .built_in,
-  pre .sql .aggregate,
-  pre .django .template_tag,
-  pre .django .variable,
-  pre .smalltalk .class,
-  pre .javadoc,
-  pre .django .filter .argument,
-  pre .smalltalk .localvars,
-  pre .smalltalk .array,
-  pre .attr_selector,
-  pre .pseudo,
-  pre .addition,
-  pre .stream,
-  pre .envvar,
-  pre .apache .tag,
-  pre .apache .cbracket,
-  pre .tex .command,
-  pre .prompt {
-    color: #42b983; }
-  /* line 136, C:/Users/admin/Desktop/GithubPages/blog/themes/hexo-theme-believe/source/css/_highlight.scss */
-  pre .comment,
-  pre .java .annotation,
-  pre .python .decorator,
-  pre .template_comment,
-  pre .pi,
-  pre .doctype,
-  pre .shebang,
-  pre .apache .sqbracket,
-  pre .tex .formula {
-    color: #b3b3b3; }
-  /* line 147, C:/Users/admin/Desktop/GithubPages/blog/themes/hexo-theme-believe/source/css/_highlight.scss */
-  pre .deletion {
-    color: #BA4545; }
-  /* line 150, C:/Users/admin/Desktop/GithubPages/blog/themes/hexo-theme-believe/source/css/_highlight.scss */
-  pre .coffeescript .javascript,
-  pre .javascript .xml,
-  pre .tex .formula,
-  pre .xml .javascript,
-  pre .xml .vbscript,
-  pre .xml .css,
-  pre .xml .cdata {
-    opacity: 0.5; }
+  article .highlight a:hover {
+    color: #6699cc !important; }
+
+/* line 106, C:/Users/admin/Desktop/GithubPages/blog/themes/hexo-theme-believe/source/css/_highlight.scss */
+article .highlight .gutter pre {
+  text-align: right;
+  padding-right: 20px; }
+
+/* line 111, C:/Users/admin/Desktop/GithubPages/blog/themes/hexo-theme-believe/source/css/_highlight.scss */
+article .highlight .line {
+  height: 1.6em; }
+
+/* line 116, C:/Users/admin/Desktop/GithubPages/blog/themes/hexo-theme-believe/source/css/_highlight.scss */
+article .gist-not-used {
+  margin: 0;
+  border-style: solid;
+  border-color: #CCC;
+  border-width: 1px 0;
+  background: #2d2d2d;
+  padding: 1em 1em 1em 2px; }
+  /* line 124, C:/Users/admin/Desktop/GithubPages/blog/themes/hexo-theme-believe/source/css/_highlight.scss */
+  article .gist-not-used .gist-file {
+    border: none;
+    font-family: "Source Code Pro", Consolas, Monaco, Menlo, Consolas, monospace;
+    margin: 0; }
+    /* line 128, C:/Users/admin/Desktop/GithubPages/blog/themes/hexo-theme-believe/source/css/_highlight.scss */
+    article .gist-not-used .gist-file .gist-data {
+      background: none;
+      border: none; }
+      /* line 131, C:/Users/admin/Desktop/GithubPages/blog/themes/hexo-theme-believe/source/css/_highlight.scss */
+      article .gist-not-used .gist-file .gist-data .highlight .gutter pre, article .highlight .gutter .gist-not-used .gist-file .gist-data pre, article .gist-not-used .gist-file .gist-data .line-numbers {
+        background: none;
+        border: none;
+        padding: 0 20px 0 0; }
+      /* line 137, C:/Users/admin/Desktop/GithubPages/blog/themes/hexo-theme-believe/source/css/_highlight.scss */
+      article .gist-not-used .gist-file .gist-data .line-data {
+        padding: 0 !important; }
+    /* line 141, C:/Users/admin/Desktop/GithubPages/blog/themes/hexo-theme-believe/source/css/_highlight.scss */
+    article .gist-not-used .gist-file .highlight {
+      margin: 0;
+      padding: 0;
+      border: none; }
+    /* line 146, C:/Users/admin/Desktop/GithubPages/blog/themes/hexo-theme-believe/source/css/_highlight.scss */
+    article .gist-not-used .gist-file .gist-meta {
+      background: #2d2d2d;
+      color: #999999;
+      font: 0.85em "Helvetica Neue", Helvetica, Arial, sans-serif;
+      text-shadow: 0 0;
+      padding: 0;
+      margin-top: 1em;
+      margin-left: 1em; }
+    /* line 156, C:/Users/admin/Desktop/GithubPages/blog/themes/hexo-theme-believe/source/css/_highlight.scss */
+    article .gist-not-used .gist-file a {
+      color: red;
+      font-weight: normal; }
+      /* line 159, C:/Users/admin/Desktop/GithubPages/blog/themes/hexo-theme-believe/source/css/_highlight.scss */
+      article .gist-not-used .gist-file a:hover {
+        text-decoration: underline; }
+
+/* line 167, C:/Users/admin/Desktop/GithubPages/blog/themes/hexo-theme-believe/source/css/_highlight.scss */
+article iframe {
+  border: 1px solid #CCC; }
+
+/* line 174, C:/Users/admin/Desktop/GithubPages/blog/themes/hexo-theme-believe/source/css/_highlight.scss */
+pre .comment,
+pre .title {
+  color: #999999; }
+
+/* line 178, C:/Users/admin/Desktop/GithubPages/blog/themes/hexo-theme-believe/source/css/_highlight.scss */
+pre .variable,
+pre .attribute,
+pre .tag,
+pre .regexp,
+pre .ruby .constant,
+pre .xml .tag .title,
+pre .xml .pi,
+pre .xml .doctype,
+pre .html .doctype,
+pre .css .id,
+pre .css .class,
+pre .css .pseudo {
+  color: #f2777a; }
+
+/* line 192, C:/Users/admin/Desktop/GithubPages/blog/themes/hexo-theme-believe/source/css/_highlight.scss */
+pre .number,
+pre .preprocessor,
+pre .built_in,
+pre .literal,
+pre .params,
+pre .constant {
+  color: #f99157; }
+
+/* line 200, C:/Users/admin/Desktop/GithubPages/blog/themes/hexo-theme-believe/source/css/_highlight.scss */
+pre .class,
+pre .ruby .class .title,
+pre .css .rules .attribute {
+  color: #99cc99; }
+
+/* line 205, C:/Users/admin/Desktop/GithubPages/blog/themes/hexo-theme-believe/source/css/_highlight.scss */
+pre .string,
+pre .value,
+pre .inheritance,
+pre .header,
+pre .ruby .symbol,
+pre .xml .cdata {
+  color: #99cc99; }
+
+/* line 213, C:/Users/admin/Desktop/GithubPages/blog/themes/hexo-theme-believe/source/css/_highlight.scss */
+pre .css .hexcolor {
+  color: #66cccc; }
+
+/* line 216, C:/Users/admin/Desktop/GithubPages/blog/themes/hexo-theme-believe/source/css/_highlight.scss */
+pre .function,
+pre .python .decorator,
+pre .python .title,
+pre .ruby .function .title,
+pre .ruby .title .keyword,
+pre .perl .sub,
+pre .javascript .title,
+pre .coffeescript .title {
+  color: #6699cc; }
+
+/* line 226, C:/Users/admin/Desktop/GithubPages/blog/themes/hexo-theme-believe/source/css/_highlight.scss */
+pre .keyword,
+pre .javascript .function {
+  color: #cc99cc; }
 
 /* line 1, C:/Users/admin/Desktop/GithubPages/blog/themes/hexo-theme-believe/source/css/_archive.scss */
 .archive {

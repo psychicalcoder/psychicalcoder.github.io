@@ -1131,10 +1131,10 @@ a.header-name {
     list-style: disc; }
   /* line 41, C:/Users/admin/Desktop/GithubPages/blog/themes/hexo-theme-believe/source/css/_post.scss */
   .entry-content blockquote {
-    color: #383838;
+    color: #111111;
     margin: 1em 0;
     padding: 0 0 0 30px;
-    border-left: 4px solid #aaa; }
+    border-left: 4px solid #FF687C; }
   /* line 47, C:/Users/admin/Desktop/GithubPages/blog/themes/hexo-theme-believe/source/css/_post.scss */
   .entry-content p img {
     display: block;

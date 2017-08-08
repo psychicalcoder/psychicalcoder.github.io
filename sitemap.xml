@@ -2,16 +2,58 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://psychicalcoder.github.io/2017/08/01/algo_preface/</loc>
+    <loc>https://psychicalcoder.github.io/2017/02/18/tioj1344/</loc>
     
-    <lastmod>2017-08-03T03:10:30.614Z</lastmod>
+    <lastmod>2017-08-07T06:52:54.239Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://psychicalcoder.github.io/2017/04/03/uva10003/</loc>
+    
+    <lastmod>2017-08-07T06:51:37.458Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://psychicalcoder.github.io/2017/02/09/tioj1019/</loc>
+    
+    <lastmod>2017-08-05T07:48:03.415Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://psychicalcoder.github.io/2017/07/18/tioj1142/</loc>
+    
+    <lastmod>2017-08-05T07:46:08.899Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://psychicalcoder.github.io/2017/08/02/algo_bellman_ford/</loc>
     
-    <lastmod>2017-08-03T02:34:53.822Z</lastmod>
+    <lastmod>2017-08-05T07:45:11.666Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://psychicalcoder.github.io/about/index.html</loc>
+    
+    <lastmod>2017-08-05T07:37:21.050Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://psychicalcoder.github.io/2017/02/09/tioj1007/</loc>
+    
+    <lastmod>2017-08-05T07:33:16.639Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://psychicalcoder.github.io/2017/08/01/algo_preface/</loc>
+    
+    <lastmod>2017-08-03T03:10:30.614Z</lastmod>
     
   </url>
   
@@ -37,13 +79,6 @@
   </url>
   
   <url>
-    <loc>https://psychicalcoder.github.io/2017/07/18/tioj1142/</loc>
-    
-    <lastmod>2017-07-18T08:52:17.875Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://psychicalcoder.github.io/2017/07/17/tioj1506/</loc>
     
     <lastmod>2017-07-17T07:57:50.987Z</lastmod>
@@ -61,13 +96,6 @@
     <loc>https://psychicalcoder.github.io/2017/07/17/tioj1579/</loc>
     
     <lastmod>2017-07-17T07:18:08.137Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://psychicalcoder.github.io/2017/04/03/uva10003/</loc>
-    
-    <lastmod>2017-07-17T07:14:24.769Z</lastmod>
     
   </url>
   
@@ -110,13 +138,6 @@
     <loc>https://psychicalcoder.github.io/2017/02/25/tioj1086/</loc>
     
     <lastmod>2017-02-25T06:40:31.359Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://psychicalcoder.github.io/2017/02/18/tioj1344/</loc>
-    
-    <lastmod>2017-02-24T14:27:44.177Z</lastmod>
     
   </url>
   
@@ -170,30 +191,9 @@
   </url>
   
   <url>
-    <loc>https://psychicalcoder.github.io/2017/02/09/tioj1019/</loc>
-    
-    <lastmod>2017-02-09T04:22:22.906Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://psychicalcoder.github.io/about/index.html</loc>
-    
-    <lastmod>2017-02-09T03:51:18.599Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://psychicalcoder.github.io/2017/02/08/hello-world/</loc>
     
     <lastmod>2017-02-08T17:58:41.989Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://psychicalcoder.github.io/2017/02/09/tioj1007/</loc>
-    
-    <lastmod>2017-02-08T17:45:15.285Z</lastmod>
     
   </url>
   

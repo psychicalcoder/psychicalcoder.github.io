@@ -994,7 +994,7 @@ Footer
 /* line 1, C:/Users/admin/Desktop/GithubPages/blog/themes/hexo-theme-believe/source/css/_nav.scss */
 .site-header {
   width: 100%;
-  background: #fff;
+  background: #f0f0f0;
   border-top: 2px solid #ec1106;
   z-index: 30;
   position: fixed;
@@ -1098,7 +1098,7 @@ a.header-name {
 /* line 1, C:/Users/admin/Desktop/GithubPages/blog/themes/hexo-theme-believe/source/css/_post.scss */
 .post {
   padding: 0px 20px 30px;
-  box-shadow: 5px 5px 25px #dadada; }
+  box-shadow: 5px 5px 25px #c1c1c1; }
   /* line 5, C:/Users/admin/Desktop/GithubPages/blog/themes/hexo-theme-believe/source/css/_post.scss */
   .post .nav-links a {
     text-decoration: none;

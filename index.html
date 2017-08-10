@@ -162,6 +162,33 @@
       </a>
     </h1>
     
+    <div class="entry-content">
+      <p>
+        <h3 id="Dijkstra’s-Algorithm"><a href="#Dijkstra’s-Algorithm" class="headerlink" title="Dijkstra’s Algorithm"></a>Dijkstra’s Algorithm</h3><blockquote><p>接續上次Bellman-Ford沒講完的SSSP算法<br>今天來說說Dijkstra’s Algorithm</br><br>這個演算法實作簡單<br>是目前已知時間複雜度最小的SSSP算法<br>但是只適用於邊權全都大於等於<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.64444em;"></span><span class="strut bottom" style="height:0.64444em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathrm">0</span></span></span></span>的圖</br><br>那麼我們來思考一下Bellman-Ford Algorithm的缺點吧<br>可以注意到Bellman-Ford每次都要掃過全部的邊<br>可是有時候掃過這些邊一點用處都沒有<br>就算有被更新到，也不一定會是真正的最短距離<br>是不是做了很多多餘的事呢?</br><br>要怎麼樣才能避免做到無謂的事呢?</br><br>
+      </p>
+    </div>
+    <div class="post-more-link text-center">
+            <a class="btn" href="/2017/08/09/algo_dijkstra/" rel="contents">
+              閱讀全文 »
+            </a>
+    </div>
+    <p class="posted-on">
+        <i class="fa fa-calendar" aria-hidden="true"></i>
+    	2017-08-09
+    </p>
+    <div class="tags-links">
+      <i class="fa fa-tags" aria-hidden="true"></i>
+      
+      <a href="/tags/algorithm/" rel="tag">
+        algorithm
+      </a>
+      
+      <a href="/tags/SSSP/" rel="tag">
+        SSSP
+      </a>
+      
+    </div>
+    
   </article>
 </div>
 
@@ -175,6 +202,35 @@
         演算法週記 單源最短路徑之Bellman-Ford演算法  
       </a>
     </h1>
+    
+    <div class="entry-content">
+      <p>
+        <h3 id="最短路徑"><a href="#最短路徑" class="headerlink" title="最短路徑"></a>最短路徑</h3><blockquote><p>什麼是最短路徑呢?<br>首先最短路徑要有起點(<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>S</mi></mrow><annotation encoding="application/x-tex">S</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68333em;"></span><span class="strut bottom" style="height:0.68333em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.05764em;">S</span></span></span></span>)跟終點(<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>T</mi></mrow><annotation encoding="application/x-tex">T</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68333em;"></span><span class="strut bottom" style="height:0.68333em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.13889em;">T</span></span></span></span>)<br>從<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>S</mi></mrow><annotation encoding="application/x-tex">S</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68333em;"></span><span class="strut bottom" style="height:0.68333em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.05764em;">S</span></span></span></span>走到<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>T</mi></mrow><annotation encoding="application/x-tex">T</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68333em;"></span><span class="strut bottom" style="height:0.68333em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.13889em;">T</span></span></span></span>經過的邊權總和最短的一條路徑就稱為”最短路徑”(Shortest Path)<br>而這個邊權和就是”最短距離”</p>
+<p>最短路徑有好多種演算法<br>今天我們來看看Bellman-Ford演算法</p>
+</blockquote>
+      </p>
+    </div>
+    <div class="post-more-link text-center">
+            <a class="btn" href="/2017/08/02/algo_bellman_ford/" rel="contents">
+              閱讀全文 »
+            </a>
+    </div>
+    <p class="posted-on">
+        <i class="fa fa-calendar" aria-hidden="true"></i>
+    	2017-08-02
+    </p>
+    <div class="tags-links">
+      <i class="fa fa-tags" aria-hidden="true"></i>
+      
+      <a href="/tags/algorithm/" rel="tag">
+        algorithm
+      </a>
+      
+      <a href="/tags/SSSP/" rel="tag">
+        SSSP
+      </a>
+      
+    </div>
     
   </article>
 </div>
@@ -190,6 +246,25 @@
       </a>
     </h1>
     
+    <div class="entry-content">
+      <p>
+        <p>這是一個新的系列<br>為什麼要寫這個系列呢?<br>因為我覺得<br>這個比起題解更有意思<br>除了那些競賽會用到的算法之外<br>我也希望可以寫一些有趣的東西<br>
+      </p>
+    </div>
+    <div class="post-more-link text-center">
+            <a class="btn" href="/2017/08/01/algo_preface/" rel="contents">
+              閱讀全文 »
+            </a>
+    </div>
+    <p class="posted-on">
+        <i class="fa fa-calendar" aria-hidden="true"></i>
+    	2017-08-01
+    </p>
+    <div class="tags-links">
+      <i class="fa fa-tags" aria-hidden="true"></i>
+      
+    </div>
+    
   </article>
 </div>
 
@@ -203,6 +278,45 @@
         TIOJ 1143 4.靈犬尋寶  
       </a>
     </h1>
+    
+    <div class="entry-content">
+      <p>
+        <h3 id="題目敘述"><a href="#題目敘述" class="headerlink" title="題目敘述"></a>題目敘述</h3><blockquote><p>正方形(左下角座標為(0,0)，右上角座標為(99,99))的格網上，有一隻靈犬要尋找一個寶物，格網上除了靈犬與寶物之外，還有一些障礙物。一般情況下，只要不超出格網的邊界，靈犬的每一步最多有8個方向可供選擇，如圖一；但是必須注意，只有在A點沒有障礙物時才可以選擇方向1或方向2，只有在B點沒有障礙物時才可以選擇方向3或方向4，只有在C點沒有障礙物時才可以選擇方向5或方向6，只有在D點沒有障礙物時才可以選擇方向7或方向8。如果靈犬可以從出發的位置走到寶物的位置，其總共使用的步數，理論上應有一個最小值；但是靈犬也有可能無法走到寶物的位置。過程中，靈犬不可以走到障礙物的位置上。</p>
+<p><img src="http://tioj.infor.org/pimgs/1143.jpg"></p>
+<p>以圖二為例，有多達4個障礙物介於靈犬與寶物之間，但是靈犬最快只要2步就可以到達寶物的位置。圖三是另一個例子，靈犬的位置靠近角落，雖然只有2個障礙物，靈犬卻無法到達寶物的位置。</p>
+<p>請撰寫一個程式，若靈犬可以從最初位置走到寶物的位置時，請列印出其使用之最少步數；若靈犬無法到達寶物的位置，請列印出單字『impossible』。</p>
+</blockquote>
+      </p>
+    </div>
+    <div class="post-more-link text-center">
+            <a class="btn" href="/2017/07/21/tioj1143/" rel="contents">
+              閱讀全文 »
+            </a>
+    </div>
+    <p class="posted-on">
+        <i class="fa fa-calendar" aria-hidden="true"></i>
+    	2017-07-21
+    </p>
+    <div class="tags-links">
+      <i class="fa fa-tags" aria-hidden="true"></i>
+      
+      <a href="/tags/coding/" rel="tag">
+        coding
+      </a>
+      
+      <a href="/tags/tioj/" rel="tag">
+        tioj
+      </a>
+      
+      <a href="/tags/bfs/" rel="tag">
+        bfs
+      </a>
+      
+      <a href="/tags/全國賽/" rel="tag">
+        全國賽
+      </a>
+      
+    </div>
     
   </article>
 </div>
@@ -218,6 +332,42 @@
       </a>
     </h1>
     
+    <div class="entry-content">
+      <p>
+        <h3 id="題目敘述"><a href="#題目敘述" class="headerlink" title="題目敘述"></a>題目敘述</h3><blockquote><p>抓寶桌遊打算在市區開N 家連鎖店。可以開連鎖店的位置是M x M 的網格，每一家連鎖店必須開在不同的網格上，而且第二家連鎖店必須開在第一家的東北方，第三家連鎖店必須開在第二家的東北方，依此類推。東北方的定義爲X 座標和Y 座標都比較大。X 座標和Y 座標均介於0 到 M - 1。如果第 i 家 （i 介於0 到 N - 1）連鎖店開在 (x, y) 的位置則會有 ((ai + bx + cy) mod d) 的顧客。請寫一個程式決定N 家連鎖店的位置，使得所有連鎖店的顧客數總和為最大</p>
+</blockquote>
+      </p>
+    </div>
+    <div class="post-more-link text-center">
+            <a class="btn" href="/2017/07/19/tioj1938/" rel="contents">
+              閱讀全文 »
+            </a>
+    </div>
+    <p class="posted-on">
+        <i class="fa fa-calendar" aria-hidden="true"></i>
+    	2017-07-19
+    </p>
+    <div class="tags-links">
+      <i class="fa fa-tags" aria-hidden="true"></i>
+      
+      <a href="/tags/coding/" rel="tag">
+        coding
+      </a>
+      
+      <a href="/tags/tioj/" rel="tag">
+        tioj
+      </a>
+      
+      <a href="/tags/dp/" rel="tag">
+        dp
+      </a>
+      
+      <a href="/tags/全國賽/" rel="tag">
+        全國賽
+      </a>
+      
+    </div>
+    
   </article>
 </div>
 
@@ -231,6 +381,42 @@
         TIOJ 1939 網路建設 (Fibers)  
       </a>
     </h1>
+    
+    <div class="entry-content">
+      <p>
+        <h3 id="題目敘述"><a href="#題目敘述" class="headerlink" title="題目敘述"></a>題目敘述</h3><blockquote><p>抓寶網路公司正在幫和平社區規劃新一代的網路架構，該社區的網路平面架構圖如下，其中有編號的頂點代表網路設備的位置，兩個相鄰頂點之間有一虛線段連接，線段部分代表可以鋪設網路光纖的路線，網路設備可以透過光纖連結起來。<br><img src="http://tioj.ck.tp.edu.tw/pimgs/1939-1.png"><br>工程師發現只要用<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>5</mn></mrow><annotation encoding="application/x-tex">5</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.64444em;"></span><span class="strut bottom" style="height:0.64444em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathrm">5</span></span></span></span> 段光纖就可以將這<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>6</mn></mrow><annotation encoding="application/x-tex">6</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.64444em;"></span><span class="strut bottom" style="height:0.64444em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathrm">6</span></span></span></span>個設備連接起來，下圖為兩種可能的連結方法，事實上還有其他連結的方式。工程師想知道總共會有幾種相異的連結方法，可以用最少的線段把所有的網路設備連結起來。<br><img src="http://tioj.ck.tp.edu.tw/pimgs/1939-2.png"><img src="http://tioj.ck.tp.edu.tw/pimgs/1939-2.png"><br>一般而言可將上述平面架構圖延伸為<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn><mi>N</mi><mo>(</mo><mi>N</mi><mo>≥</mo><mn>3</mn><mo>)</mo></mrow><annotation encoding="application/x-tex">2N (N \geq 3)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base textstyle uncramped"><span class="mord mathrm">2</span><span class="mord mathit" style="margin-right:0.10903em;">N</span><span class="mopen">(</span><span class="mord mathit" style="margin-right:0.10903em;">N</span><span class="mrel">≥</span><span class="mord mathrm">3</span><span class="mclose">)</span></span></span></span>個頂點，上排頂點的編號為<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.64444em;"></span><span class="strut bottom" style="height:0.64444em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathrm">1</span></span></span></span> 到<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>N</mi></mrow><annotation encoding="application/x-tex">N</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68333em;"></span><span class="strut bottom" style="height:0.68333em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.10903em;">N</span></span></span></span>，下一排的頂點編號由<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>N</mi><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">N+1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68333em;"></span><span class="strut bottom" style="height:0.76666em;vertical-align:-0.08333em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.10903em;">N</span><span class="mbin">+</span><span class="mord mathrm">1</span></span></span></span>至<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn><mi>N</mi></mrow><annotation encoding="application/x-tex">2N</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68333em;"></span><span class="strut bottom" style="height:0.68333em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathrm">2</span><span class="mord mathit" style="margin-right:0.10903em;">N</span></span></span></span>，其中頂點<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>I</mi><mo>(</mo><mn>1</mn><mo>≤</mo><mi>I</mi><mo>≤</mo><mi>N</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">I (1 \leq I \leq N)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.07847em;">I</span><span class="mopen">(</span><span class="mord mathrm">1</span><span class="mrel">≤</span><span class="mord mathit" style="margin-right:0.07847em;">I</span><span class="mrel">≤</span><span class="mord mathit" style="margin-right:0.10903em;">N</span><span class="mclose">)</span></span></span></span>與頂點<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>I</mi><mo>+</mo><mi>N</mi></mrow><annotation encoding="application/x-tex">I+N</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68333em;"></span><span class="strut bottom" style="height:0.76666em;vertical-align:-0.08333em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.07847em;">I</span><span class="mbin">+</span><span class="mord mathit" style="margin-right:0.10903em;">N</span></span></span></span> 相鄰，另外對於頂點<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>I</mi><mo>(</mo><mn>1</mn><mo>&lt;</mo><mi>I</mi><mo>&lt;</mo><mi>N</mi><mo separator="true">,</mo><mi>N</mi><mo>+</mo><mn>1</mn><mo>&lt;</mo><mi>I</mi><mo>&lt;</mo><mn>2</mn><mi>N</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">I (1 &lt; I &lt; N, N+1 &lt; I &lt; 2N)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.07847em;">I</span><span class="mopen">(</span><span class="mord mathrm">1</span><span class="mrel">&lt;</span><span class="mord mathit" style="margin-right:0.07847em;">I</span><span class="mrel">&lt;</span><span class="mord mathit" style="margin-right:0.10903em;">N</span><span class="mpunct">,</span><span class="mord mathit" style="margin-right:0.10903em;">N</span><span class="mbin">+</span><span class="mord mathrm">1</span><span class="mrel">&lt;</span><span class="mord mathit" style="margin-right:0.07847em;">I</span><span class="mrel">&lt;</span><span class="mord mathrm">2</span><span class="mord mathit" style="margin-right:0.10903em;">N</span><span class="mclose">)</span></span></span></span>分別與頂點<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>I</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">I-1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68333em;"></span><span class="strut bottom" style="height:0.76666em;vertical-align:-0.08333em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.07847em;">I</span><span class="mbin">−</span><span class="mord mathrm">1</span></span></span></span>及 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>I</mi><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">I+1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68333em;"></span><span class="strut bottom" style="height:0.76666em;vertical-align:-0.08333em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.07847em;">I</span><span class="mbin">+</span><span class="mord mathrm">1</span></span></span></span> 相鄰。請寫一程式，幫工程師計算出總共有幾種相異的連結方法。因答案可能很大，程式輸出的答案為「原始答案」除以<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><msup><mn>0</mn><mn>9</mn></msup><mo>+</mo><mn>9</mn></mrow><annotation encoding="application/x-tex">10^9+9</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.8141079999999999em;"></span><span class="strut bottom" style="height:0.897438em;vertical-align:-0.08333em;"></span><span class="base textstyle uncramped"><span class="mord mathrm">1</span><span class="mord"><span class="mord mathrm">0</span><span class="vlist"><span style="top:-0.363em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle uncramped"><span class="mord mathrm">9</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span><span class="mbin">+</span><span class="mord mathrm">9</span></span></span></span>的餘數。</p>
+</blockquote>
+      </p>
+    </div>
+    <div class="post-more-link text-center">
+            <a class="btn" href="/2017/07/18/tioj1939/" rel="contents">
+              閱讀全文 »
+            </a>
+    </div>
+    <p class="posted-on">
+        <i class="fa fa-calendar" aria-hidden="true"></i>
+    	2017-07-18
+    </p>
+    <div class="tags-links">
+      <i class="fa fa-tags" aria-hidden="true"></i>
+      
+      <a href="/tags/coding/" rel="tag">
+        coding
+      </a>
+      
+      <a href="/tags/tioj/" rel="tag">
+        tioj
+      </a>
+      
+      <a href="/tags/dp/" rel="tag">
+        dp
+      </a>
+      
+      <a href="/tags/全國賽/" rel="tag">
+        全國賽
+      </a>
+      
+    </div>
     
   </article>
 </div>
@@ -246,6 +432,42 @@
       </a>
     </h1>
     
+    <div class="entry-content">
+      <p>
+        <h3 id="題目敘述"><a href="#題目敘述" class="headerlink" title="題目敘述"></a>題目敘述</h3><blockquote><p>一個組合電路(combinational circuit)由線路(wires)連接一組邏輯閘(logic gates)而成，並且不包含有向迴路(directed cycle)。一個組合電路的效能決定於最後一個主要輸出(primary output)被算出來的時間。假設每一個邏輯閘所需的運算時間都是固定並且是已知的，而線路的延遲(delay)是0。我們希望把一個組合電路所有的關鍵邏輯閘找出來。若一個邏輯閘的運算時間有任何延長，便會影響到整個電路的效能，它就被稱為關鍵邏輯閘。以圖一的組合電路為例，I1、I2、I3是主要輸入；O1、O2是主要輸出；圓圈代表邏輯閘，箭頭代表線路；每個邏輯閘有自己的編號以及固定的延遲時間。在圖一的例子當中，該組合電路中的O1會因為邏輯閘2、4、5的延遲，在時間400才會收到運算結果；而O2會因為邏輯閘2、4、6的延遲，在時間600才收到運算結果，因此O2是最後一個被算出來的主要輸出。關鍵邏輯閘分別是2、4以及6號邏輯閘，當其中一個關鍵邏輯閘的運算時間有任何延長，O2被算出來的時間也會再往後延遲。相反地，就算1號邏輯閘的運算時間從150延長到160，也不會影響到O2被算出來的時間，因此1號邏輯閘並不是關鍵邏輯閘。</p>
+</blockquote>
+      </p>
+    </div>
+    <div class="post-more-link text-center">
+            <a class="btn" href="/2017/07/18/tioj1142/" rel="contents">
+              閱讀全文 »
+            </a>
+    </div>
+    <p class="posted-on">
+        <i class="fa fa-calendar" aria-hidden="true"></i>
+    	2017-07-18
+    </p>
+    <div class="tags-links">
+      <i class="fa fa-tags" aria-hidden="true"></i>
+      
+      <a href="/tags/coding/" rel="tag">
+        coding
+      </a>
+      
+      <a href="/tags/tioj/" rel="tag">
+        tioj
+      </a>
+      
+      <a href="/tags/全國賽/" rel="tag">
+        全國賽
+      </a>
+      
+      <a href="/tags/graph/" rel="tag">
+        graph
+      </a>
+      
+    </div>
+    
   </article>
 </div>
 
@@ -259,6 +481,38 @@
         TIOJ 1506 二元一次聯立方程式  
       </a>
     </h1>
+    
+    <div class="entry-content">
+      <p>
+        <h3 id="題目敘述"><a href="#題目敘述" class="headerlink" title="題目敘述"></a>題目敘述</h3><blockquote><p>解二元一次聯立方程式</p>
+</blockquote>
+      </p>
+    </div>
+    <div class="post-more-link text-center">
+            <a class="btn" href="/2017/07/17/tioj1506/" rel="contents">
+              閱讀全文 »
+            </a>
+    </div>
+    <p class="posted-on">
+        <i class="fa fa-calendar" aria-hidden="true"></i>
+    	2017-07-17
+    </p>
+    <div class="tags-links">
+      <i class="fa fa-tags" aria-hidden="true"></i>
+      
+      <a href="/tags/coding/" rel="tag">
+        coding
+      </a>
+      
+      <a href="/tags/tioj/" rel="tag">
+        tioj
+      </a>
+      
+      <a href="/tags/math/" rel="tag">
+        math
+      </a>
+      
+    </div>
     
   </article>
 </div>
@@ -274,6 +528,43 @@
       </a>
     </h1>
     
+    <div class="entry-content">
+      <p>
+        <h3 id="題目敘述"><a href="#題目敘述" class="headerlink" title="題目敘述"></a>題目敘述</h3><blockquote><p>假設有 N個正整數A[1], A[2],…, A[N]，我們要在每一個數字之前加入+號或-號使得它們的總和為0。例如: 1, 2 及 3，我們可以得到<br>(-1)+(-2)+(+3)=0；但是對於2, 2 及 1 則無法透過加入+號或-號使得它們的總和為 0。</p>
+<p>請你寫一個程式來判斷任意N個正整數是否可以透過加入+號或-號使得它們的總和為 0。</p>
+</blockquote>
+      </p>
+    </div>
+    <div class="post-more-link text-center">
+            <a class="btn" href="/2017/07/17/tioj1508/" rel="contents">
+              閱讀全文 »
+            </a>
+    </div>
+    <p class="posted-on">
+        <i class="fa fa-calendar" aria-hidden="true"></i>
+    	2017-07-17
+    </p>
+    <div class="tags-links">
+      <i class="fa fa-tags" aria-hidden="true"></i>
+      
+      <a href="/tags/coding/" rel="tag">
+        coding
+      </a>
+      
+      <a href="/tags/tioj/" rel="tag">
+        tioj
+      </a>
+      
+      <a href="/tags/dp/" rel="tag">
+        dp
+      </a>
+      
+      <a href="/tags/toi/" rel="tag">
+        toi
+      </a>
+      
+    </div>
+    
   </article>
 </div>
 
@@ -287,6 +578,46 @@
         TIOJ 1579 來自未來的新台幣  
       </a>
     </h1>
+    
+    <div class="entry-content">
+      <p>
+        <h3 id="題目敘述"><a href="#題目敘述" class="headerlink" title="題目敘述"></a>題目敘述</h3><blockquote><p>相信大家都知道，現在流通於市面的新台幣面額常見的有<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><mo separator="true">,</mo><mn>5</mn><mo separator="true">,</mo><mn>1</mn><mn>0</mn><mo separator="true">,</mo><mn>5</mn><mn>0</mn><mo separator="true">,</mo><mn>1</mn><mn>0</mn><mn>0</mn><mo separator="true">,</mo><mn>5</mn><mn>0</mn><mn>0</mn><mo separator="true">,</mo><mn>1</mn><mn>0</mn><mn>0</mn><mn>0</mn></mrow><annotation encoding="application/x-tex">1, 5, 10, 50, 100, 500, 1000 </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.64444em;"></span><span class="strut bottom" style="height:0.8388800000000001em;vertical-align:-0.19444em;"></span><span class="base textstyle uncramped"><span class="mord mathrm">1</span><span class="mpunct">,</span><span class="mord mathrm">5</span><span class="mpunct">,</span><span class="mord mathrm">1</span><span class="mord mathrm">0</span><span class="mpunct">,</span><span class="mord mathrm">5</span><span class="mord mathrm">0</span><span class="mpunct">,</span><span class="mord mathrm">1</span><span class="mord mathrm">0</span><span class="mord mathrm">0</span><span class="mpunct">,</span><span class="mord mathrm">5</span><span class="mord mathrm">0</span><span class="mord mathrm">0</span><span class="mpunct">,</span><span class="mord mathrm">1</span><span class="mord mathrm">0</span><span class="mord mathrm">0</span><span class="mord mathrm">0</span></span></span></span>。<br>（<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn><mn>0</mn><mo separator="true">,</mo><mn>2</mn><mn>0</mn><mn>0</mn><mo separator="true">,</mo><mn>2</mn><mn>0</mn><mn>0</mn><mn>0</mn></mrow><annotation encoding="application/x-tex">20,200,2000</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.64444em;"></span><span class="strut bottom" style="height:0.8388800000000001em;vertical-align:-0.19444em;"></span><span class="base textstyle uncramped"><span class="mord mathrm">2</span><span class="mord mathrm">0</span><span class="mpunct">,</span><span class="mord mathrm">2</span><span class="mord mathrm">0</span><span class="mord mathrm">0</span><span class="mpunct">,</span><span class="mord mathrm">2</span><span class="mord mathrm">0</span><span class="mord mathrm">0</span><span class="mord mathrm">0</span></span></span></span>元和五角並不常見）<br>假設過了幾百年以後，央行發行了「新新台幣」，有<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>N</mi></mrow><annotation encoding="application/x-tex">N</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68333em;"></span><span class="strut bottom" style="height:0.68333em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.10903em;">N</span></span></span></span>種面額，分別是<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><mo separator="true">,</mo><mn>5</mn><mo separator="true">,</mo><mn>1</mn><mn>0</mn><mo separator="true">,</mo><mn>5</mn><mn>0</mn><mo separator="true">,</mo><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">1, 5, 10, 50, …</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.64444em;"></span><span class="strut bottom" style="height:0.8388800000000001em;vertical-align:-0.19444em;"></span><span class="base textstyle uncramped"><span class="mord mathrm">1</span><span class="mpunct">,</span><span class="mord mathrm">5</span><span class="mpunct">,</span><span class="mord mathrm">1</span><span class="mord mathrm">0</span><span class="mpunct">,</span><span class="mord mathrm">5</span><span class="mord mathrm">0</span><span class="mpunct">,</span><span class="mord mathrm">.</span><span class="mord mathrm">.</span><span class="mord mathrm">.</span></span></span></span>如此下去的規律，請計算給定的新台幣們能湊出的不為零的金額數有多少個。</p>
+</blockquote>
+      </p>
+    </div>
+    <div class="post-more-link text-center">
+            <a class="btn" href="/2017/07/17/tioj1579/" rel="contents">
+              閱讀全文 »
+            </a>
+    </div>
+    <p class="posted-on">
+        <i class="fa fa-calendar" aria-hidden="true"></i>
+    	2017-07-17
+    </p>
+    <div class="tags-links">
+      <i class="fa fa-tags" aria-hidden="true"></i>
+      
+      <a href="/tags/coding/" rel="tag">
+        coding
+      </a>
+      
+      <a href="/tags/tioj/" rel="tag">
+        tioj
+      </a>
+      
+      <a href="/tags/dp/" rel="tag">
+        dp
+      </a>
+      
+      <a href="/tags/math/" rel="tag">
+        math
+      </a>
+      
+      <a href="/tags/toi/" rel="tag">
+        toi
+      </a>
+      
+    </div>
     
   </article>
 </div>

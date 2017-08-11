@@ -105,6 +105,15 @@
               </a>
             </li>
           
+            <li>
+              <a href="/tags">
+                
+                  <i class="fa fa-tags "></i>
+                
+                標籤
+              </a>
+            </li>
+          
         </ul>
       </div>
       <!-- /.navbar-collapse -->
@@ -146,21 +155,28 @@
 <h3 id="題解"><a href="#題解" class="headerlink" title="題解"></a>題解</h3><blockquote><p>若豆子數量是大於1的奇數的話那堆就會被丟掉一顆然後分成兩堆<br>一堆分成兩堆<br>兩堆分成四堆<br>每堆都一樣多<br>哪我們就能用位運算來得知他在分堆的過程中會丟掉多少豆子</p>
 </blockquote>
 <h6 id="C"><a href="#C" class="headerlink" title="C++"></a>C++</h6><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</div><div class="line">    <span class="keyword">int</span> n,ans=<span class="number">0</span>,t=<span class="number">0</span>,i;</div><div class="line">    <span class="keyword">bool</span> flag = <span class="literal">true</span>;</div><div class="line">    <span class="keyword">while</span>(<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n)==<span class="number">1</span>)&#123;</div><div class="line">        <span class="keyword">if</span>(n==<span class="number">0</span>&amp;&amp;!flag)<span class="keyword">break</span>;</div><div class="line">        <span class="keyword">if</span>(n==<span class="number">0</span>)&#123;</div><div class="line">            <span class="built_in">printf</span>(<span class="string">"%d\n"</span>,ans-t);</div><div class="line">            ans=<span class="number">0</span>;</div><div class="line">            t=<span class="number">0</span>;</div><div class="line">            flag=<span class="literal">false</span>;</div><div class="line">            <span class="keyword">continue</span>;</div><div class="line">        &#125;</div><div class="line">        ans+=n;</div><div class="line">        i=<span class="number">1</span>;</div><div class="line">        <span class="keyword">while</span>(n&gt;<span class="number">1</span>)&#123;</div><div class="line">            <span class="keyword">if</span>(n&amp;<span class="number">1</span>)t+=i;</div><div class="line">            i&lt;&lt;=<span class="number">1</span>;</div><div class="line">            n&gt;&gt;=<span class="number">1</span>;</div><div class="line">        &#125;</div><div class="line">        flag=<span class="literal">true</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+          
         </div>
       </article>
     </div>
+    <aside id="sidebar">
+      <div class="widget">
+        <p>分類列表</p></br>
+        <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Algorithm-Weeekly-Journal/">Algorithm-Weeekly-Journal</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIOJ/">TIOJ</a><span class="category-list-count">20</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Template/">Template</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/UVa/">UVa</a><span class="category-list-count">2</span></li></ul>
+      </div>
+    </aside>
     <!-- Pre or Next -->
     
 	<div class="container" >
            <ul class="pager">
     	     
       	     <li class="previous">
-              <a href="/2017/03/11/segmenttree/" rel="prev">下一篇</a>
+              <a href="/2017/03/11/segmenttree/" rel="prev">下一篇 - 模板-線段樹 </a>
              </li>
            
            
               <li class="next">
-              <a href="/2017/02/25/tioj1086/" rel="prev">上一篇</a>
+              <a href="/2017/02/25/tioj1086/" rel="prev">上一篇 - TIOJ 1086 放錯的信封 </a>
             </li>
            
           </ul>

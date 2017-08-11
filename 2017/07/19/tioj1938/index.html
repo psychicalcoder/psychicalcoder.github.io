@@ -105,6 +105,15 @@
               </a>
             </li>
           
+            <li>
+              <a href="/tags">
+                
+                  <i class="fa fa-tags "></i>
+                
+                標籤
+              </a>
+            </li>
+          
         </ul>
       </div>
       <!-- /.navbar-collapse -->
@@ -149,21 +158,28 @@
 <h6 id="C"><a href="#C" class="headerlink" title="C++"></a>C++</h6><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> LL;</div><div class="line"></div><div class="line"><span class="keyword">const</span> LL inf = (LL)<span class="number">9.22e18</span>;</div><div class="line"></div><div class="line"><span class="keyword">int</span> m, n, a, b, c, d;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">calc</span><span class="params">(<span class="keyword">int</span> i, <span class="keyword">int</span> x, <span class="keyword">int</span> y)</span> </span>&#123;</div><div class="line">    <span class="keyword">return</span> (a*i+b*x+c*y)%d;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">int</span> dp[<span class="number">205</span>][<span class="number">205</span>][<span class="number">105</span>];</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</div><div class="line">    <span class="keyword">while</span>(<span class="built_in">scanf</span>(<span class="string">"%d%d%d%d%d%d"</span>, &amp;m, &amp;n, &amp;a, &amp;b, &amp;c, &amp;d) == <span class="number">6</span>) &#123;</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> r = <span class="number">1</span>; r &lt;= m; r++) &#123;</div><div class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> c = <span class="number">1</span>; c &lt;= m; c++) &#123;</div><div class="line">                <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= min(r,n); i++) &#123;</div><div class="line">                    dp[r][c][i] = dp[r<span class="number">-1</span>][c<span class="number">-1</span>][i<span class="number">-1</span>]+calc(i<span class="number">-1</span>, r<span class="number">-1</span>, c<span class="number">-1</span>);</div><div class="line">                    dp[r][c][i] = max(&#123;dp[r][c][i], dp[r<span class="number">-1</span>][c][i], dp[r][c<span class="number">-1</span>][i]&#125;);</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="built_in">printf</span>(<span class="string">"%d\n"</span>,dp[m][m][n]);       </div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>Code超短阿ˊ`</p>
 
+          
         </div>
       </article>
     </div>
+    <aside id="sidebar">
+      <div class="widget">
+        <p>分類列表</p></br>
+        <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Algorithm-Weeekly-Journal/">Algorithm-Weeekly-Journal</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIOJ/">TIOJ</a><span class="category-list-count">20</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Template/">Template</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/UVa/">UVa</a><span class="category-list-count">2</span></li></ul>
+      </div>
+    </aside>
     <!-- Pre or Next -->
     
 	<div class="container" >
            <ul class="pager">
     	     
       	     <li class="previous">
-              <a href="/2017/07/21/tioj1143/" rel="prev">下一篇</a>
+              <a href="/2017/07/21/tioj1143/" rel="prev">下一篇 - TIOJ 1143 4.靈犬尋寶 </a>
              </li>
            
            
               <li class="next">
-              <a href="/2017/07/18/tioj1939/" rel="prev">上一篇</a>
+              <a href="/2017/07/18/tioj1939/" rel="prev">上一篇 - TIOJ 1939 網路建設 (Fibers) </a>
             </li>
            
           </ul>

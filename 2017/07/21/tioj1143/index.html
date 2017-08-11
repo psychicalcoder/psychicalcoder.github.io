@@ -135,6 +135,11 @@
           </p>
         <!-- Post Main Content -->
         <div class="entry-content">
+          
+            <div id="toc">
+            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#題目敘述"><span class="toc-text">題目敘述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#題解"><span class="toc-text">題解</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#C"><span class="toc-text">C++</span></a></li></ol></li></ol></li></ol></li></ol>
+            </div>
+          
           <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.css"><h3 id="題目敘述"><a href="#題目敘述" class="headerlink" title="題目敘述"></a>題目敘述</h3><blockquote><p>正方形(左下角座標為(0,0)，右上角座標為(99,99))的格網上，有一隻靈犬要尋找一個寶物，格網上除了靈犬與寶物之外，還有一些障礙物。一般情況下，只要不超出格網的邊界，靈犬的每一步最多有8個方向可供選擇，如圖一；但是必須注意，只有在A點沒有障礙物時才可以選擇方向1或方向2，只有在B點沒有障礙物時才可以選擇方向3或方向4，只有在C點沒有障礙物時才可以選擇方向5或方向6，只有在D點沒有障礙物時才可以選擇方向7或方向8。如果靈犬可以從出發的位置走到寶物的位置，其總共使用的步數，理論上應有一個最小值；但是靈犬也有可能無法走到寶物的位置。過程中，靈犬不可以走到障礙物的位置上。</p>
 <p><img src="http://tioj.infor.org/pimgs/1143.jpg"></p>
 <p>以圖二為例，有多達4個障礙物介於靈犬與寶物之間，但是靈犬最快只要2步就可以到達寶物的位置。圖三是另一個例子，靈犬的位置靠近角落，雖然只有2個障礙物，靈犬卻無法到達寶物的位置。</p>

@@ -135,6 +135,11 @@
           </p>
         <!-- Post Main Content -->
         <div class="entry-content">
+          
+            <div id="toc">
+            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#題目敘述"><span class="toc-text">題目敘述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#題解"><span class="toc-text">題解</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#C"><span class="toc-text">C++</span></a></li></ol></li></ol></li></ol></li></ol>
+            </div>
+          
           <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.css"><h3 id="題目敘述"><a href="#題目敘述" class="headerlink" title="題目敘述"></a>題目敘述</h3><blockquote><p>一個組合電路(combinational circuit)由線路(wires)連接一組邏輯閘(logic gates)而成，並且不包含有向迴路(directed cycle)。一個組合電路的效能決定於最後一個主要輸出(primary output)被算出來的時間。假設每一個邏輯閘所需的運算時間都是固定並且是已知的，而線路的延遲(delay)是0。我們希望把一個組合電路所有的關鍵邏輯閘找出來。若一個邏輯閘的運算時間有任何延長，便會影響到整個電路的效能，它就被稱為關鍵邏輯閘。以圖一的組合電路為例，I1、I2、I3是主要輸入；O1、O2是主要輸出；圓圈代表邏輯閘，箭頭代表線路；每個邏輯閘有自己的編號以及固定的延遲時間。在圖一的例子當中，該組合電路中的O1會因為邏輯閘2、4、5的延遲，在時間400才會收到運算結果；而O2會因為邏輯閘2、4、6的延遲，在時間600才收到運算結果，因此O2是最後一個被算出來的主要輸出。關鍵邏輯閘分別是2、4以及6號邏輯閘，當其中一個關鍵邏輯閘的運算時間有任何延長，O2被算出來的時間也會再往後延遲。相反地，就算1號邏輯閘的運算時間從150延長到160，也不會影響到O2被算出來的時間，因此1號邏輯閘並不是關鍵邏輯閘。</p>
 </blockquote>
 <a id="more"></a>

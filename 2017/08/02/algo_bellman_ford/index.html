@@ -127,29 +127,28 @@
 
   <!-- Main Content -->
   <div class="content-area">
-  <div class="post">
-    <!-- Post Content -->
-    <div class="container">
-      <article>
-        <!-- Title date & tags -->
-        <div class="post-header">
-          <h1 class="entry-title">
-            演算法週記 單源最短路徑之Bellman-Ford演算法
-            
-          </h1>
-         
-        </div>
-         <p class="a-posted-on">
-          2017-08-02
-          </p>
-        <!-- Post Main Content -->
-        <div class="entry-content">
-          
-            <div id="toc">
-            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#最短路徑"><span class="toc-text">最短路徑</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Bellman-Ford-Algorithm"><span class="toc-text">Bellman-Ford Algorithm</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#edge-struct版"><span class="toc-text">edge struct版</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#鄰接矩陣版"><span class="toc-text">鄰接矩陣版</span></a></li></ol></li></ol>
-            </div>
-          
-          <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.css"><h3 id="最短路徑"><a href="#最短路徑" class="headerlink" title="最短路徑"></a>最短路徑</h3><blockquote><p>什麼是最短路徑呢?<br>首先最短路徑要有起點(<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>S</mi></mrow><annotation encoding="application/x-tex">S</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68333em;"></span><span class="strut bottom" style="height:0.68333em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.05764em;">S</span></span></span></span>)跟終點(<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>T</mi></mrow><annotation encoding="application/x-tex">T</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68333em;"></span><span class="strut bottom" style="height:0.68333em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.13889em;">T</span></span></span></span>)<br>從<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>S</mi></mrow><annotation encoding="application/x-tex">S</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68333em;"></span><span class="strut bottom" style="height:0.68333em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.05764em;">S</span></span></span></span>走到<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>T</mi></mrow><annotation encoding="application/x-tex">T</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68333em;"></span><span class="strut bottom" style="height:0.68333em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.13889em;">T</span></span></span></span>經過的邊權總和最短的一條路徑就稱為”最短路徑”(Shortest Path)<br>而這個邊權和就是”最短距離”</p>
+	<div class="post">
+		<!-- Post Content -->
+		<div class="container">
+			<article>
+			<!-- Title date & tags -->
+			<div class="post-header">
+				<h1 class="entry-title">
+					演算法週記 單源最短路徑之Bellman-Ford演算法
+					
+				</h1>
+			</div>
+			<p class="a-posted-on">
+				2017-08-02
+			</p>
+			<!-- Post Main Content -->
+			<div class="entry-content">
+				
+					<div id="toc">
+						<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#最短路徑"><span class="toc-text">最短路徑</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Bellman-Ford-Algorithm"><span class="toc-text">Bellman-Ford Algorithm</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#edge-struct版"><span class="toc-text">edge struct版</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#鄰接矩陣版"><span class="toc-text">鄰接矩陣版</span></a></li></ol></li></ol>
+					</div>
+				
+				<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.css"><h3 id="最短路徑"><a href="#最短路徑" class="headerlink" title="最短路徑"></a>最短路徑</h3><blockquote><p>什麼是最短路徑呢?<br>首先最短路徑要有起點(<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>S</mi></mrow><annotation encoding="application/x-tex">S</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68333em;"></span><span class="strut bottom" style="height:0.68333em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.05764em;">S</span></span></span></span>)跟終點(<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>T</mi></mrow><annotation encoding="application/x-tex">T</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68333em;"></span><span class="strut bottom" style="height:0.68333em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.13889em;">T</span></span></span></span>)<br>從<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>S</mi></mrow><annotation encoding="application/x-tex">S</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68333em;"></span><span class="strut bottom" style="height:0.68333em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.05764em;">S</span></span></span></span>走到<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>T</mi></mrow><annotation encoding="application/x-tex">T</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68333em;"></span><span class="strut bottom" style="height:0.68333em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.13889em;">T</span></span></span></span>經過的邊權總和最短的一條路徑就稱為”最短路徑”(Shortest Path)<br>而這個邊權和就是”最短距離”</p>
 <p>最短路徑有好多種演算法<br>今天我們來看看Bellman-Ford演算法</p>
 </blockquote>
 <a id="more"></a>
@@ -160,46 +159,40 @@
 <h4 id="鄰接矩陣版"><a href="#鄰接矩陣版" class="headerlink" title="鄰接矩陣版"></a>鄰接矩陣版</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"></div><div class="line"><span class="keyword">const</span> <span class="keyword">int</span> INF = <span class="number">1000000000</span>; <span class="comment">//1e9</span></div><div class="line"></div><div class="line"><span class="keyword">int</span> V, E; <span class="comment">//頂點數、邊數</span></div><div class="line"><span class="keyword">int</span> G[<span class="number">105</span>][<span class="number">105</span>]; <span class="comment">//有邊則G[i][j] != INF</span></div><div class="line"><span class="keyword">int</span> d[<span class="number">105</span>]; <span class="comment">//所有點到S的距離</span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">bellman_ford</span><span class="params">(<span class="keyword">int</span> s)</span> </span>&#123;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; V; i++) d[i] = INF; <span class="comment">//初始化距離</span></div><div class="line">    d[s] = <span class="number">0</span>; <span class="comment">//源點距離=0</span></div><div class="line">    <span class="keyword">while</span>(<span class="literal">true</span>) &#123;</div><div class="line">        <span class="keyword">bool</span> update = <span class="literal">false</span>;</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; V; i++) &#123;</div><div class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; V; j++) &#123;</div><div class="line">                <span class="keyword">if</span>(G[i][j] != INF &amp;&amp; d[i] != INF &amp;&amp; d[j] &gt; d[i]+G[i][j]) &#123;</div><div class="line">                    d[j] = d[i]+G[i][j];</div><div class="line">                    update = <span class="literal">true</span>;</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">if</span>(!update) <span class="keyword">break</span>; <span class="comment">//沒更新就退出</span></div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//demo</span></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</div><div class="line">    <span class="built_in">cin</span> &gt;&gt; V &gt;&gt; E;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; V; i++) <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; V; j++) G[i][j] = INF;</div><div class="line">    <span class="keyword">int</span> u,v,c;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; E; i++) &#123;</div><div class="line">        <span class="built_in">cin</span> &gt;&gt; u &gt;&gt; v &gt;&gt; c;</div><div class="line">        <span class="comment">//G[v][u] = G[u][v] = c; //無向圖</span></div><div class="line">    &#125;</div><div class="line">    bellman_ford(<span class="number">0</span>);</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; V; i++) &#123;</div><div class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">"d["</span> &lt;&lt; i &lt;&lt; <span class="string">"] = "</span> &lt;&lt; d[i] &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>本來想多寫幾種SSSP的演算法<br>可是光一個Bellman-Ford就寫了一下午OAO<br>真的很好奇我是不是真的能一週一篇=ㄦ=</p>
 
-          
-        </div>
-      </article>
-    </div>
-    <aside id="sidebar">
-      <div class="widget">
-        <p>分類列表</p></br>
-        <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Algorithm-Weeekly-Journal/">Algorithm-Weeekly-Journal</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIOJ/">TIOJ</a><span class="category-list-count">20</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Template/">Template</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/UVa/">UVa</a><span class="category-list-count">2</span></li></ul>
-      </div>
-    </aside>
-    <!-- Pre or Next -->
-    
-	<div class="container" >
-           <ul class="pager">
-    	     
-      	     <li class="previous">
-              <a href="/2017/08/09/algo_dijkstra/" rel="prev">下一篇 - 演算法週記 單源最短路徑之Dijkstra's Algorithm </a>
-             </li>
-           
-           
-              <li class="next">
-              <a href="/2017/08/01/algo_preface/" rel="prev">上一篇 - 演算法週記 序 </a>
+				
+			</div>
+			</article>
+		</div>
+		<!-- Pre or Next -->
+		
+			<div class="container" >
+				<ul class="pager">
+					
+						<li class="previous">
+							<a href="/2017/08/09/algo_dijkstra/" rel="prev">下一篇 - 演算法週記 單源最短路徑之Dijkstra's Algorithm</a>
+						</li>
+					
+					
+						<li class="next">
+							<a href="/2017/08/01/algo_preface/" rel="prev">上一篇 - 演算法週記 序</a>
             </li>
-           
-          </ul>
-       </div>
-　　　　<!-- Comments -->
-    <div class="container">
-      
+					
+				</ul>
+			</div>
+			<!-- Comments -->
+			<div class="container">
+				
 <section id="comment">
-  <!-- <h1 class="title">留言</h1> -->
+  <!-- <h1 class="title">Comments</h1> -->
 
   
 </section>
 
 
-    </div>
-   
-　　　　
-  </div>
+			</div>
+		
+		　　　　
+	</div>
 </div>
 
 

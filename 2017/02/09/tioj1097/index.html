@@ -127,29 +127,28 @@
 
   <!-- Main Content -->
   <div class="content-area">
-  <div class="post">
-    <!-- Post Content -->
-    <div class="container">
-      <article>
-        <!-- Title date & tags -->
-        <div class="post-header">
-          <h1 class="entry-title">
-            TIOJ 1097 F.營地
-            
-          </h1>
-         
-        </div>
-         <p class="a-posted-on">
-          2017-02-09
-          </p>
-        <!-- Post Main Content -->
-        <div class="entry-content">
-          
-            <div id="toc">
-            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#題目敘述"><span class="toc-text">題目敘述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#題解"><span class="toc-text">題解</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#C"><span class="toc-text">C++</span></a></li></ol></li></ol></li></ol></li></ol>
-            </div>
-          
-          <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.css"><h3 id="題目敘述"><a href="#題目敘述" class="headerlink" title="題目敘述"></a>題目敘述</h3><blockquote><p>露營時都搭過帳棚吧？但帳棚也不是說搭就搭，必須要有一塊平坦的空地才行，否則就必須要先整理場地，清除石塊、雜物才能搭好。但也不是說清理就清理，有時候如果出現很大塊的石頭或是大型的坑洞，帳篷就不得不避開這樣的地方。<br>清理好場地以後，要搭怎麼樣的帳棚呢？雖然大部分是依場地而定，但對於初學者可能還是以特定的形狀為宜。<br>現在給你一塊空地的資料，請你計算出在這營地上能夠搭建帳篷的最大面積。為了簡化問題，假設營地為一 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>L</mi><mo>×</mo><mi>W</mi></mrow><annotation encoding="application/x-tex">L \times W </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68333em;"></span><span class="strut bottom" style="height:0.76666em;vertical-align:-0.08333em;"></span><span class="base textstyle uncramped"><span class="mord mathit">L</span><span class="mbin">×</span><span class="mord mathit" style="margin-right:0.13889em;">W</span></span></span></span>的矩形，並分為 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>L</mi><mo>×</mo><mi>W</mi></mrow><annotation encoding="application/x-tex">L \times W </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68333em;"></span><span class="strut bottom" style="height:0.76666em;vertical-align:-0.08333em;"></span><span class="base textstyle uncramped"><span class="mord mathit">L</span><span class="mbin">×</span><span class="mord mathit" style="margin-right:0.13889em;">W</span></span></span></span>個方格，方格為場地的最小單位，一個方格內的場地特性視為一體。並限制所搭帳篷的形狀必須是正方形，且帳篷的四邊和營地的四邊分別對應平行。</p>
+	<div class="post">
+		<!-- Post Content -->
+		<div class="container">
+			<article>
+			<!-- Title date & tags -->
+			<div class="post-header">
+				<h1 class="entry-title">
+					TIOJ 1097 F.營地
+					
+				</h1>
+			</div>
+			<p class="a-posted-on">
+				2017-02-09
+			</p>
+			<!-- Post Main Content -->
+			<div class="entry-content">
+				
+					<div id="toc">
+						<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#題目敘述"><span class="toc-text">題目敘述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#題解"><span class="toc-text">題解</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#C"><span class="toc-text">C++</span></a></li></ol></li></ol></li></ol></li></ol>
+					</div>
+				
+				<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.css"><h3 id="題目敘述"><a href="#題目敘述" class="headerlink" title="題目敘述"></a>題目敘述</h3><blockquote><p>露營時都搭過帳棚吧？但帳棚也不是說搭就搭，必須要有一塊平坦的空地才行，否則就必須要先整理場地，清除石塊、雜物才能搭好。但也不是說清理就清理，有時候如果出現很大塊的石頭或是大型的坑洞，帳篷就不得不避開這樣的地方。<br>清理好場地以後，要搭怎麼樣的帳棚呢？雖然大部分是依場地而定，但對於初學者可能還是以特定的形狀為宜。<br>現在給你一塊空地的資料，請你計算出在這營地上能夠搭建帳篷的最大面積。為了簡化問題，假設營地為一 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>L</mi><mo>×</mo><mi>W</mi></mrow><annotation encoding="application/x-tex">L \times W </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68333em;"></span><span class="strut bottom" style="height:0.76666em;vertical-align:-0.08333em;"></span><span class="base textstyle uncramped"><span class="mord mathit">L</span><span class="mbin">×</span><span class="mord mathit" style="margin-right:0.13889em;">W</span></span></span></span>的矩形，並分為 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>L</mi><mo>×</mo><mi>W</mi></mrow><annotation encoding="application/x-tex">L \times W </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68333em;"></span><span class="strut bottom" style="height:0.76666em;vertical-align:-0.08333em;"></span><span class="base textstyle uncramped"><span class="mord mathit">L</span><span class="mbin">×</span><span class="mord mathit" style="margin-right:0.13889em;">W</span></span></span></span>個方格，方格為場地的最小單位，一個方格內的場地特性視為一體。並限制所搭帳篷的形狀必須是正方形，且帳篷的四邊和營地的四邊分別對應平行。</p>
 </blockquote>
 <a id="more"></a>
 <h3 id="題解"><a href="#題解" class="headerlink" title="題解"></a>題解</h3><blockquote><p>這題就是最大正方形問題<br>是著名的Dp問題</p>
@@ -167,46 +166,40 @@
 <h6 id="C"><a href="#C" class="headerlink" title="C++"></a>C++</h6><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"></div><div class="line"><span class="keyword">int</span> d[<span class="number">2</span>][<span class="number">5005</span>];</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</div><div class="line">    <span class="keyword">int</span> m,n,t,mx;</div><div class="line">    <span class="keyword">while</span>(<span class="built_in">scanf</span>(<span class="string">"%d%d"</span>,&amp;m,&amp;n)==<span class="number">2</span>&amp;&amp;m&amp;&amp;n)&#123;</div><div class="line">        mx=<span class="number">0</span>;</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++) &#123;</div><div class="line">            <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;t);</div><div class="line">            d[<span class="number">0</span>][i]=t==<span class="number">2</span>?<span class="number">0</span>:<span class="number">1</span>;</div><div class="line">            <span class="keyword">if</span>(t!=<span class="number">2</span>)mx=<span class="number">1</span>;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;m;i++)&#123;</div><div class="line">            <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;t);</div><div class="line">            d[<span class="number">1</span>][<span class="number">0</span>]=t==<span class="number">2</span>?<span class="number">0</span>:<span class="number">1</span>;</div><div class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;n;j++)&#123;</div><div class="line">                <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;t);</div><div class="line">                <span class="keyword">if</span>(t==<span class="number">2</span>)d[<span class="number">1</span>][j]=<span class="number">0</span>;</div><div class="line">                <span class="keyword">else</span> &#123;</div><div class="line">                    d[<span class="number">1</span>][j]=min(d[<span class="number">0</span>][j<span class="number">-1</span>],min(d[<span class="number">0</span>][j],d[<span class="number">1</span>][j<span class="number">-1</span>]))+<span class="number">1</span>;</div><div class="line">                    mx=max(d[<span class="number">1</span>][j],mx);</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++) <span class="comment">//滾動</span></div><div class="line">                d[<span class="number">0</span>][i]=d[<span class="number">1</span>][i];</div><div class="line">            &#125;</div><div class="line">            <span class="built_in">printf</span>(<span class="string">"%d\n"</span>,mx*mx);</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>不懂可以看演算法筆記喔</p>
 
-          
-        </div>
-      </article>
-    </div>
-    <aside id="sidebar">
-      <div class="widget">
-        <p>分類列表</p></br>
-        <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Algorithm-Weeekly-Journal/">Algorithm-Weeekly-Journal</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIOJ/">TIOJ</a><span class="category-list-count">20</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Template/">Template</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/UVa/">UVa</a><span class="category-list-count">2</span></li></ul>
-      </div>
-    </aside>
-    <!-- Pre or Next -->
-    
-	<div class="container" >
-           <ul class="pager">
-    	     
-      	     <li class="previous">
-              <a href="/2017/02/09/tioj1092/" rel="prev">下一篇 - TIOJ 1092 跳格子遊戲 </a>
-             </li>
-           
-           
-              <li class="next">
-              <a href="/2017/02/09/tioj1010/" rel="prev">上一篇 - TIOJ 1010 前綴後綴 </a>
+				
+			</div>
+			</article>
+		</div>
+		<!-- Pre or Next -->
+		
+			<div class="container" >
+				<ul class="pager">
+					
+						<li class="previous">
+							<a href="/2017/02/09/tioj1092/" rel="prev">下一篇 - TIOJ 1092 跳格子遊戲</a>
+						</li>
+					
+					
+						<li class="next">
+							<a href="/2017/02/09/tioj1010/" rel="prev">上一篇 - TIOJ 1010 前綴後綴</a>
             </li>
-           
-          </ul>
-       </div>
-　　　　<!-- Comments -->
-    <div class="container">
-      
+					
+				</ul>
+			</div>
+			<!-- Comments -->
+			<div class="container">
+				
 <section id="comment">
-  <!-- <h1 class="title">留言</h1> -->
+  <!-- <h1 class="title">Comments</h1> -->
 
   
 </section>
 
 
-    </div>
-   
-　　　　
-  </div>
+			</div>
+		
+		　　　　
+	</div>
 </div>
 
 

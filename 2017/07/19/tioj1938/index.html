@@ -147,6 +147,29 @@
 					<div id="toc">
 						<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#題目敘述"><span class="toc-text">題目敘述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#題解"><span class="toc-text">題解</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#C"><span class="toc-text">C++</span></a></li></ol></li></ol></li></ol></li></ol>
 					</div>
+          <style>
+            .toc {
+              text-decoration: none;
+              font-family: "微软雅黑";
+              font-size: 15px;
+              line-height: 30px;
+              font-weight: 800;
+              box-sizing: content-box;
+              padding: 6px;
+              text-shadow: 0 0 1px rgba(0, 0, 0, 0.1);
+              color: #3a3a3a; 
+            }
+            .toc .toc-text {
+              color: #3a3a3a; 
+            }
+            .toc .toc-text:hover {
+              opacity: 1;
+              border-radius: 3px;
+              background: black;
+              color: white;
+              padding: 6px; 
+            }
+          </style>
 				
 				<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.css"><h3 id="題目敘述"><a href="#題目敘述" class="headerlink" title="題目敘述"></a>題目敘述</h3><blockquote><p>抓寶桌遊打算在市區開N 家連鎖店。可以開連鎖店的位置是M x M 的網格，每一家連鎖店必須開在不同的網格上，而且第二家連鎖店必須開在第一家的東北方，第三家連鎖店必須開在第二家的東北方，依此類推。東北方的定義爲X 座標和Y 座標都比較大。X 座標和Y 座標均介於0 到 M - 1。如果第 i 家 （i 介於0 到 N - 1）連鎖店開在 (x, y) 的位置則會有 ((ai + bx + cy) mod d) 的顧客。請寫一個程式決定N 家連鎖店的位置，使得所有連鎖店的顧客數總和為最大</p>
 </blockquote>
@@ -181,7 +204,7 @@
 			<div class="container">
 				
 <section id="comment">
-  <!-- <h1 class="title">留言</h1> -->
+  <!-- <h1 class="title">Comments</h1> -->
 
   
 </section>

@@ -147,6 +147,29 @@
 					<div id="toc">
 						<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Dijkstra’s-Algorithm"><span class="toc-text">Dijkstra’s Algorithm</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#分析"><span class="toc-text">分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#優化"><span class="toc-text">優化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二次優化"><span class="toc-text">二次優化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#三次優化"><span class="toc-text">三次優化</span></a></li></ol>
 					</div>
+          <style>
+            .toc {
+              text-decoration: none;
+              font-family: "微软雅黑";
+              font-size: 15px;
+              line-height: 30px;
+              font-weight: 800;
+              box-sizing: content-box;
+              padding: 6px;
+              text-shadow: 0 0 1px rgba(0, 0, 0, 0.1);
+              color: #3a3a3a; 
+            }
+            .toc .toc-text {
+              color: #3a3a3a; 
+            }
+            .toc .toc-text:hover {
+              opacity: 1;
+              border-radius: 3px;
+              background: black;
+              color: white;
+              padding: 6px; 
+            }
+          </style>
 				
 				<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.css"><h3 id="Dijkstra’s-Algorithm"><a href="#Dijkstra’s-Algorithm" class="headerlink" title="Dijkstra’s Algorithm"></a>Dijkstra’s Algorithm</h3><blockquote><p>接續上次Bellman-Ford沒講完的SSSP算法<br>今天來說說Dijkstra’s Algorithm<br><br>這個演算法實作簡單<br>是目前已知時間複雜度最小的SSSP算法<br>但是只適用於邊權全都大於等於<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.64444em;"></span><span class="strut bottom" style="height:0.64444em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathrm">0</span></span></span></span>的圖<br><br>那麼我們來思考一下Bellman-Ford Algorithm的缺點吧<br>可以注意到Bellman-Ford每次都要掃過全部的邊<br>可是有時候掃過這些邊一點用處都沒有<br>就算有被更新到，也不一定會是真正的最短距離<br>是不是做了很多多餘的事呢?<br><br>要怎麼樣才能避免做到無謂的事呢?<br><br>可以很輕易的想到<br>只對已經確定最短路徑的頂點做延伸<br>延伸完就不再用這個頂點<br>這兩個優化<br><br>如何確定一個頂點是否已經被確定了呢?<br>這時我們引入最短路徑樹的概念<br>一棵最短路徑樹上的點<br>必是一個已經被確定的點<br><br>最初只有起點在最短路徑樹上<br>接著找出一個不在樹上<br>離起點最近的一個點加入最短路徑樹<br>不停的重複這個動作<br>直到所有的點都被加入最短路徑樹<br><br>詳細的實作法如下<br>1.將所有的<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>d</mi><mo>[</mo><mi>i</mi><mo>]</mo></mrow><annotation encoding="application/x-tex">d[i]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base textstyle uncramped"><span class="mord mathit">d</span><span class="mopen">[</span><span class="mord mathit">i</span><span class="mclose">]</span></span></span></span>設為<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>I</mi><mi>N</mi><mi>F</mi></mrow><annotation encoding="application/x-tex">INF</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68333em;"></span><span class="strut bottom" style="height:0.68333em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.07847em;">I</span><span class="mord mathit" style="margin-right:0.10903em;">N</span><span class="mord mathit" style="margin-right:0.13889em;">F</span></span></span></span><br>2.將<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>d</mi><mo>[</mo><mi>s</mi><mo>]</mo></mrow><annotation encoding="application/x-tex">d[s]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base textstyle uncramped"><span class="mord mathit">d</span><span class="mopen">[</span><span class="mord mathit">s</span><span class="mclose">]</span></span></span></span>設為<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.64444em;"></span><span class="strut bottom" style="height:0.64444em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathrm">0</span></span></span></span><br>3.找到所有未訪問的點中<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>d</mi></mrow><annotation encoding="application/x-tex">d</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.69444em;"></span><span class="strut bottom" style="height:0.69444em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit">d</span></span></span></span>最小的點<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.43056em;"></span><span class="strut bottom" style="height:0.43056em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit">x</span></span></span></span><br>4.將<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.43056em;"></span><span class="strut bottom" style="height:0.43056em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit">x</span></span></span></span>設為已訪問<br>5.更新x所有聯外點<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>y</mi></mrow><annotation encoding="application/x-tex">y</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.43056em;"></span><span class="strut bottom" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.03588em;">y</span></span></span></span>的<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>d</mi></mrow><annotation encoding="application/x-tex">d</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.69444em;"></span><span class="strut bottom" style="height:0.69444em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit">d</span></span></span></span><br>6.回到3.直到找不到為止</p>
 </blockquote>
@@ -185,7 +208,7 @@
 			<div class="container">
 				
 <section id="comment">
-  <!-- <h1 class="title">留言</h1> -->
+  <!-- <h1 class="title">Comments</h1> -->
 
   
 </section>

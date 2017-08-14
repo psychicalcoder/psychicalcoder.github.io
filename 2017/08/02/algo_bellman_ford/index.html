@@ -147,6 +147,29 @@
 					<div id="toc">
 						<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#最短路徑"><span class="toc-text">最短路徑</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Bellman-Ford-Algorithm"><span class="toc-text">Bellman-Ford Algorithm</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#edge-struct版"><span class="toc-text">edge struct版</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#鄰接矩陣版"><span class="toc-text">鄰接矩陣版</span></a></li></ol></li></ol>
 					</div>
+          <style>
+            .toc {
+              text-decoration: none;
+              font-family: "微软雅黑";
+              font-size: 15px;
+              line-height: 30px;
+              font-weight: 800;
+              box-sizing: content-box;
+              padding: 6px;
+              text-shadow: 0 0 1px rgba(0, 0, 0, 0.1);
+              color: #3a3a3a; 
+            }
+            .toc .toc-text {
+              color: #3a3a3a; 
+            }
+            .toc .toc-text:hover {
+              opacity: 1;
+              border-radius: 3px;
+              background: black;
+              color: white;
+              padding: 6px; 
+            }
+          </style>
 				
 				<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.css"><h3 id="最短路徑"><a href="#最短路徑" class="headerlink" title="最短路徑"></a>最短路徑</h3><blockquote><p>什麼是最短路徑呢?<br>首先最短路徑要有起點(<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>S</mi></mrow><annotation encoding="application/x-tex">S</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68333em;"></span><span class="strut bottom" style="height:0.68333em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.05764em;">S</span></span></span></span>)跟終點(<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>T</mi></mrow><annotation encoding="application/x-tex">T</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68333em;"></span><span class="strut bottom" style="height:0.68333em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.13889em;">T</span></span></span></span>)<br>從<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>S</mi></mrow><annotation encoding="application/x-tex">S</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68333em;"></span><span class="strut bottom" style="height:0.68333em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.05764em;">S</span></span></span></span>走到<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>T</mi></mrow><annotation encoding="application/x-tex">T</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68333em;"></span><span class="strut bottom" style="height:0.68333em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.13889em;">T</span></span></span></span>經過的邊權總和最短的一條路徑就稱為”最短路徑”(Shortest Path)<br>而這個邊權和就是”最短距離”</p>
 <p>最短路徑有好多種演算法<br>今天我們來看看Bellman-Ford演算法</p>
@@ -183,7 +206,7 @@
 			<div class="container">
 				
 <section id="comment">
-  <!-- <h1 class="title">留言</h1> -->
+  <!-- <h1 class="title">Comments</h1> -->
 
   
 </section>

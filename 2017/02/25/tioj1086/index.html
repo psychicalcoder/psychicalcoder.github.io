@@ -149,6 +149,11 @@
 					</div>
           <style>
             .toc {
+              border-top-style:solid;
+              border-top-width:medium;
+              border-bottom-style:solid;
+              border-bottom-width:medium;
+              cursor: pointer;
               text-decoration: none;
               font-family: "微软雅黑";
               font-size: 15px;
@@ -169,6 +174,14 @@
               color: white;
               padding: 6px; 
             }
+            
+            @media screen and (min-width: 1140px) {
+              .toc {
+                position:fixed;
+                top:150px;
+                left:30px;
+              }
+            }
           </style>
 				
 				<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.css"><h3 id="題目敘述"><a href="#題目敘述" class="headerlink" title="題目敘述"></a>題目敘述</h3><blockquote><p>有天爸爸交代小明幫忙把寫好的信裝進信封裡，信與信封上的名字要配對。例如：給王大毛的信要裝到寫有王大毛的信封。這時頑皮的小明想到一個惡作劇，就是把所有人的信與信封都裝錯；也就是說沒有一個人會收到正確寄給自己的信。例如<br>A收到B的信，<br>B收到C的信，<br>C收到A的信。<br>請幫小明算算，到底有多少種裝法可以不讓任何人收到應該寄給自己的信。</p>
@@ -184,7 +197,7 @@
 		<!-- Pre or Next -->
 		
 			<div class="container" >
-				<ul class="pager">
+				<ul class="pager2">
 					
 						<li class="previous">
 							<a href="/2017/02/25/tioj1031/" rel="prev">下一篇 - TIOJ 1031 收集豆子</a>
@@ -196,6 +209,37 @@
             </li>
 					
 				</ul>
+        <style>
+        .pager2 {
+          padding: 1.5em 0;
+          display: table;
+          margin: 0 auto;
+        }
+        
+        .pager2 .next {
+          padding-top: 10px;
+        }
+        
+        .pager2 a:hover {
+          border-radius: 3px;
+          background: black;
+          color: white;
+          padding: 6px; 
+        }
+        
+        .pager2 a {
+          text-decoration: none;
+          font-family: "微软雅黑";
+          text-transform: uppercase;
+          font-size: 15px;
+          line-height: 30px;
+          font-weight: 800;
+          box-sizing: content-box;
+          padding: 6px;
+          letter-spacing: 1px;
+          text-shadow: 0 0 1px rgba(0, 0, 0, 0.1);
+        }
+        </style>
 			</div>
 			<!-- Comments -->
 			<div class="container">

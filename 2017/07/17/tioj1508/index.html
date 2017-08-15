@@ -149,6 +149,11 @@
 					</div>
           <style>
             .toc {
+              border-top-style:solid;
+              border-top-width:medium;
+              border-bottom-style:solid;
+              border-bottom-width:medium;
+              cursor: pointer;
               text-decoration: none;
               font-family: "微软雅黑";
               font-size: 15px;
@@ -169,6 +174,14 @@
               color: white;
               padding: 6px; 
             }
+            
+            @media screen and (min-width: 1140px) {
+              .toc {
+                position:fixed;
+                top:150px;
+                left:30px;
+              }
+            }
           </style>
 				
 				<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.css"><h3 id="題目敘述"><a href="#題目敘述" class="headerlink" title="題目敘述"></a>題目敘述</h3><blockquote><p>假設有 N個正整數A[1], A[2],…, A[N]，我們要在每一個數字之前加入+號或-號使得它們的總和為0。例如: 1, 2 及 3，我們可以得到<br>(-1)+(-2)+(+3)=0；但是對於2, 2 及 1 則無法透過加入+號或-號使得它們的總和為 0。</p>
@@ -187,7 +200,7 @@
 		<!-- Pre or Next -->
 		
 			<div class="container" >
-				<ul class="pager">
+				<ul class="pager2">
 					
 						<li class="previous">
 							<a href="/2017/07/17/tioj1506/" rel="prev">下一篇 - TIOJ 1506 二元一次聯立方程式</a>
@@ -199,6 +212,37 @@
             </li>
 					
 				</ul>
+        <style>
+        .pager2 {
+          padding: 1.5em 0;
+          display: table;
+          margin: 0 auto;
+        }
+        
+        .pager2 .next {
+          padding-top: 10px;
+        }
+        
+        .pager2 a:hover {
+          border-radius: 3px;
+          background: black;
+          color: white;
+          padding: 6px; 
+        }
+        
+        .pager2 a {
+          text-decoration: none;
+          font-family: "微软雅黑";
+          text-transform: uppercase;
+          font-size: 15px;
+          line-height: 30px;
+          font-weight: 800;
+          box-sizing: content-box;
+          padding: 6px;
+          letter-spacing: 1px;
+          text-shadow: 0 0 1px rgba(0, 0, 0, 0.1);
+        }
+        </style>
 			</div>
 			<!-- Comments -->
 			<div class="container">

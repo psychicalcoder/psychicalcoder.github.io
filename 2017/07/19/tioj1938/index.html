@@ -149,6 +149,11 @@
 					</div>
           <style>
             .toc {
+              border-top-style:solid;
+              border-top-width:medium;
+              border-bottom-style:solid;
+              border-bottom-width:medium;
+              cursor: pointer;
               text-decoration: none;
               font-family: "微软雅黑";
               font-size: 15px;
@@ -169,6 +174,14 @@
               color: white;
               padding: 6px; 
             }
+            
+            @media screen and (min-width: 1140px) {
+              .toc {
+                position:fixed;
+                top:150px;
+                left:30px;
+              }
+            }
           </style>
 				
 				<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.css"><h3 id="題目敘述"><a href="#題目敘述" class="headerlink" title="題目敘述"></a>題目敘述</h3><blockquote><p>抓寶桌遊打算在市區開N 家連鎖店。可以開連鎖店的位置是M x M 的網格，每一家連鎖店必須開在不同的網格上，而且第二家連鎖店必須開在第一家的東北方，第三家連鎖店必須開在第二家的東北方，依此類推。東北方的定義爲X 座標和Y 座標都比較大。X 座標和Y 座標均介於0 到 M - 1。如果第 i 家 （i 介於0 到 N - 1）連鎖店開在 (x, y) 的位置則會有 ((ai + bx + cy) mod d) 的顧客。請寫一個程式決定N 家連鎖店的位置，使得所有連鎖店的顧客數總和為最大</p>
@@ -187,7 +200,7 @@
 		<!-- Pre or Next -->
 		
 			<div class="container" >
-				<ul class="pager">
+				<ul class="pager2">
 					
 						<li class="previous">
 							<a href="/2017/07/21/tioj1143/" rel="prev">下一篇 - TIOJ 1143 4.靈犬尋寶</a>
@@ -199,6 +212,37 @@
             </li>
 					
 				</ul>
+        <style>
+        .pager2 {
+          padding: 1.5em 0;
+          display: table;
+          margin: 0 auto;
+        }
+        
+        .pager2 .next {
+          padding-top: 10px;
+        }
+        
+        .pager2 a:hover {
+          border-radius: 3px;
+          background: black;
+          color: white;
+          padding: 6px; 
+        }
+        
+        .pager2 a {
+          text-decoration: none;
+          font-family: "微软雅黑";
+          text-transform: uppercase;
+          font-size: 15px;
+          line-height: 30px;
+          font-weight: 800;
+          box-sizing: content-box;
+          padding: 6px;
+          letter-spacing: 1px;
+          text-shadow: 0 0 1px rgba(0, 0, 0, 0.1);
+        }
+        </style>
 			</div>
 			<!-- Comments -->
 			<div class="container">

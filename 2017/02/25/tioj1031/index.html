@@ -149,6 +149,11 @@
 					</div>
           <style>
             .toc {
+              border-top-style:solid;
+              border-top-width:medium;
+              border-bottom-style:solid;
+              border-bottom-width:medium;
+              cursor: pointer;
               text-decoration: none;
               font-family: "微软雅黑";
               font-size: 15px;
@@ -169,6 +174,14 @@
               color: white;
               padding: 6px; 
             }
+            
+            @media screen and (min-width: 1140px) {
+              .toc {
+                position:fixed;
+                top:150px;
+                left:30px;
+              }
+            }
           </style>
 				
 				<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.css"><h3 id="題目敘述"><a href="#題目敘述" class="headerlink" title="題目敘述"></a>題目敘述</h3><blockquote><p>桌面上有許多堆豆子和一個筒子。<br>現在進行一種遊戲：每次找一堆豆子，如果這堆豆子只有1個，就將它放入筒子，<br>如果多於一個，則將它分成盡量多而且相等的兩堆，並且把剩下的一個(如果有的話)丟掉。<br>重複進行許多次之後，所有的豆子要不是在筒子內就是被丟掉了。<br>現在，我們想要知道在遊戲中會有多少豆子被放入筒子。</p>
@@ -184,7 +197,7 @@
 		<!-- Pre or Next -->
 		
 			<div class="container" >
-				<ul class="pager">
+				<ul class="pager2">
 					
 						<li class="previous">
 							<a href="/2017/03/11/segmenttree/" rel="prev">下一篇 - 模板-線段樹</a>
@@ -196,6 +209,37 @@
             </li>
 					
 				</ul>
+        <style>
+        .pager2 {
+          padding: 1.5em 0;
+          display: table;
+          margin: 0 auto;
+        }
+        
+        .pager2 .next {
+          padding-top: 10px;
+        }
+        
+        .pager2 a:hover {
+          border-radius: 3px;
+          background: black;
+          color: white;
+          padding: 6px; 
+        }
+        
+        .pager2 a {
+          text-decoration: none;
+          font-family: "微软雅黑";
+          text-transform: uppercase;
+          font-size: 15px;
+          line-height: 30px;
+          font-weight: 800;
+          box-sizing: content-box;
+          padding: 6px;
+          letter-spacing: 1px;
+          text-shadow: 0 0 1px rgba(0, 0, 0, 0.1);
+        }
+        </style>
 			</div>
 			<!-- Comments -->
 			<div class="container">

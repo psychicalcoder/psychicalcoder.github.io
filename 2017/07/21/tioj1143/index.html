@@ -149,6 +149,11 @@
 					</div>
           <style>
             .toc {
+              border-top-style:solid;
+              border-top-width:medium;
+              border-bottom-style:solid;
+              border-bottom-width:medium;
+              cursor: pointer;
               text-decoration: none;
               font-family: "微软雅黑";
               font-size: 15px;
@@ -169,6 +174,14 @@
               color: white;
               padding: 6px; 
             }
+            
+            @media screen and (min-width: 1140px) {
+              .toc {
+                position:fixed;
+                top:150px;
+                left:30px;
+              }
+            }
           </style>
 				
 				<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.css"><h3 id="題目敘述"><a href="#題目敘述" class="headerlink" title="題目敘述"></a>題目敘述</h3><blockquote><p>正方形(左下角座標為(0,0)，右上角座標為(99,99))的格網上，有一隻靈犬要尋找一個寶物，格網上除了靈犬與寶物之外，還有一些障礙物。一般情況下，只要不超出格網的邊界，靈犬的每一步最多有8個方向可供選擇，如圖一；但是必須注意，只有在A點沒有障礙物時才可以選擇方向1或方向2，只有在B點沒有障礙物時才可以選擇方向3或方向4，只有在C點沒有障礙物時才可以選擇方向5或方向6，只有在D點沒有障礙物時才可以選擇方向7或方向8。如果靈犬可以從出發的位置走到寶物的位置，其總共使用的步數，理論上應有一個最小值；但是靈犬也有可能無法走到寶物的位置。過程中，靈犬不可以走到障礙物的位置上。</p>
@@ -187,7 +200,7 @@
 		<!-- Pre or Next -->
 		
 			<div class="container" >
-				<ul class="pager">
+				<ul class="pager2">
 					
 						<li class="previous">
 							<a href="/2017/08/01/algo_preface/" rel="prev">下一篇 - 演算法週記 序</a>
@@ -199,6 +212,37 @@
             </li>
 					
 				</ul>
+        <style>
+        .pager2 {
+          padding: 1.5em 0;
+          display: table;
+          margin: 0 auto;
+        }
+        
+        .pager2 .next {
+          padding-top: 10px;
+        }
+        
+        .pager2 a:hover {
+          border-radius: 3px;
+          background: black;
+          color: white;
+          padding: 6px; 
+        }
+        
+        .pager2 a {
+          text-decoration: none;
+          font-family: "微软雅黑";
+          text-transform: uppercase;
+          font-size: 15px;
+          line-height: 30px;
+          font-weight: 800;
+          box-sizing: content-box;
+          padding: 6px;
+          letter-spacing: 1px;
+          text-shadow: 0 0 1px rgba(0, 0, 0, 0.1);
+        }
+        </style>
 			</div>
 			<!-- Comments -->
 			<div class="container">

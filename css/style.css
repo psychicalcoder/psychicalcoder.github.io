@@ -869,12 +869,10 @@ Content
     margin: 0 5px;
     font-style: italic; }
 
-/* line 525, C:/Users/admin/Desktop/GithubPages/blog/themes/hexo-theme-believe/source/css/_believe.scss */
+/* line 526, C:/Users/admin/Desktop/GithubPages/blog/themes/hexo-theme-believe/source/css/_believe.scss */
 .pager {
-  padding: 1.5em 0;
-  display: table;
-  margin: 0 auto; }
-  /* line 529, C:/Users/admin/Desktop/GithubPages/blog/themes/hexo-theme-believe/source/css/_believe.scss */
+  padding: 1.5em 0; }
+  /* line 528, C:/Users/admin/Desktop/GithubPages/blog/themes/hexo-theme-believe/source/css/_believe.scss */
   .pager:after {
     visibility: hidden;
     display: block;
@@ -882,31 +880,30 @@ Content
     content: " ";
     clear: both;
     height: 0; }
-  /* line 538, C:/Users/admin/Desktop/GithubPages/blog/themes/hexo-theme-believe/source/css/_believe.scss */
+  /* line 537, C:/Users/admin/Desktop/GithubPages/blog/themes/hexo-theme-believe/source/css/_believe.scss */
   .pager:hover .meta-arraw {
     opacity: 0.8; }
-  /* line 542, C:/Users/admin/Desktop/GithubPages/blog/themes/hexo-theme-believe/source/css/_believe.scss */
+  /* line 541, C:/Users/admin/Desktop/GithubPages/blog/themes/hexo-theme-believe/source/css/_believe.scss */
   .pager .previous {
     float: right;
     margin-right: 20%; }
-  /* line 546, C:/Users/admin/Desktop/GithubPages/blog/themes/hexo-theme-believe/source/css/_believe.scss */
+  /* line 545, C:/Users/admin/Desktop/GithubPages/blog/themes/hexo-theme-believe/source/css/_believe.scss */
   .pager .next {
     float: left;
-    margin-left: 20%;
-    padding-top: 10px; }
-  /* line 551, C:/Users/admin/Desktop/GithubPages/blog/themes/hexo-theme-believe/source/css/_believe.scss */
+    margin-left: 20%; }
+  /* line 549, C:/Users/admin/Desktop/GithubPages/blog/themes/hexo-theme-believe/source/css/_believe.scss */
   .pager a {
     text-decoration: none;
     font-family: "微软雅黑";
     text-transform: uppercase;
     font-size: 15px;
-    line-height: 30px;
+    line-height: 20px;
     font-weight: 800;
     box-sizing: content-box;
     padding: 6px;
     letter-spacing: 1px;
     text-shadow: 0 0 1px rgba(0, 0, 0, 0.1); }
-    /* line 562, C:/Users/admin/Desktop/GithubPages/blog/themes/hexo-theme-believe/source/css/_believe.scss */
+    /* line 560, C:/Users/admin/Desktop/GithubPages/blog/themes/hexo-theme-believe/source/css/_believe.scss */
     .pager a:hover {
       opacity: 1;
       border-radius: 3px;
@@ -914,7 +911,7 @@ Content
       color: white;
       padding: 6px; }
 
-/* line 573, C:/Users/admin/Desktop/GithubPages/blog/themes/hexo-theme-believe/source/css/_believe.scss */
+/* line 571, C:/Users/admin/Desktop/GithubPages/blog/themes/hexo-theme-believe/source/css/_believe.scss */
 .meta-arraw {
   width: 10px;
   height: 17px;
@@ -925,25 +922,25 @@ Content
   opacity: 0.3;
   transition: opacity 0.5s ease; }
 
-/* line 583, C:/Users/admin/Desktop/GithubPages/blog/themes/hexo-theme-believe/source/css/_believe.scss */
+/* line 581, C:/Users/admin/Desktop/GithubPages/blog/themes/hexo-theme-believe/source/css/_believe.scss */
 .meta-arraw-left {
   background: url("../images/arrow-left.svg") no-repeat; }
 
-/* line 586, C:/Users/admin/Desktop/GithubPages/blog/themes/hexo-theme-believe/source/css/_believe.scss */
+/* line 584, C:/Users/admin/Desktop/GithubPages/blog/themes/hexo-theme-believe/source/css/_believe.scss */
 .meta-arraw-right {
   background: url("../images/arrow-right.svg") no-repeat; }
 
 /*--------------------------------------------------------------
 Comment
 --------------------------------------------------------------*/
-/* line 592, C:/Users/admin/Desktop/GithubPages/blog/themes/hexo-theme-believe/source/css/_believe.scss */
+/* line 590, C:/Users/admin/Desktop/GithubPages/blog/themes/hexo-theme-believe/source/css/_believe.scss */
 #comment {
   margin-top: 70px; }
 
 /*--------------------------------------------------------------
 Footer
 --------------------------------------------------------------*/
-/* line 599, C:/Users/admin/Desktop/GithubPages/blog/themes/hexo-theme-believe/source/css/_believe.scss */
+/* line 597, C:/Users/admin/Desktop/GithubPages/blog/themes/hexo-theme-believe/source/css/_believe.scss */
 .footer-widgets {
   font-size: 0.750em;
   z-index: 2;
@@ -953,13 +950,13 @@ Footer
   padding-bottom: 40px;
   text-align: center; }
 
-/* line 608, C:/Users/admin/Desktop/GithubPages/blog/themes/hexo-theme-believe/source/css/_believe.scss */
+/* line 606, C:/Users/admin/Desktop/GithubPages/blog/themes/hexo-theme-believe/source/css/_believe.scss */
 .header-content {
   width: 100%;
   height: 100%;
   z-index: 2; }
 
-/* line 613, C:/Users/admin/Desktop/GithubPages/blog/themes/hexo-theme-believe/source/css/_believe.scss */
+/* line 611, C:/Users/admin/Desktop/GithubPages/blog/themes/hexo-theme-believe/source/css/_believe.scss */
 .header-info-link {
   transform: translate(-50%, -50%);
   position: absolute;
@@ -968,28 +965,28 @@ Footer
   left: 50%;
   top: 50%; }
 
-/* line 621, C:/Users/admin/Desktop/GithubPages/blog/themes/hexo-theme-believe/source/css/_believe.scss */
+/* line 619, C:/Users/admin/Desktop/GithubPages/blog/themes/hexo-theme-believe/source/css/_believe.scss */
 .icon {
   float: left;
   overflow: hidden;
   display: block;
   width: 15%;
   margin: 5%; }
-  /* line 627, C:/Users/admin/Desktop/GithubPages/blog/themes/hexo-theme-believe/source/css/_believe.scss */
+  /* line 625, C:/Users/admin/Desktop/GithubPages/blog/themes/hexo-theme-believe/source/css/_believe.scss */
   .icon:hover {
     color: grey; }
 
-/* line 632, C:/Users/admin/Desktop/GithubPages/blog/themes/hexo-theme-believe/source/css/_believe.scss */
+/* line 630, C:/Users/admin/Desktop/GithubPages/blog/themes/hexo-theme-believe/source/css/_believe.scss */
 .site-info {
   text-align: center;
   font-size: 0.750em;
   padding-bottom: 20px;
   padding-top: 20px;
   color: #a2a2a2; }
-  /* line 638, C:/Users/admin/Desktop/GithubPages/blog/themes/hexo-theme-believe/source/css/_believe.scss */
+  /* line 636, C:/Users/admin/Desktop/GithubPages/blog/themes/hexo-theme-believe/source/css/_believe.scss */
   .site-info .split {
     margin: 0 2px; }
-  /* line 641, C:/Users/admin/Desktop/GithubPages/blog/themes/hexo-theme-believe/source/css/_believe.scss */
+  /* line 639, C:/Users/admin/Desktop/GithubPages/blog/themes/hexo-theme-believe/source/css/_believe.scss */
   .site-info a {
     text-decoration: none;
     color: #666666; }

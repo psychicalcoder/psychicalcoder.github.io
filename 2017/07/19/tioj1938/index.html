@@ -127,26 +127,26 @@
 
   <!-- Main Content -->
   <div class="content-area">
-	<div class="post">
-		<!-- Post Content -->
-		<div class="container">
-			<article>
-			<!-- Title date & tags -->
-			<div class="post-header">
-				<h1 class="entry-title">
-					TIOJ 1938 連鎖店 (Chains)
-					
-				</h1>
-			</div>
-			<p class="a-posted-on">
-				2017-07-19
-			</p>
-			<!-- Post Main Content -->
-			<div class="entry-content">
-				
-					<div id="toc">
-						<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#題目敘述"><span class="toc-text">題目敘述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#題解"><span class="toc-text">題解</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#C"><span class="toc-text">C++</span></a></li></ol></li></ol></li></ol></li></ol>
-					</div>
+  <div class="post">
+    <!-- Post Content -->
+    <div class="container">
+      <article>
+      <!-- Title date & tags -->
+      <div class="post-header">
+        <h1 class="entry-title">
+          TIOJ 1938 連鎖店 (Chains)
+          
+        </h1>
+      </div>
+      <p class="a-posted-on">
+        2017-07-19
+      </p>
+      <!-- Post Main Content -->
+      <div class="entry-content">
+        
+          <div id="toc">
+            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#題目敘述"><span class="toc-text">題目敘述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#題解"><span class="toc-text">題解</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#C"><span class="toc-text">C++</span></a></li></ol></li></ol></li></ol></li></ol>
+          </div>
           <style>
             .toc {
               border-top-style:solid;
@@ -183,8 +183,8 @@
               }
             }
           </style>
-				
-				<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.css"><h3 id="題目敘述"><a href="#題目敘述" class="headerlink" title="題目敘述"></a>題目敘述</h3><blockquote><p>抓寶桌遊打算在市區開N 家連鎖店。可以開連鎖店的位置是M x M 的網格，每一家連鎖店必須開在不同的網格上，而且第二家連鎖店必須開在第一家的東北方，第三家連鎖店必須開在第二家的東北方，依此類推。東北方的定義爲X 座標和Y 座標都比較大。X 座標和Y 座標均介於0 到 M - 1。如果第 i 家 （i 介於0 到 N - 1）連鎖店開在 (x, y) 的位置則會有 ((ai + bx + cy) mod d) 的顧客。請寫一個程式決定N 家連鎖店的位置，使得所有連鎖店的顧客數總和為最大</p>
+        
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.css"><h3 id="題目敘述"><a href="#題目敘述" class="headerlink" title="題目敘述"></a>題目敘述</h3><blockquote><p>抓寶桌遊打算在市區開N 家連鎖店。可以開連鎖店的位置是M x M 的網格，每一家連鎖店必須開在不同的網格上，而且第二家連鎖店必須開在第一家的東北方，第三家連鎖店必須開在第二家的東北方，依此類推。東北方的定義爲X 座標和Y 座標都比較大。X 座標和Y 座標均介於0 到 M - 1。如果第 i 家 （i 介於0 到 N - 1）連鎖店開在 (x, y) 的位置則會有 ((ai + bx + cy) mod d) 的顧客。請寫一個程式決定N 家連鎖店的位置，使得所有連鎖店的顧客數總和為最大</p>
 </blockquote>
 <a id="more"></a>
 <h3 id="題解"><a href="#題解" class="headerlink" title="題解"></a>題解</h3><blockquote><p>絕對的水題DP<br>把xy變成row, column就能變成一個表格<br>東北方就是右下方<br><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>d</mi><mi>p</mi><mo>[</mo><mi>r</mi><mo>]</mo><mo>[</mo><mi>c</mi><mo>]</mo><mo>[</mo><mi>i</mi><mo>]</mo></mrow><annotation encoding="application/x-tex">dp[r][c][i]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base textstyle uncramped"><span class="mord mathit">d</span><span class="mord mathit">p</span><span class="mopen">[</span><span class="mord mathit" style="margin-right:0.02778em;">r</span><span class="mclose">]</span><span class="mopen">[</span><span class="mord mathit">c</span><span class="mclose">]</span><span class="mopen">[</span><span class="mord mathit">i</span><span class="mclose">]</span></span></span></span>整個左上方區塊，已經決定好<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.65952em;"></span><span class="strut bottom" style="height:0.65952em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit">i</span></span></span></span>家店的位置的最大顧客數<br>瞬間就能得到<br><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>d</mi><mi>p</mi><mo>[</mo><mi>r</mi><mo>]</mo><mo>[</mo><mi>c</mi><mo>]</mo><mo>[</mo><mi>i</mi><mo>]</mo><mo>=</mo><mi>m</mi><mi>a</mi><mi>x</mi><mo>{</mo><mi>d</mi><mi>p</mi><mo>[</mo><mi>r</mi><mo>−</mo><mn>1</mn><mo>]</mo><mo>[</mo><mi>c</mi><mo>−</mo><mn>1</mn><mo>]</mo><mo>[</mo><mi>i</mi><mo>−</mo><mn>1</mn><mo>]</mo><mo>+</mo><mi>f</mi><mo>(</mo><mi>r</mi><mo separator="true">,</mo><mi>c</mi><mo separator="true">,</mo><mi>i</mi><mo>)</mo><mo separator="true">,</mo><mi>d</mi><mi>p</mi><mo>[</mo><mi>r</mi><mo>−</mo><mn>1</mn><mo>]</mo><mo>[</mo><mi>c</mi><mo>]</mo><mo>[</mo><mi>i</mi><mo>]</mo><mo separator="true">,</mo><mi>d</mi><mi>p</mi><mo>[</mo><mi>r</mi><mo>]</mo><mo>[</mo><mi>c</mi><mo>−</mo><mn>1</mn><mo>]</mo><mo>[</mo><mi>i</mi><mo>]</mo><mo>}</mo></mrow><annotation encoding="application/x-tex">dp[r][c][i] = max{dp[r-1][c-1][i-1]+f(r,c,i), dp[r-1][c][i], dp[r][c-1][i]}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base textstyle uncramped"><span class="mord mathit">d</span><span class="mord mathit">p</span><span class="mopen">[</span><span class="mord mathit" style="margin-right:0.02778em;">r</span><span class="mclose">]</span><span class="mopen">[</span><span class="mord mathit">c</span><span class="mclose">]</span><span class="mopen">[</span><span class="mord mathit">i</span><span class="mclose">]</span><span class="mrel">=</span><span class="mord mathit">m</span><span class="mord mathit">a</span><span class="mord mathit">x</span><span class="mopen">{</span><span class="mord mathit">d</span><span class="mord mathit">p</span><span class="mopen">[</span><span class="mord mathit" style="margin-right:0.02778em;">r</span><span class="mbin">−</span><span class="mord mathrm">1</span><span class="mclose">]</span><span class="mopen">[</span><span class="mord mathit">c</span><span class="mbin">−</span><span class="mord mathrm">1</span><span class="mclose">]</span><span class="mopen">[</span><span class="mord mathit">i</span><span class="mbin">−</span><span class="mord mathrm">1</span><span class="mclose">]</span><span class="mbin">+</span><span class="mord mathit" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathit" style="margin-right:0.02778em;">r</span><span class="mpunct">,</span><span class="mord mathit">c</span><span class="mpunct">,</span><span class="mord mathit">i</span><span class="mclose">)</span><span class="mpunct">,</span><span class="mord mathit">d</span><span class="mord mathit">p</span><span class="mopen">[</span><span class="mord mathit" style="margin-right:0.02778em;">r</span><span class="mbin">−</span><span class="mord mathrm">1</span><span class="mclose">]</span><span class="mopen">[</span><span class="mord mathit">c</span><span class="mclose">]</span><span class="mopen">[</span><span class="mord mathit">i</span><span class="mclose">]</span><span class="mpunct">,</span><span class="mord mathit">d</span><span class="mord mathit">p</span><span class="mopen">[</span><span class="mord mathit" style="margin-right:0.02778em;">r</span><span class="mclose">]</span><span class="mopen">[</span><span class="mord mathit">c</span><span class="mbin">−</span><span class="mord mathrm">1</span><span class="mclose">]</span><span class="mopen">[</span><span class="mord mathit">i</span><span class="mclose">]</span><span class="mclose">}</span></span></span></span><br>這樣一個狀態轉移方程式</p>
@@ -193,25 +193,25 @@
 <h6 id="C"><a href="#C" class="headerlink" title="C++"></a>C++</h6><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> LL;</div><div class="line"></div><div class="line"><span class="keyword">const</span> LL inf = (LL)<span class="number">9.22e18</span>;</div><div class="line"></div><div class="line"><span class="keyword">int</span> m, n, a, b, c, d;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">calc</span><span class="params">(<span class="keyword">int</span> i, <span class="keyword">int</span> x, <span class="keyword">int</span> y)</span> </span>&#123;</div><div class="line">    <span class="keyword">return</span> (a*i+b*x+c*y)%d;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">int</span> dp[<span class="number">205</span>][<span class="number">205</span>][<span class="number">105</span>];</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</div><div class="line">    <span class="keyword">while</span>(<span class="built_in">scanf</span>(<span class="string">"%d%d%d%d%d%d"</span>, &amp;m, &amp;n, &amp;a, &amp;b, &amp;c, &amp;d) == <span class="number">6</span>) &#123;</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> r = <span class="number">1</span>; r &lt;= m; r++) &#123;</div><div class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> c = <span class="number">1</span>; c &lt;= m; c++) &#123;</div><div class="line">                <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= min(r,n); i++) &#123;</div><div class="line">                    dp[r][c][i] = dp[r<span class="number">-1</span>][c<span class="number">-1</span>][i<span class="number">-1</span>]+calc(i<span class="number">-1</span>, r<span class="number">-1</span>, c<span class="number">-1</span>);</div><div class="line">                    dp[r][c][i] = max(&#123;dp[r][c][i], dp[r<span class="number">-1</span>][c][i], dp[r][c<span class="number">-1</span>][i]&#125;);</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="built_in">printf</span>(<span class="string">"%d\n"</span>,dp[m][m][n]);       </div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>Code超短阿ˊ`</p>
 
-				
-			</div>
-			</article>
-		</div>
-		<!-- Pre or Next -->
-		
-			<div class="container" >
-				<ul class="pager2">
-					
-						<li class="previous">
-							<a href="/2017/07/21/tioj1143/" rel="prev">下一篇 - TIOJ 1143 4.靈犬尋寶</a>
-						</li>
-					
-					
-						<li class="next">
-							<a href="/2017/07/18/tioj1939/" rel="prev">上一篇 - TIOJ 1939 網路建設 (Fibers)</a>
+        
+      </div>
+      </article>
+    </div>
+    <!-- Pre or Next -->
+    
+      <div class="container" >
+        <ul class="pager2">
+          
+            <li class="previous">
+              <a href="/2017/07/21/tioj1143/" rel="prev">下一篇 - TIOJ 1143 4.靈犬尋寶</a>
             </li>
-					
-				</ul>
+          
+          
+            <li class="next">
+              <a href="/2017/07/18/tioj1939/" rel="prev">上一篇 - TIOJ 1939 網路建設 (Fibers)</a>
+            </li>
+          
+        </ul>
         <style>
         .pager2 {
           padding: 1.5em 0;
@@ -243,21 +243,21 @@
           text-shadow: 0 0 1px rgba(0, 0, 0, 0.1);
         }
         </style>
-			</div>
-			<!-- Comments -->
-			<div class="container">
-				
+      </div>
+      <!-- Comments -->
+      <div class="container">
+        
 <section id="comment">
-  <!-- <h1 class="title">Comments</h1> -->
+  <!-- <h1 class="title">留言</h1> -->
 
   
 </section>
 
 
-			</div>
-		
-		　　　　
-	</div>
+      </div>
+    
+    　　　　
+  </div>
 </div>
 
 

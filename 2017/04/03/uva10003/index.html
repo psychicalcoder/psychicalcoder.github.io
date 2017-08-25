@@ -127,26 +127,26 @@
 
   <!-- Main Content -->
   <div class="content-area">
-	<div class="post">
-		<!-- Post Content -->
-		<div class="container">
-			<article>
-			<!-- Title date & tags -->
-			<div class="post-header">
-				<h1 class="entry-title">
-					UVa 10003 Cutting Sticks
-					
-				</h1>
-			</div>
-			<p class="a-posted-on">
-				2017-04-03
-			</p>
-			<!-- Post Main Content -->
-			<div class="entry-content">
-				
-					<div id="toc">
-						<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#題目敘述"><span class="toc-text">題目敘述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#題解"><span class="toc-text">題解</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#C"><span class="toc-text">C++</span></a></li></ol></li></ol></li></ol></li></ol>
-					</div>
+  <div class="post">
+    <!-- Post Content -->
+    <div class="container">
+      <article>
+      <!-- Title date & tags -->
+      <div class="post-header">
+        <h1 class="entry-title">
+          UVa 10003 Cutting Sticks
+          
+        </h1>
+      </div>
+      <p class="a-posted-on">
+        2017-04-03
+      </p>
+      <!-- Post Main Content -->
+      <div class="entry-content">
+        
+          <div id="toc">
+            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#題目敘述"><span class="toc-text">題目敘述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#題解"><span class="toc-text">題解</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#C"><span class="toc-text">C++</span></a></li></ol></li></ol></li></ol></li></ol>
+          </div>
           <style>
             .toc {
               border-top-style:solid;
@@ -183,8 +183,8 @@
               }
             }
           </style>
-				
-				<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.css"><h3 id="題目敘述"><a href="#題目敘述" class="headerlink" title="題目敘述"></a>題目敘述</h3><blockquote><p>有一根長度為L的棍子，還有n個切割點的位置，切割的費用為被切割的木棍長，求最小總切割費用。</p>
+        
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.css"><h3 id="題目敘述"><a href="#題目敘述" class="headerlink" title="題目敘述"></a>題目敘述</h3><blockquote><p>有一根長度為L的棍子，還有n個切割點的位置，切割的費用為被切割的木棍長，求最小總切割費用。</p>
 </blockquote>
 <a id="more"></a>
 <h3 id="題解"><a href="#題解" class="headerlink" title="題解"></a>題解</h3><blockquote><p>這是入門經典上的一個很簡單的例題<br>就不多說了<br><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>d</mi><mi>p</mi><mo>(</mo><mi>x</mi><mo separator="true">,</mo><mi>y</mi><mo>)</mo><mo>=</mo><mi>m</mi><mi>i</mi><mi>n</mi><mo>{</mo><mi>d</mi><mi>p</mi><mo>(</mo><mi>x</mi><mo separator="true">,</mo><mi>i</mi><mo>)</mo><mo>+</mo><mi>d</mi><mi>p</mi><mo>(</mo><mi>i</mi><mo separator="true">,</mo><mi>y</mi><mo>)</mo><mi mathvariant="normal">∣</mi><mi>x</mi><mo>&lt;</mo><mi>i</mi><mo>&lt;</mo><mi>y</mi><mo>}</mo><mo>+</mo><msub><mi>a</mi><mi>y</mi></msub><mo>−</mo><msub><mi>a</mi><mi>x</mi></msub></mrow><annotation encoding="application/x-tex">dp(x,y) = min{dp(x,i)+dp(i,y)|x&lt;i&lt;y }+a_y-a_x </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1.036108em;vertical-align:-0.286108em;"></span><span class="base textstyle uncramped"><span class="mord mathit">d</span><span class="mord mathit">p</span><span class="mopen">(</span><span class="mord mathit">x</span><span class="mpunct">,</span><span class="mord mathit" style="margin-right:0.03588em;">y</span><span class="mclose">)</span><span class="mrel">=</span><span class="mord mathit">m</span><span class="mord mathit">i</span><span class="mord mathit">n</span><span class="mopen">{</span><span class="mord mathit">d</span><span class="mord mathit">p</span><span class="mopen">(</span><span class="mord mathit">x</span><span class="mpunct">,</span><span class="mord mathit">i</span><span class="mclose">)</span><span class="mbin">+</span><span class="mord mathit">d</span><span class="mord mathit">p</span><span class="mopen">(</span><span class="mord mathit">i</span><span class="mpunct">,</span><span class="mord mathit" style="margin-right:0.03588em;">y</span><span class="mclose">)</span><span class="mord mathrm">∣</span><span class="mord mathit">x</span><span class="mrel">&lt;</span><span class="mord mathit">i</span><span class="mrel">&lt;</span><span class="mord mathit" style="margin-right:0.03588em;">y</span><span class="mclose">}</span><span class="mbin">+</span><span class="mord"><span class="mord mathit">a</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord mathit" style="margin-right:0.03588em;">y</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span><span class="mbin">−</span><span class="mord"><span class="mord mathit">a</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord mathit">x</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span></span></span><br>使用記憶化搜尋<br>當棍子無法在被切割時，費用為0<br>時間複雜度<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><msup><mi>n</mi><mn>3</mn></msup><mo>)</mo></mrow><annotation encoding="application/x-tex">O(n^3)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.8141079999999999em;"></span><span class="strut bottom" style="height:1.064108em;vertical-align:-0.25em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord"><span class="mord mathit">n</span><span class="vlist"><span style="top:-0.363em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle uncramped"><span class="mord mathrm">3</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span><span class="mclose">)</span></span></span></span><br>可以用四邊形優化到<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><msup><mi>n</mi><mn>2</mn></msup><mo>)</mo></mrow><annotation encoding="application/x-tex">O(n^2)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.8141079999999999em;"></span><span class="strut bottom" style="height:1.064108em;vertical-align:-0.25em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord"><span class="mord mathit">n</span><span class="vlist"><span style="top:-0.363em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle uncramped"><span class="mord mathrm">2</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span><span class="mclose">)</span></span></span></span>不過這邊不需要用到囉XD</p>
@@ -192,25 +192,25 @@
 <h6 id="C"><a href="#C" class="headerlink" title="C++"></a>C++</h6><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> LL;</div><div class="line"></div><div class="line"><span class="keyword">const</span> <span class="keyword">int</span> INF = <span class="number">100000000</span>;</div><div class="line"><span class="keyword">int</span> L, n;</div><div class="line"><span class="keyword">int</span> a[<span class="number">55</span>], d[<span class="number">55</span>][<span class="number">55</span>];</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">dp</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span> </span>&#123;</div><div class="line">    <span class="keyword">if</span>(d[x][y] &gt; <span class="number">-1</span>) <span class="keyword">return</span> d[x][y];</div><div class="line">    <span class="keyword">if</span>(x+<span class="number">1</span> == y) <span class="keyword">return</span> d[x][y] = <span class="number">0</span>;</div><div class="line">    <span class="keyword">int</span> ans = INF;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = x+<span class="number">1</span>; i &lt; y; i++) &#123;</div><div class="line">        ans = min(ans, dp(x,i)+dp(i,y));</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> d[x][y] = ans + a[y] - a[x];</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</div><div class="line">    <span class="keyword">while</span>(<span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;L)==<span class="number">1</span> &amp;&amp; L) &#123;</div><div class="line">        <span class="built_in">memset</span>(d,<span class="number">-1</span>,<span class="keyword">sizeof</span>(d));</div><div class="line">        <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;n);</div><div class="line">        a[<span class="number">0</span>] = <span class="number">0</span>;a[n+<span class="number">1</span>] = L;</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) <span class="built_in">scanf</span>(<span class="string">"%d"</span>, a+i);</div><div class="line">        <span class="built_in">printf</span>(<span class="string">"The minimum cutting is %d.\n"</span>, dp(<span class="number">0</span>,n+<span class="number">1</span>));</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>其實好像差不多都是抄書</p>
 
-				
-			</div>
-			</article>
-		</div>
-		<!-- Pre or Next -->
-		
-			<div class="container" >
-				<ul class="pager2">
-					
-						<li class="previous">
-							<a href="/2017/07/17/tioj1981/" rel="prev">下一篇 - TIOJ 1981 部落格（Blog）</a>
-						</li>
-					
-					
-						<li class="next">
-							<a href="/2017/03/31/uva10891/" rel="prev">上一篇 - UVa 10891 Game of Sum</a>
+        
+      </div>
+      </article>
+    </div>
+    <!-- Pre or Next -->
+    
+      <div class="container" >
+        <ul class="pager2">
+          
+            <li class="previous">
+              <a href="/2017/07/17/tioj1981/" rel="prev">下一篇 - TIOJ 1981 部落格（Blog）</a>
             </li>
-					
-				</ul>
+          
+          
+            <li class="next">
+              <a href="/2017/03/31/uva10891/" rel="prev">上一篇 - UVa 10891 Game of Sum</a>
+            </li>
+          
+        </ul>
         <style>
         .pager2 {
           padding: 1.5em 0;
@@ -242,21 +242,21 @@
           text-shadow: 0 0 1px rgba(0, 0, 0, 0.1);
         }
         </style>
-			</div>
-			<!-- Comments -->
-			<div class="container">
-				
+      </div>
+      <!-- Comments -->
+      <div class="container">
+        
 <section id="comment">
-  <!-- <h1 class="title">Comments</h1> -->
+  <!-- <h1 class="title">留言</h1> -->
 
   
 </section>
 
 
-			</div>
-		
-		　　　　
-	</div>
+      </div>
+    
+    　　　　
+  </div>
 </div>
 
 

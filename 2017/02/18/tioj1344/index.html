@@ -127,26 +127,26 @@
 
   <!-- Main Content -->
   <div class="content-area">
-	<div class="post">
-		<!-- Post Content -->
-		<div class="container">
-			<article>
-			<!-- Title date & tags -->
-			<div class="post-header">
-				<h1 class="entry-title">
-					TIOJ 1344 [IOI 2007, Day 2] Miners
-					
-				</h1>
-			</div>
-			<p class="a-posted-on">
-				2017-02-18
-			</p>
-			<!-- Post Main Content -->
-			<div class="entry-content">
-				
-					<div id="toc">
-						<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#題目敘述"><span class="toc-text">題目敘述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#題解"><span class="toc-text">題解</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#C"><span class="toc-text">C++</span></a></li></ol></li></ol></li></ol></li></ol>
-					</div>
+  <div class="post">
+    <!-- Post Content -->
+    <div class="container">
+      <article>
+      <!-- Title date & tags -->
+      <div class="post-header">
+        <h1 class="entry-title">
+          TIOJ 1344 [IOI 2007, Day 2] Miners
+          
+        </h1>
+      </div>
+      <p class="a-posted-on">
+        2017-02-18
+      </p>
+      <!-- Post Main Content -->
+      <div class="entry-content">
+        
+          <div id="toc">
+            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#題目敘述"><span class="toc-text">題目敘述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#題解"><span class="toc-text">題解</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#C"><span class="toc-text">C++</span></a></li></ol></li></ol></li></ol></li></ol>
+          </div>
           <style>
             .toc {
               border-top-style:solid;
@@ -183,8 +183,8 @@
               }
             }
           </style>
-				
-				<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.css"><h3 id="題目敘述"><a href="#題目敘述" class="headerlink" title="題目敘述"></a>題目敘述</h3><blockquote><p>有兩個煤礦區各有一群礦工在礦區採礦。因為採礦是很辛苦的工作，這些礦工需要食物讓他們保持體力。<br>每次一個裝載的食物到達礦區後，此礦區的礦工即可生產相同數量的煤礦。<br>每次裝載的食物可以是肉類裝載、魚類裝載、或麵包裝載其中的一種。<br>因為礦工喜歡多樣化的餐點，若能享用越多樣化的餐點，礦工的產能就越大。明確地說，礦工會考量運送到其礦區的最新裝載食物<br>和前兩次裝載食物(若還未有多次裝載時，則以現有次數的裝載食物為考量)來做以下的產能：<br> •若考量的裝載食物只有一種類型，礦工只生產 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.64444em;"></span><span class="strut bottom" style="height:0.64444em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathrm">1</span></span></span></span> 單位的煤礦；<br> •若考量的裝載食物內含有二種不同類型，礦工則生產 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn></mrow><annotation encoding="application/x-tex">2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.64444em;"></span><span class="strut bottom" style="height:0.64444em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathrm">2</span></span></span></span> 單位的煤礦；<br> •若考量的裝載食物內含有三種不同類型，礦工則生產 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>3</mn></mrow><annotation encoding="application/x-tex">3</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.64444em;"></span><span class="strut bottom" style="height:0.64444em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathrm">3</span></span></span></span> 單位的煤礦；<br>假設我們事先知道裝載食物的內容和運送順序，就能以裝載食物的運送順序和運送地點來影響各個礦區的產量分佈。<br>各個裝載食物都不能切割，必須被運送到其中一個礦區。<br>此兩個礦區不需要收到相同次數的裝載食物(事實上，允許將所有裝載食物運送到同一礦區)。<br>請寫一個程式在給定要分配到礦區之裝載食物的類型和順序的條件下，經由決定各個裝載食物應送到礦區 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.64444em;"></span><span class="strut bottom" style="height:0.64444em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathrm">1</span></span></span></span> 還是礦區 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn></mrow><annotation encoding="application/x-tex">2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.64444em;"></span><span class="strut bottom" style="height:0.64444em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathrm">2</span></span></span></span> ，來幫忙<br>找出可以生產的最大煤礦總產量。</p>
+        
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.css"><h3 id="題目敘述"><a href="#題目敘述" class="headerlink" title="題目敘述"></a>題目敘述</h3><blockquote><p>有兩個煤礦區各有一群礦工在礦區採礦。因為採礦是很辛苦的工作，這些礦工需要食物讓他們保持體力。<br>每次一個裝載的食物到達礦區後，此礦區的礦工即可生產相同數量的煤礦。<br>每次裝載的食物可以是肉類裝載、魚類裝載、或麵包裝載其中的一種。<br>因為礦工喜歡多樣化的餐點，若能享用越多樣化的餐點，礦工的產能就越大。明確地說，礦工會考量運送到其礦區的最新裝載食物<br>和前兩次裝載食物(若還未有多次裝載時，則以現有次數的裝載食物為考量)來做以下的產能：<br> •若考量的裝載食物只有一種類型，礦工只生產 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.64444em;"></span><span class="strut bottom" style="height:0.64444em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathrm">1</span></span></span></span> 單位的煤礦；<br> •若考量的裝載食物內含有二種不同類型，礦工則生產 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn></mrow><annotation encoding="application/x-tex">2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.64444em;"></span><span class="strut bottom" style="height:0.64444em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathrm">2</span></span></span></span> 單位的煤礦；<br> •若考量的裝載食物內含有三種不同類型，礦工則生產 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>3</mn></mrow><annotation encoding="application/x-tex">3</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.64444em;"></span><span class="strut bottom" style="height:0.64444em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathrm">3</span></span></span></span> 單位的煤礦；<br>假設我們事先知道裝載食物的內容和運送順序，就能以裝載食物的運送順序和運送地點來影響各個礦區的產量分佈。<br>各個裝載食物都不能切割，必須被運送到其中一個礦區。<br>此兩個礦區不需要收到相同次數的裝載食物(事實上，允許將所有裝載食物運送到同一礦區)。<br>請寫一個程式在給定要分配到礦區之裝載食物的類型和順序的條件下，經由決定各個裝載食物應送到礦區 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.64444em;"></span><span class="strut bottom" style="height:0.64444em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathrm">1</span></span></span></span> 還是礦區 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn></mrow><annotation encoding="application/x-tex">2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.64444em;"></span><span class="strut bottom" style="height:0.64444em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathrm">2</span></span></span></span> ，來幫忙<br>找出可以生產的最大煤礦總產量。</p>
 </blockquote>
 <a id="more"></a>
 <h3 id="題解"><a href="#題解" class="headerlink" title="題解"></a>題解</h3><blockquote><p>第一次寫IOI題<br>這題一臉就是DP<br>而且是最水的那種</p>
@@ -197,25 +197,25 @@
 <h6 id="C"><a href="#C" class="headerlink" title="C++"></a>C++</h6><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> LL;</div><div class="line"></div><div class="line"><span class="keyword">int</span> N, y;</div><div class="line"></div><div class="line"><span class="keyword">int</span> da[<span class="number">4</span>][<span class="number">4</span>][<span class="number">4</span>][<span class="number">4</span>], db[<span class="number">4</span>][<span class="number">4</span>][<span class="number">4</span>][<span class="number">4</span>];</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">tran</span><span class="params">(<span class="keyword">char</span> ch)</span> </span>&#123;</div><div class="line">    <span class="keyword">if</span>(ch == <span class="string">'M'</span>) <span class="keyword">return</span> <span class="number">1</span>;</div><div class="line">    <span class="keyword">if</span>(ch == <span class="string">'F'</span>) <span class="keyword">return</span> <span class="number">2</span>;</div><div class="line">    <span class="keyword">return</span> <span class="number">3</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">score</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b, <span class="keyword">int</span> c)</span> </span>&#123;</div><div class="line">    <span class="keyword">int</span> r = <span class="number">0</span>;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; <span class="number">4</span>; i++) <span class="keyword">if</span>(a == i || b == i || c == i) r++;</div><div class="line">    <span class="keyword">return</span> r;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</div><div class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;N);</div><div class="line">    getchar(); <span class="comment">//吃掉換行</span></div><div class="line">    <span class="built_in">memset</span>(da, <span class="number">-1</span>, <span class="keyword">sizeof</span>(da));</div><div class="line">    <span class="built_in">memset</span>(db, <span class="number">-1</span>, <span class="keyword">sizeof</span>(db));</div><div class="line">    da[<span class="number">0</span>][<span class="number">0</span>][<span class="number">0</span>][<span class="number">0</span>] = <span class="number">0</span>;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> r = <span class="number">0</span>; r &lt; N; r++) &#123;</div><div class="line">        <span class="keyword">int</span> kd = tran(getchar());</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">4</span>; i++)</div><div class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; i &lt; <span class="number">4</span>; i++)</div><div class="line">                <span class="keyword">for</span>(<span class="keyword">int</span> k = <span class="number">0</span>; k &lt; <span class="number">4</span>; k++) &#123;</div><div class="line">                <span class="comment">//db[i][kd][j][k]</span></div><div class="line">                <span class="keyword">int</span> mx = <span class="number">-1</span>;</div><div class="line">                <span class="keyword">for</span>(<span class="keyword">int</span> u = <span class="number">0</span>; u &lt; <span class="number">4</span>; u++)</div><div class="line">                    <span class="keyword">if</span>(da[u][i][j][k] != <span class="number">-1</span> &amp;&amp; (y = da[u][i][j][k] + score(u,i,kd)) &gt; mx) &#123;</div><div class="line">                        mx = y;</div><div class="line">                    &#125;</div><div class="line">                db[i][kd][j][k] = max(db[i][kd][j][k], mx);</div><div class="line">                <span class="comment">//db[i][j][k][kd]</span></div><div class="line">                mx = <span class="number">-1</span>;</div><div class="line">                <span class="keyword">for</span>(<span class="keyword">int</span> u = <span class="number">0</span>; u &lt; <span class="number">4</span>; u++)</div><div class="line">                    <span class="keyword">if</span>(da[i][j][u][k] != <span class="number">-1</span> &amp;&amp; (y = da[i][j][u][k] + score(u,k,kd)) &gt; mx)&#123;</div><div class="line">                        mx = y;</div><div class="line">                    &#125;</div><div class="line">                db[i][j][k][kd] = max(db[i][j][k][kd], mx);</div><div class="line">        &#125;</div><div class="line">        <span class="built_in">memcpy</span>(da,db,<span class="keyword">sizeof</span>(db));</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">int</span> ans = <span class="number">-1</span>;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">4</span>; i++)</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; i &lt; <span class="number">4</span>; i++)</div><div class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> k = <span class="number">0</span>; k &lt; <span class="number">4</span>; k++)</div><div class="line">                <span class="keyword">for</span>(<span class="keyword">int</span> u = <span class="number">0</span>; u &lt; <span class="number">4</span>; u++)</div><div class="line">                    <span class="keyword">if</span>(da[i][j][k][u] &gt; ans)</div><div class="line">                        ans = da[i][j][k][u];</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%d\n"</span>, ans);</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>誰可以告訴我為什麼Highlight怎麼了QAQ<br>我把inline跟define拿掉就沒事了<br>真奇怪</p>
 
-				
-			</div>
-			</article>
-		</div>
-		<!-- Pre or Next -->
-		
-			<div class="container" >
-				<ul class="pager2">
-					
-						<li class="previous">
-							<a href="/2017/02/25/tioj1086/" rel="prev">下一篇 - TIOJ 1086 放錯的信封</a>
-						</li>
-					
-					
-						<li class="next">
-							<a href="/2017/02/12/tioj1155/" rel="prev">上一篇 - TIOJ 1155 4.經濟編碼</a>
+        
+      </div>
+      </article>
+    </div>
+    <!-- Pre or Next -->
+    
+      <div class="container" >
+        <ul class="pager2">
+          
+            <li class="previous">
+              <a href="/2017/02/25/tioj1086/" rel="prev">下一篇 - TIOJ 1086 放錯的信封</a>
             </li>
-					
-				</ul>
+          
+          
+            <li class="next">
+              <a href="/2017/02/12/tioj1155/" rel="prev">上一篇 - TIOJ 1155 4.經濟編碼</a>
+            </li>
+          
+        </ul>
         <style>
         .pager2 {
           padding: 1.5em 0;
@@ -247,21 +247,21 @@
           text-shadow: 0 0 1px rgba(0, 0, 0, 0.1);
         }
         </style>
-			</div>
-			<!-- Comments -->
-			<div class="container">
-				
+      </div>
+      <!-- Comments -->
+      <div class="container">
+        
 <section id="comment">
-  <!-- <h1 class="title">Comments</h1> -->
+  <!-- <h1 class="title">留言</h1> -->
 
   
 </section>
 
 
-			</div>
-		
-		　　　　
-	</div>
+      </div>
+    
+    　　　　
+  </div>
 </div>
 
 

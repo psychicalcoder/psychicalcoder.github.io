@@ -127,26 +127,26 @@
 
   <!-- Main Content -->
   <div class="content-area">
-	<div class="post">
-		<!-- Post Content -->
-		<div class="container">
-			<article>
-			<!-- Title date & tags -->
-			<div class="post-header">
-				<h1 class="entry-title">
-					TIOJ 1508 加減問題
-					
-				</h1>
-			</div>
-			<p class="a-posted-on">
-				2017-07-17
-			</p>
-			<!-- Post Main Content -->
-			<div class="entry-content">
-				
-					<div id="toc">
-						<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#題目敘述"><span class="toc-text">題目敘述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#題解"><span class="toc-text">題解</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#C"><span class="toc-text">C++</span></a></li></ol></li></ol></li></ol></li></ol>
-					</div>
+  <div class="post">
+    <!-- Post Content -->
+    <div class="container">
+      <article>
+      <!-- Title date & tags -->
+      <div class="post-header">
+        <h1 class="entry-title">
+          TIOJ 1508 加減問題
+          
+        </h1>
+      </div>
+      <p class="a-posted-on">
+        2017-07-17
+      </p>
+      <!-- Post Main Content -->
+      <div class="entry-content">
+        
+          <div id="toc">
+            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#題目敘述"><span class="toc-text">題目敘述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#題解"><span class="toc-text">題解</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#C"><span class="toc-text">C++</span></a></li></ol></li></ol></li></ol></li></ol>
+          </div>
           <style>
             .toc {
               border-top-style:solid;
@@ -183,8 +183,8 @@
               }
             }
           </style>
-				
-				<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.css"><h3 id="題目敘述"><a href="#題目敘述" class="headerlink" title="題目敘述"></a>題目敘述</h3><blockquote><p>假設有 N個正整數A[1], A[2],…, A[N]，我們要在每一個數字之前加入+號或-號使得它們的總和為0。例如: 1, 2 及 3，我們可以得到<br>(-1)+(-2)+(+3)=0；但是對於2, 2 及 1 則無法透過加入+號或-號使得它們的總和為 0。</p>
+        
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.css"><h3 id="題目敘述"><a href="#題目敘述" class="headerlink" title="題目敘述"></a>題目敘述</h3><blockquote><p>假設有 N個正整數A[1], A[2],…, A[N]，我們要在每一個數字之前加入+號或-號使得它們的總和為0。例如: 1, 2 及 3，我們可以得到<br>(-1)+(-2)+(+3)=0；但是對於2, 2 及 1 則無法透過加入+號或-號使得它們的總和為 0。</p>
 <p>請你寫一個程式來判斷任意N個正整數是否可以透過加入+號或-號使得它們的總和為 0。</p>
 </blockquote>
 <a id="more"></a>
@@ -193,25 +193,25 @@
 <h6 id="C"><a href="#C" class="headerlink" title="C++"></a>C++</h6><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> LL;</div><div class="line"></div><div class="line"><span class="keyword">const</span> LL inf = (LL)<span class="number">9.22e18</span>;</div><div class="line"></div><div class="line"><span class="keyword">int</span> m, n, s;</div><div class="line"><span class="keyword">int</span> a[<span class="number">105</span>];</div><div class="line"><span class="keyword">bool</span> dp[<span class="number">100005</span>];</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</div><div class="line">    <span class="built_in">scanf</span>(<span class="string">"%d%d"</span>, &amp;m, &amp;n);</div><div class="line">    <span class="keyword">while</span>(m--) &#123;</div><div class="line">        <span class="built_in">memset</span>(dp, <span class="literal">false</span>, <span class="keyword">sizeof</span>(dp));</div><div class="line">        dp[<span class="number">0</span>] = <span class="literal">true</span>;</div><div class="line">        s = <span class="number">0</span>;</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</div><div class="line">            <span class="built_in">scanf</span>(<span class="string">"%d"</span>, a+i);</div><div class="line">            s += a[i];</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">if</span>(s&amp;<span class="number">1</span>) &#123;</div><div class="line">            <span class="built_in">puts</span>(<span class="string">"No"</span>);</div><div class="line">            <span class="keyword">continue</span>;</div><div class="line">        &#125; </div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</div><div class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = s; a[i] &lt;= j; j--) &#123;</div><div class="line">                dp[j] |= dp[j-a[i]];</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="built_in">puts</span>(dp[s&gt;&gt;<span class="number">1</span>] ? <span class="string">"Yes"</span> : <span class="string">"No"</span>);</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>我竟然想那麼久QAQ<br>真奇怪</p>
 
-				
-			</div>
-			</article>
-		</div>
-		<!-- Pre or Next -->
-		
-			<div class="container" >
-				<ul class="pager2">
-					
-						<li class="previous">
-							<a href="/2017/07/17/tioj1506/" rel="prev">下一篇 - TIOJ 1506 二元一次聯立方程式</a>
-						</li>
-					
-					
-						<li class="next">
-							<a href="/2017/07/17/tioj1579/" rel="prev">上一篇 - TIOJ 1579 來自未來的新台幣</a>
+        
+      </div>
+      </article>
+    </div>
+    <!-- Pre or Next -->
+    
+      <div class="container" >
+        <ul class="pager2">
+          
+            <li class="previous">
+              <a href="/2017/07/17/tioj1506/" rel="prev">下一篇 - TIOJ 1506 二元一次聯立方程式</a>
             </li>
-					
-				</ul>
+          
+          
+            <li class="next">
+              <a href="/2017/07/17/tioj1579/" rel="prev">上一篇 - TIOJ 1579 來自未來的新台幣</a>
+            </li>
+          
+        </ul>
         <style>
         .pager2 {
           padding: 1.5em 0;
@@ -243,21 +243,21 @@
           text-shadow: 0 0 1px rgba(0, 0, 0, 0.1);
         }
         </style>
-			</div>
-			<!-- Comments -->
-			<div class="container">
-				
+      </div>
+      <!-- Comments -->
+      <div class="container">
+        
 <section id="comment">
-  <!-- <h1 class="title">Comments</h1> -->
+  <!-- <h1 class="title">留言</h1> -->
 
   
 </section>
 
 
-			</div>
-		
-		　　　　
-	</div>
+      </div>
+    
+    　　　　
+  </div>
 </div>
 
 

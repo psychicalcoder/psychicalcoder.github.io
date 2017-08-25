@@ -127,26 +127,26 @@
 
   <!-- Main Content -->
   <div class="content-area">
-	<div class="post">
-		<!-- Post Content -->
-		<div class="container">
-			<article>
-			<!-- Title date & tags -->
-			<div class="post-header">
-				<h1 class="entry-title">
-					模板-Binary Indexed Tree
-					
-				</h1>
-			</div>
-			<p class="a-posted-on">
-				2017-03-11
-			</p>
-			<!-- Post Main Content -->
-			<div class="entry-content">
-				
-					<div id="toc">
-						<ol class="toc"><li class="toc-item toc-level-6"><a class="toc-link" href="#C-C"><span class="toc-text">C/C++</span></a></li></ol>
-					</div>
+  <div class="post">
+    <!-- Post Content -->
+    <div class="container">
+      <article>
+      <!-- Title date & tags -->
+      <div class="post-header">
+        <h1 class="entry-title">
+          模板-Binary Indexed Tree
+          
+        </h1>
+      </div>
+      <p class="a-posted-on">
+        2017-03-11
+      </p>
+      <!-- Post Main Content -->
+      <div class="entry-content">
+        
+          <div id="toc">
+            <ol class="toc"><li class="toc-item toc-level-6"><a class="toc-link" href="#C-C"><span class="toc-text">C/C++</span></a></li></ol>
+          </div>
           <style>
             .toc {
               border-top-style:solid;
@@ -183,8 +183,8 @@
               }
             }
           </style>
-				
-				<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.css"><p>今天要來講BinaryIndexedTree<br>BinaryIndexedTree 俗稱 BIT<br>台灣好像沒有翻譯??<br>大陸人稱之為”樹狀數組”<br>我覺得這個說法蠻不錯的<br>BIT長的不像棵樹但是擁有樹的精神(X<br>他的起源比線段樹還要早<br>這還蠻奇怪的，BIT應該比線段樹還要難想到才對<br><a id="more"></a><br>廢話不多說<br>到底什麼是BIT?<br>先來說說BIT的功能好了<br>BIT可以在<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>l</mi><mi>o</mi><mi>g</mi><mi>n</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O(logn)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathit" style="margin-right:0.01968em;">l</span><span class="mord mathit">o</span><span class="mord mathit" style="margin-right:0.03588em;">g</span><span class="mord mathit">n</span><span class="mclose">)</span></span></span></span>的時間查詢前綴合以及修改單點
+        
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.css"><p>今天要來講BinaryIndexedTree<br>BinaryIndexedTree 俗稱 BIT<br>台灣好像沒有翻譯??<br>大陸人稱之為”樹狀數組”<br>我覺得這個說法蠻不錯的<br>BIT長的不像棵樹但是擁有樹的精神(X<br>他的起源比線段樹還要早<br>這還蠻奇怪的，BIT應該比線段樹還要難想到才對<br><a id="more"></a><br>廢話不多說<br>到底什麼是BIT?<br>先來說說BIT的功能好了<br>BIT可以在<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>l</mi><mi>o</mi><mi>g</mi><mi>n</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O(logn)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathit" style="margin-right:0.01968em;">l</span><span class="mord mathit">o</span><span class="mord mathit" style="margin-right:0.03588em;">g</span><span class="mord mathit">n</span><span class="mclose">)</span></span></span></span>的時間查詢前綴合以及修改單點
 (修改區間以後有空再說
 有了前綴合就等於有區間合了!
 而且BIT的運作比起線段樹更為快速
@@ -215,25 +215,25 @@ undefined
 <p>如果有不懂得地方可以Email給我喔!!(在About可以看到</p>
 <h6 id="C-C"><a href="#C-C" class="headerlink" title="C/C++"></a>C/C++</h6><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> LL; </div><div class="line"></div><div class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">1000000</span>;</div><div class="line"></div><div class="line"><span class="keyword">int</span> n;</div><div class="line"><span class="keyword">int</span> BIT[N];</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">low_bit</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</div><div class="line">    <span class="keyword">return</span> x &amp; -x;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> idx, <span class="keyword">int</span> val)</span> </span>&#123;</div><div class="line">    <span class="keyword">while</span>(idx &lt;= n)&#123;</div><div class="line">        BIT[idx] += val;</div><div class="line">        idx += low_bit(idx);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">sum</span><span class="params">(<span class="keyword">int</span> idx)</span> </span>&#123;</div><div class="line">    <span class="keyword">int</span> ans = <span class="number">0</span>;</div><div class="line">    <span class="keyword">while</span>(idx &gt; <span class="number">0</span>) &#123;</div><div class="line">        ans += BIT[idx];</div><div class="line">        idx -= low_bit(idx);</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> ans;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//Demo</span></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</div><div class="line">    <span class="built_in">memset</span>(BIT,<span class="number">0</span>,<span class="keyword">sizeof</span>(BIT));</div><div class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;n);</div><div class="line">    <span class="keyword">int</span> a, i, v;</div><div class="line">    <span class="keyword">while</span>(<span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;a) == <span class="number">1</span> &amp;&amp; a)&#123;</div><div class="line">        <span class="keyword">if</span>(a == <span class="number">1</span>) &#123;</div><div class="line">            <span class="built_in">scanf</span>(<span class="string">"%d%d"</span>, &amp;i, &amp;v);</div><div class="line">            add(i,v);</div><div class="line">            <span class="built_in">printf</span>(<span class="string">"ADD(%d,%d) successfully\n"</span>, i, v);</div><div class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span>(a == <span class="number">2</span>) &#123;</div><div class="line">            <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;i);</div><div class="line">            <span class="built_in">printf</span>(<span class="string">"SUM(%d) = %d\n\n"</span>, i, sum(i));</div><div class="line">        &#125; <span class="keyword">else</span> &#123;</div><div class="line">            <span class="built_in">puts</span>(<span class="string">"Please Input 0(exit),1(add),2(sum)\n"</span>);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
-				
-			</div>
-			</article>
-		</div>
-		<!-- Pre or Next -->
-		
-			<div class="container" >
-				<ul class="pager2">
-					
-						<li class="previous">
-							<a href="/2017/03/31/uva10891/" rel="prev">下一篇 - UVa 10891 Game of Sum</a>
-						</li>
-					
-					
-						<li class="next">
-							<a href="/2017/03/11/segmenttree/" rel="prev">上一篇 - 模板-線段樹</a>
+        
+      </div>
+      </article>
+    </div>
+    <!-- Pre or Next -->
+    
+      <div class="container" >
+        <ul class="pager2">
+          
+            <li class="previous">
+              <a href="/2017/03/31/uva10891/" rel="prev">下一篇 - UVa 10891 Game of Sum</a>
             </li>
-					
-				</ul>
+          
+          
+            <li class="next">
+              <a href="/2017/03/11/segmenttree/" rel="prev">上一篇 - 模板-線段樹</a>
+            </li>
+          
+        </ul>
         <style>
         .pager2 {
           padding: 1.5em 0;
@@ -265,21 +265,21 @@ undefined
           text-shadow: 0 0 1px rgba(0, 0, 0, 0.1);
         }
         </style>
-			</div>
-			<!-- Comments -->
-			<div class="container">
-				
+      </div>
+      <!-- Comments -->
+      <div class="container">
+        
 <section id="comment">
-  <!-- <h1 class="title">Comments</h1> -->
+  <!-- <h1 class="title">留言</h1> -->
 
   
 </section>
 
 
-			</div>
-		
-		　　　　
-	</div>
+      </div>
+    
+    　　　　
+  </div>
 </div>
 
 

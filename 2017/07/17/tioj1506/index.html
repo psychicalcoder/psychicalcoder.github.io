@@ -127,26 +127,26 @@
 
   <!-- Main Content -->
   <div class="content-area">
-	<div class="post">
-		<!-- Post Content -->
-		<div class="container">
-			<article>
-			<!-- Title date & tags -->
-			<div class="post-header">
-				<h1 class="entry-title">
-					TIOJ 1506 二元一次聯立方程式
-					
-				</h1>
-			</div>
-			<p class="a-posted-on">
-				2017-07-17
-			</p>
-			<!-- Post Main Content -->
-			<div class="entry-content">
-				
-					<div id="toc">
-						<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#題目敘述"><span class="toc-text">題目敘述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#題解"><span class="toc-text">題解</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#C"><span class="toc-text">C++</span></a></li></ol></li></ol></li></ol></li></ol>
-					</div>
+  <div class="post">
+    <!-- Post Content -->
+    <div class="container">
+      <article>
+      <!-- Title date & tags -->
+      <div class="post-header">
+        <h1 class="entry-title">
+          TIOJ 1506 二元一次聯立方程式
+          
+        </h1>
+      </div>
+      <p class="a-posted-on">
+        2017-07-17
+      </p>
+      <!-- Post Main Content -->
+      <div class="entry-content">
+        
+          <div id="toc">
+            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#題目敘述"><span class="toc-text">題目敘述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#題解"><span class="toc-text">題解</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#C"><span class="toc-text">C++</span></a></li></ol></li></ol></li></ol></li></ol>
+          </div>
           <style>
             .toc {
               border-top-style:solid;
@@ -183,32 +183,32 @@
               }
             }
           </style>
-				
-				<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.css"><h3 id="題目敘述"><a href="#題目敘述" class="headerlink" title="題目敘述"></a>題目敘述</h3><blockquote><p>解二元一次聯立方程式</p>
+        
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.css"><h3 id="題目敘述"><a href="#題目敘述" class="headerlink" title="題目敘述"></a>題目敘述</h3><blockquote><p>解二元一次聯立方程式</p>
 </blockquote>
 <a id="more"></a>
 <h3 id="題解"><a href="#題解" class="headerlink" title="題解"></a>題解</h3><blockquote><p>自己算一下公式<br>不過會遇到一個問題<br>有一個測資答案是0<br>但是在運算的時候double可能會把他算成-0<br>就輸出了-0<br>所以要特判一下</p>
 </blockquote>
 <h6 id="C"><a href="#C" class="headerlink" title="C++"></a>C++</h6><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> LL;</div><div class="line"></div><div class="line"><span class="keyword">const</span> <span class="keyword">int</span> inf = (<span class="keyword">int</span>)<span class="number">1e9</span>;</div><div class="line"></div><div class="line"><span class="keyword">double</span> a1,b1,a2,b2;</div><div class="line"><span class="keyword">double</span> x, y;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</div><div class="line">    <span class="built_in">scanf</span>(<span class="string">"%lf%lf%lf%lf"</span>, &amp;a1, &amp;a2, &amp;b1, &amp;b2);</div><div class="line">    <span class="keyword">if</span>(a1 == <span class="number">0.0</span>) y = b1;</div><div class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(a2 == <span class="number">0.0</span>) y = b2;</div><div class="line">    <span class="keyword">else</span>  y = (b1*a2-b2*a1)/(a2-a1);</div><div class="line">    <span class="keyword">if</span>(a1 == <span class="number">0.0</span>) x = (y-b2)/a2;</div><div class="line">    <span class="keyword">else</span> x = (y-b1)/a1;</div><div class="line">    <span class="keyword">if</span>(<span class="built_in">abs</span>(x) == <span class="number">0</span>) x = <span class="number">0</span>;</div><div class="line">    <span class="keyword">if</span>(<span class="built_in">abs</span>(y) == <span class="number">0</span>) y = <span class="number">0</span>;</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%.2f\n%.2f\n"</span>, x, y);</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-				
-			</div>
-			</article>
-		</div>
-		<!-- Pre or Next -->
-		
-			<div class="container" >
-				<ul class="pager2">
-					
-						<li class="previous">
-							<a href="/2017/07/18/tioj1142/" rel="prev">下一篇 - TIOJ 1142 關鍵邏輯閘</a>
-						</li>
-					
-					
-						<li class="next">
-							<a href="/2017/07/17/tioj1508/" rel="prev">上一篇 - TIOJ 1508 加減問題</a>
+        
+      </div>
+      </article>
+    </div>
+    <!-- Pre or Next -->
+    
+      <div class="container" >
+        <ul class="pager2">
+          
+            <li class="previous">
+              <a href="/2017/07/18/tioj1142/" rel="prev">下一篇 - TIOJ 1142 關鍵邏輯閘</a>
             </li>
-					
-				</ul>
+          
+          
+            <li class="next">
+              <a href="/2017/07/17/tioj1508/" rel="prev">上一篇 - TIOJ 1508 加減問題</a>
+            </li>
+          
+        </ul>
         <style>
         .pager2 {
           padding: 1.5em 0;
@@ -240,21 +240,21 @@
           text-shadow: 0 0 1px rgba(0, 0, 0, 0.1);
         }
         </style>
-			</div>
-			<!-- Comments -->
-			<div class="container">
-				
+      </div>
+      <!-- Comments -->
+      <div class="container">
+        
 <section id="comment">
-  <!-- <h1 class="title">Comments</h1> -->
+  <!-- <h1 class="title">留言</h1> -->
 
   
 </section>
 
 
-			</div>
-		
-		　　　　
-	</div>
+      </div>
+    
+    　　　　
+  </div>
 </div>
 
 

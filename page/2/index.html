@@ -179,6 +179,57 @@
           <div class="container">
   <article class="post">
     <h1 class="entry-title">
+      <a href="/2017/07/17/tioj1508/" rel="bookmark">
+        TIOJ 1508 加減問題  
+      </a>
+    </h1>
+    
+    <div class="entry-content">
+      <p>
+        <h3 id="題目敘述"><a href="#題目敘述" class="headerlink" title="題目敘述"></a>題目敘述</h3><blockquote><p>假設有 N個正整數A[1], A[2],…, A[N]，我們要在每一個數字之前加入+號或-號使得它們的總和為0。例如: 1, 2 及 3，我們可以得到<br>(-1)+(-2)+(+3)=0；但是對於2, 2 及 1 則無法透過加入+號或-號使得它們的總和為 0。</p>
+<p>請你寫一個程式來判斷任意N個正整數是否可以透過加入+號或-號使得它們的總和為 0。</p>
+</blockquote>
+      </p>
+    </div>
+    <div class="post-more-link text-center">
+            <a class="btn" href="/2017/07/17/tioj1508/" rel="contents">
+              閱讀全文 »
+            </a>
+    </div>
+    <p class="posted-on">
+        <i class="fa fa-calendar" aria-hidden="true"></i>
+    	2017-07-17
+    </p>
+    <div class="tags-links">
+      <i class="fa fa-tags" aria-hidden="true"></i>
+      
+      <a href="/tags/coding/" rel="tag">
+        coding
+      </a>
+      
+      <a href="/tags/tioj/" rel="tag">
+        tioj
+      </a>
+      
+      <a href="/tags/dp/" rel="tag">
+        dp
+      </a>
+      
+      <a href="/tags/toi/" rel="tag">
+        toi
+      </a>
+      
+    </div>
+    
+  </article>
+</div>
+
+        </div> 
+    
+        <div class="article">
+          <div class="container">
+  <article class="post">
+    <h1 class="entry-title">
       <a href="/2017/07/17/tioj1579/" rel="bookmark">
         TIOJ 1579 來自未來的新台幣  
       </a>
@@ -595,55 +646,6 @@
       
       <a href="/tags/ioi/" rel="tag">
         ioi
-      </a>
-      
-    </div>
-    
-  </article>
-</div>
-
-        </div> 
-    
-        <div class="article">
-          <div class="container">
-  <article class="post">
-    <h1 class="entry-title">
-      <a href="/2017/02/12/tioj1155/" rel="bookmark">
-        TIOJ 1155 4.經濟編碼  
-      </a>
-    </h1>
-    
-    <div class="entry-content">
-      <p>
-        <h3 id="題目敘述"><a href="#題目敘述" class="headerlink" title="題目敘述"></a>題目敘述</h3><blockquote><p>為降低資料儲存的空間或增加資料傳送的速度，編碼是常用的方法。<br>假設有一個字元集，每個字元出現的頻率是已知的。現在要把每個字元編碼成為一個二元字串(例如把‘A’編碼作101)，採用的編碼必須合乎以下條件：一個字元的編碼不可以是另一個字元的前置(prefix)。前置的定義如下：若一個字串s1為另一個字串s2的前置，則從s2的最後一個字元開始，連續刪除一定數量的字元後可以得到s1(s2本身也是s2的前置)，舉例而言：如果字元‘A’的編碼是101，而字元‘B’的編碼為01，則‘B’的編碼不為‘A’編碼的前置；如果字元‘C’的編碼為1100，而字元‘D’的是11，則‘D’的編碼是‘C’編碼的前置。以下的編碼方式可以在符合這個條件下給出最經濟的編碼，請找出使用下述方法做最經濟編碼時，一個字元編碼的預期長度。<br>編碼法<br>1.如以下所述建立一棵二元樹。<br>先從字元集選取兩個出現頻率最低的字元作合併，合併後以一個全新的虛擬字元取代這兩個字元，新字元的頻率等於這兩個舊字元頻率的總和，並令這兩個舊字元為此新字元的兩個子樹，左右不拘。重覆以上動作，直至字元集剩下一個字元為止。如下圖(i)到(iv)。<br>2.再依照以下所述方法將各字元作編碼。<br>由上一步驟所得之二元樹，將每個內部節點(internal node)連往左子樹的邊(edge)標記為‘0’，連往右子樹的邊標記為‘1’，如下圖(v)所示。一字元的編碼即為從樹根(root)至此字元，經過的每一個邊的標記所成之字串。在此‘a’編碼作000，‘?’編碼作01。</p>
-<p><img src="http://tioj.infor.org/pimgs/1155_1.png"><br><img src="http://tioj.infor.org/pimgs/1155_2.png"></p>
-<p>在按照上述的編碼法完成最經濟編碼之後，就可以計算這個字元編碼的預期長度。首先算出每個字元的預期長度 = 編碼長度 × 出現頻率，然後把所有字元的預期長度總合起來，就可以得到此字元編碼的預期長度。下表是上述編碼的計算範例。</p>
-<p><img src="http://tioj.infor.org/pimgs/1155_3.png"></p>
-</blockquote>
-      </p>
-    </div>
-    <div class="post-more-link text-center">
-            <a class="btn" href="/2017/02/12/tioj1155/" rel="contents">
-              閱讀全文 »
-            </a>
-    </div>
-    <p class="posted-on">
-        <i class="fa fa-calendar" aria-hidden="true"></i>
-    	2017-02-12
-    </p>
-    <div class="tags-links">
-      <i class="fa fa-tags" aria-hidden="true"></i>
-      
-      <a href="/tags/coding/" rel="tag">
-        coding
-      </a>
-      
-      <a href="/tags/tioj/" rel="tag">
-        tioj
-      </a>
-      
-      <a href="/tags/greedy/" rel="tag">
-        greedy
       </a>
       
     </div>
